@@ -1,3 +1,12 @@
-﻿theme: jekyll-theme-cayman
-title: Eduardo J. Rodriguez - Portfolio
-description: KPIs, charts, automation projects
+﻿title: Eduardo J. Rodriguez
+description: Automation, RPA, Solutions, AI/ML
+theme: jekyll-theme-minimal
+
+header_pages:
+  - projects.md
+  - case-studies.md
+  - resume.md
+  - contact.md
+
+github:
+  repository_url: https://github.com/ejr1216/portfolio
