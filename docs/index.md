@@ -1,34 +1,49 @@
-# Portfolio KPIs
+---
+title: Portfolio KPIs
+layout: default
+---
+ 
+![spacer](data:image/gif;base64,R0lGODlhAQABAAAAACw=)
+<link rel="stylesheet" href="assets/css/custom.css">
+<div class="hero"><h1>Portfolio KPIs</h1><p>Automation hours saved and impact</p><a class="btn" href="https://github.com/ejr1216/portfolio">View on GitHub</a></div>
+## KPI Summary
 
 | KPI | Value |
 | --- | ---: |
-| Total Sales | 286 |
-| Average CSAT | 4.47 |
-| Conversion Rate | 22.61% |
-| Avg Response Minutes | 36.1 |
-| Total Leads | 1265 |
-| Total Appointments | 879 |
-| Total Showings | 680 |
-| Total Revenue | $575,000 |
+| Total Hours Saved | 1039.2 |
+| Estimated Cost Saved | $41,568 |
+| FTE Saved (est.) | 0.50 |
+| Avg Monthly Hours | 86.6 |
 
 ## Charts
-![monthly_sales](charts/monthly_sales.png)
+![monthly_hours_saved](charts/monthly_hours_saved.png)
 
-![csat_by_month](charts/csat_by_month.png)
+![hours_by_project](charts/hours_by_project.png)
 
-![funnel_totals](charts/funnel_totals.png)
+![cumulative_hours](charts/cumulative_hours.png)
 
-![response_minutes](charts/response_minutes.png)
+## Top Projects by Hours
+
+| Project | Hours | Cost |
+| --- | ---: | ---: |
+| Social Review Sorting | 519.6 | $20,784 |
+| OEM Survey ETL + KPI | 259.8 | $10,392 |
+| Automated Cancellation Input | 155.9 | $6,235 |
+| Voice of the Customer (VoC) | 103.9 | $4,157 |
 
 ## Monthly Summary
 
-| Month | Leads | Appointments | Showings | Sales | Csat | Responseminutes | Revenue |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025-01 | 120 | 80 | 60 | 25 | 4.30 | 45.0 | $50,000 |
-| 2025-02 | 140 | 90 | 70 | 28 | 4.20 | 42.0 | $56,000 |
-| 2025-03 | 160 | 110 | 85 | 35 | 4.40 | 38.0 | $70,000 |
-| 2025-04 | 155 | 105 | 80 | 33 | 4.50 | 36.0 | $66,000 |
-| 2025-05 | 170 | 120 | 95 | 40 | 4.60 | 34.0 | $82,000 |
-| 2025-06 | 165 | 118 | 92 | 39 | 4.50 | 33.0 | $79,000 |
-| 2025-07 | 180 | 130 | 100 | 44 | 4.70 | 31.0 | $88,000 |
-| 2025-08 | 175 | 126 | 98 | 42 | 4.60 | 30.0 | $84,000 |
+| Month | Hours | Cost |
+| --- | ---: | ---: |
+| 2024-10 | 86.6 | $3,464 |
+| 2024-11 | 86.6 | $3,464 |
+| 2024-12 | 86.6 | $3,464 |
+| 2025-01 | 86.6 | $3,464 |
+| 2025-02 | 86.6 | $3,464 |
+| 2025-03 | 86.6 | $3,464 |
+| 2025-04 | 86.6 | $3,464 |
+| 2025-05 | 86.6 | $3,464 |
+| 2025-06 | 86.6 | $3,464 |
+| 2025-07 | 86.6 | $3,464 |
+| 2025-08 | 86.6 | $3,464 |
+| 2025-09 | 86.6 | $3,464 |

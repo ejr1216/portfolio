@@ -30,12 +30,11 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path], monthly: pd.Data
         "title: Portfolio KPIs",
         "layout: default",
         "---",
+        " ",
+        "![spacer](data:image/gif;base64,R0lGODlhAQABAAAAACw=)",  # forces theme spacing
         '<link rel="stylesheet" href="assets/css/custom.css">',
-        '<div class="hero">',
-        "<h1>Portfolio KPIs</h1>",
-        "<p>Automation hours saved and impact</p>",
-        '<a class="btn" href="https://github.com/ejr1216/portfolio">View on GitHub</a>',
-        "</div>",
+        '<div class="hero"><h1>Portfolio KPIs</h1><p>Automation hours saved and impact</p>'
+        '<a class="btn" href="https://github.com/ejr1216/portfolio">View on GitHub</a></div>',
         "## KPI Summary",
         "",
         "| KPI | Value |",
@@ -69,11 +68,12 @@ def main() -> None:
 
     projects = loadProjects(dataPath)
     monthly = expandMonthly(projects, months=12, hourlyRate=40.0)
+
     kpis = computeKpis(monthly)
-    monthAgg = monthlySummary(monthly)
+    monthAgg = monthlySummary(monthly).sort_values("month").reset_index(drop=True)
     leaderboard = projectLeaderboard(monthly)
 
-    # Chart 1: Monthly total hours
+    # 1) Monthly hours
     plt.figure()
     plt.plot(monthAgg["month"], monthAgg["hours"], marker="o")
     plt.title("Monthly Hours Saved")
@@ -81,7 +81,7 @@ def main() -> None:
     plt.ylabel("Hours")
     saveFigure(chartsDir / "monthly_hours_saved.png")
 
-    # Chart 2: Hours by project
+    # 2) Hours by project
     plt.figure()
     plt.bar(leaderboard["project"], leaderboard["hours"])
     plt.title("Hours Saved by Project")
@@ -90,11 +90,10 @@ def main() -> None:
     plt.xticks(rotation=25, ha="right")
     saveFigure(chartsDir / "hours_by_project.png")
 
-    # Chart 3: Cumulative hours
+    # 3) Cumulative
     plt.figure()
-    monthAgg = monthAgg.sort_values("month").reset_index(drop=True)
     monthAgg["cumHours"] = monthAgg["hours"].cumsum()
-    plt.plot(cum["month"], cum["cumHours"], marker="o")
+    plt.plot(monthAgg["month"], monthAgg["cumHours"], marker="o")
     plt.title("Cumulative Hours Saved")
     plt.xlabel("Month")
     plt.ylabel("Hours")
