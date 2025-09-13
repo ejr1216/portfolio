@@ -30,7 +30,7 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path], monthly: pd.Data
         "title: Portfolio KPIs",
         "layout: default",
         "---",
-        '<link rel="stylesheet" href="/assets/css/custom.css">',
+        '<link rel="stylesheet" href="assets/css/custom.css">',
         '<div class="hero">',
         "<h1>Portfolio KPIs</h1>",
         "<p>Automation hours saved and impact</p>",
@@ -92,7 +92,8 @@ def main() -> None:
 
     # Chart 3: Cumulative hours
     plt.figure()
-    cum = monthAgg.sort_values("month").assign(cumHours=monthAgg["hours"].cumsum())
+    monthAgg = monthAgg.sort_values("month").reset_index(drop=True)
+    monthAgg["cumHours"] = monthAgg["hours"].cumsum()
     plt.plot(cum["month"], cum["cumHours"], marker="o")
     plt.title("Cumulative Hours Saved")
     plt.xlabel("Month")

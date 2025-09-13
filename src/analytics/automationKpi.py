@@ -4,6 +4,14 @@ import pandas as pd
 
 def loadProjects(csvPath: Path) -> pd.DataFrame:
     df = pd.read_csv(csvPath)
+    # normalize headers like "Start Date", "start_date", etc.
+    rename = {c: c.strip().lower().replace(" ", "").replace("_", "") for c in df.columns}
+    df.columns = [rename[c] for c in df.columns]
+    aliases = {
+        "startdate": "startDate",
+        "hourssavedperweek": "hoursSavedPerWeek",
+    }
+    df = df.rename(columns={k: v for k, v in aliases.items() if k in df.columns})
     df["startDate"] = pd.to_datetime(df["startDate"])
     return df
 
