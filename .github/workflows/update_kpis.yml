@@ -1,0 +1,33 @@
+name: Update KPIs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'  # Mondays 12:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Generate KPIs
+        run: python scripts/generateKpiCharts.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update KPIs"
+            git push
+          fi
