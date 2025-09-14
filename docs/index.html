@@ -1,25 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo J. Rodriguez - Automation Impact</title>
+    <title>Eduardo J. Rodriguez - Automation Impact Portfolio</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+        
         :root {
             --primary: #667eea;
             --secondary: #764ba2;
             --accent: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
             --dark: #0f172a;
             --light: #e2e8f0;
+            --glass: rgba(255, 255, 255, 0.05);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: Inter, system-ui, sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--light);
             min-height: 100vh;
         }
+
         nav {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.05);
@@ -28,31 +35,38 @@
             top: 0;
             z-index: 100;
         }
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
             justify-content: center;
         }
+
         nav a {
             color: var(--light);
             text-decoration: none;
             transition: color 0.3s;
         }
+
         nav a:hover { color: var(--primary); }
+
         .hero {
             padding: 4rem 2rem;
             text-align: center;
         }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
+
         .gradient-text {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -60,6 +74,7 @@
             max-width: 1000px;
             margin: 3rem auto;
         }
+
         .stat-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -68,14 +83,17 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s;
         }
+
         .stat-card:hover {
             transform: translateY(-5px);
         }
+
         .stat-value {
             font-size: 2.5rem;
             font-weight: 900;
             color: var(--primary);
         }
+
         .stat-label {
             color: #94a3b8;
             text-transform: uppercase;
@@ -83,11 +101,13 @@
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
-        .projects {
+
+        .section {
             padding: 3rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
+
         h2 {
             text-align: center;
             font-size: 2.5rem;
@@ -96,11 +116,13 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
+
         .project-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -108,71 +130,252 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s;
+            text-align: center;
         }
+
         .project-card:hover {
             transform: translateY(-10px);
         }
+
         .project-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+
         .project-title {
             font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 1rem;
             color: var(--primary);
         }
-        .project-metrics {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+            line-height: 1.6;
         }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
         .metric {
             background: rgba(102, 126, 234, 0.1);
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 0.5rem;
             border-radius: 10px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-align: center;
         }
+
+        .metric-value {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
         .charts-section {
             padding: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
+
+        .chart-container {
+            margin-bottom: 4rem;
+            text-align: center;
         }
+
+        .chart-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
         canvas {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 1rem;
+            max-width: 100%;
         }
+
+        .ecosystem-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .ecosystem-category {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .ecosystem-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tech-tag:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .proof-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 1200px;
+        }
+
+        .proof-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .proof-stats {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .proof-stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .proof-stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .proof-stat-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        .showcase-section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .showcase-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .showcase-item:hover {
+            transform: scale(1.05);
+        }
+
+        .showcase-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
         .contact {
             text-align: center;
             padding: 3rem 2rem;
             background: rgba(255, 255, 255, 0.05);
         }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .contact a {
             color: var(--primary);
             text-decoration: none;
-            margin: 0 1rem;
         }
+
+        .location-note {
+            margin-top: 1rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .hero-stats { grid-template-columns: 1fr; }
-            .charts-grid { grid-template-columns: 1fr; }
+            .proof-content { grid-template-columns: 1fr; }
+            .ecosystem-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#home"> Impact</a></li>
-            <li><a href="#projects"> Projects</a></li>
-            <li><a href="#charts"> Analytics</a></li>
-            <li><a href="#contact"> Contact</a></li>
+            <li><a href="#home">🚀 Impact</a></li>
+            <li><a href="#projects">💼 Projects</a></li>
+            <li><a href="#analytics">📊 Analytics</a></li>
+            <li><a href="#ecosystem">🌐 Ecosystem</a></li>
+            <li><a href="#proof">🏆 Proof of Work</a></li>
+            <li><a href="#showcase">✨ Showcase</a></li>
+            <li><a href="#contact">📧 Contact</a></li>
         </ul>
     </nav>
 
@@ -201,71 +404,265 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="section">
         <h2>Key Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-icon"></div>
+                <div class="project-icon">🎯</div>
                 <h3 class="project-title">Voice of Customer (VoC)</h3>
-                <p>Automated sentiment analysis handling 15x volume with 40 hrs/week savings</p>
+                <p class="project-description">Automated sentiment analysis handling 15x volume with 40 hrs/week savings</p>
                 <div class="project-metrics">
-                    <span class="metric">31,176 hrs</span>
-                    <span class="metric">$686K</span>
+                    <div class="metric">
+                        <span class="metric-value">31,176</span>
+                        <span class="metric-label">Hours Saved</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">$686K</span>
+                        <span class="metric-label">Cost Saved</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">15x</span>
+                        <span class="metric-label">Volume Scale</span>
+                    </div>
                 </div>
             </div>
+            
             <div class="project-card">
-                <div class="project-icon"></div>
+                <div class="project-icon">🤖</div>
                 <h3 class="project-title">Social Review Sorting</h3>
-                <p>ML-powered review categorization across platforms</p>
+                <p class="project-description">ML-powered review categorization across platforms</p>
                 <div class="project-metrics">
-                    <span class="metric">216 hrs</span>
-                    <span class="metric">Real-time</span>
+                    <div class="metric">
+                        <span class="metric-value">216</span>
+                        <span class="metric-label">Hours/Month</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">99%</span>
+                        <span class="metric-label">Accuracy</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value"><5min</span>
+                        <span class="metric-label">Response Time</span>
+                    </div>
                 </div>
             </div>
+            
             <div class="project-card">
-                <div class="project-icon"></div>
+                <div class="project-icon">📊</div>
                 <h3 class="project-title">OEM Survey ETL</h3>
-                <p>End-to-end data pipeline with automated KPIs</p>
+                <p class="project-description">End-to-end data pipeline with automated KPIs</p>
                 <div class="project-metrics">
-                    <span class="metric">43 hrs/mo</span>
-                    <span class="metric">100%</span>
+                    <div class="metric">
+                        <span class="metric-value">43</span>
+                        <span class="metric-label">Hours/Month</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">0</span>
+                        <span class="metric-label">Manual Errors</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">24/7</span>
+                        <span class="metric-label">Availability</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="charts" class="charts-section">
+    <section id="analytics" class="charts-section">
         <h2>Performance Analytics</h2>
-        <div class="charts-grid">
+        
+        <div class="chart-container">
+            <h3 class="chart-title">Monthly Hours Saved Trend</h3>
             <canvas id="trendChart" height="300"></canvas>
-            <canvas id="projectChart" height="300"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h3 class="chart-title">Project Impact Distribution</h3>
+            <canvas id="stackedChart" height="300"></canvas>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="section">
+        <h2>Technology Ecosystem</h2>
+        <div class="ecosystem-container">
+            <div class="ecosystem-grid">
+                <div class="ecosystem-category">
+                    <h3>🤖 RPA & Automation</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">UiPath</span>
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Smartsheet</span>
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Monday.com</span>
+                        <span class="tech-tag">Airtable</span>
+                        <span class="tech-tag">Zapier</span>
+                        <span class="tech-tag">TotalCX</span>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-category">
+                    <h3>📊 Presentation & BI</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">PowerPoint</span>
+                        <span class="tech-tag">Smartsheet Dashboard</span>
+                        <span class="tech-tag">Loom</span>
+                        <span class="tech-tag">Excel Pivot Tables</span>
+                        <span class="tech-tag">MS Project</span>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-category">
+                    <h3>🗄️ Database</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Snowflake</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-category">
+                    <h3>🧠 AI/ML</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Multi-Model</span>
+                        <span class="tech-tag">Model Training</span>
+                        <span class="tech-tag">Model Evaluation</span>
+                        <span class="tech-tag">Guard-rails</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                        <span class="tech-tag">Context Engineering</span>
+                        <span class="tech-tag">Open-Source LLMs</span>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-category">
+                    <h3>💻 Software Engineering</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SDLC</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">CI/CD</span>
+                        <span class="tech-tag">QA Testing</span>
+                        <span class="tech-tag">GitHub</span>
+                        <span class="tech-tag">Linux/Ubuntu</span>
+                        <span class="tech-tag">PowerShell</span>
+                        <span class="tech-tag">RedHat</span>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof" class="section">
+        <h2>Proof of Work</h2>
+        <div class="proof-section">
+            <div class="proof-content">
+                <div class="proof-stats">
+                    <div class="proof-stat">
+                        <div class="proof-stat-value">5,000+</div>
+                        <div class="proof-stat-label">New Google Reviews Generated</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-value">4.6 → 4.7</div>
+                        <div class="proof-stat-label">Star Rating Increase</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-value">99%</div>
+                        <div class="proof-stat-label">Review Response Rate</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-value">18 Months</div>
+                        <div class="proof-stat-label">Faster CX Goal Achievement</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Ed Napleton Automotive Group Case Study</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        Led the implementation of Journey Insights at Ed Napleton Automotive Group, transforming disconnected customer feedback into actionable intelligence. 
+                        The system became the "heartbeat of our customer experience," enabling daily pulse checks, pattern-focused deep dives, and targeted improvements.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        This data-driven approach resulted in unprecedented growth in reviews and ratings, with the platform providing clarity and speed that accelerated 
+                        CX goals by 18 months.
+                    </p>
+                    <a href="https://www.loom.com/share/b50583103746462ca7909ed22df2e59b" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">
+                        📹 Watch Case Study Video →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="showcase-section">
+        <h2>Live Showcases</h2>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🎯 Interactive Analytics Dashboard</h3>
+                <p>Real-time data visualization and analytics platform built with modern web technologies.</p>
+                <a href="https://claude.ai/public/artifacts/293d9ef1-5e54-419d-87fc-4bc6754158f8?fullscreen=true" target="_blank" class="showcase-link">
+                    View Live Demo →
+                </a>
+            </div>
+            <div class="showcase-item">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">📊 Smartsheet Automation</h3>
+                <p>Enterprise workflow automation solution with integrated reporting and notifications.</p>
+                <a href="https://cdn.bfldr.com/ZZH8X5LD/as/s9wvnqb36nssh7f4ffwsh/Smartsheet_Moments_Email_2?auto" target="_blank" class="showcase-link">
+                    View Solution →
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
-        <p>
-            <a href="mailto:Ejr1216@icloud.com"> Ejr1216@icloud.com</a>
-            <a href="https://linkedin.com/in/ejr1216"> LinkedIn</a>
-            <a href="https://github.com/ejr1216"> GitHub</a>
-        </p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:ejr1216@icloud.com">ejr1216@icloud.com</a>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <a href="tel:708-719-0854">(708) 719-0854</a>
+            </div>
+            <div class="contact-item">
+                <span>💼</span>
+                <a href="https://linkedin.com/in/ejr1216" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span>🐙</span>
+                <a href="https://github.com/ejr1216" target="_blank">GitHub</a>
+            </div>
+            <div class="contact-item">
+                <span>𝕏</span>
+                <a href="https://x.com/ejr1216" target="_blank">@ejr1216</a>
+            </div>
+            <div class="contact-item">
+                <span>🤗</span>
+                <a href="https://huggingface.co/ejr1216" target="_blank">Hugging Face</a>
+            </div>
+        </div>
+        <p class="location-note">📍 Based in Chicago • Will consider relocation for the right opportunity</p>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Simple charts
-        const chartConfig = {
+        // Monthly trend line chart
+        const trendCtx = document.getElementById('trendChart');
+        new Chart(trendCtx, {
             type: 'line',
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } }
-            }
-        };
-        
-        // Monthly trend
-        new Chart(document.getElementById('trendChart'), {
-            ...chartConfig,
             data: {
                 labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
                 datasets: [{
@@ -273,23 +670,81 @@
                     data: [2598, 2598, 2598, 2598, 2611, 2611, 2611, 2654, 2654, 2654, 2676, 2676],
                     borderColor: '#667eea',
                     backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    tension: 0.4
-                }]
-            }
-        });
-        
-        // Project breakdown
-        new Chart(document.getElementById('projectChart'), {
-            type: 'bar',
-            data: {
-                labels: ['VoC', 'Social', 'Cancel', 'OEM'],
-                datasets: [{
-                    label: 'Hours',
-                    data: [31176, 217, 104, 43],
-                    backgroundColor: ['#667eea', '#764ba2', '#10b981', '#f59e0b']
+                    tension: 0.4,
+                    fill: true
                 }]
             },
-            options: chartConfig.options
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    x: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+
+        // Stacked bar chart for projects
+        const stackedCtx = document.getElementById('stackedChart');
+        new Chart(stackedCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                datasets: [
+                    {
+                        label: 'VoC',
+                        data: [2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400, 2400],
+                        backgroundColor: '#667eea'
+                    },
+                    {
+                        label: 'Social Review',
+                        data: [150, 150, 150, 150, 160, 160, 160, 180, 180, 180, 190, 190],
+                        backgroundColor: '#764ba2'
+                    },
+                    {
+                        label: 'OEM Survey',
+                        data: [40, 40, 40, 40, 43, 43, 43, 43, 43, 43, 43, 43],
+                        backgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Auto Cancel',
+                        data: [8, 8, 8, 8, 8, 8, 8, 31, 31, 31, 43, 43],
+                        backgroundColor: '#f59e0b'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: { color: '#e2e8f0' }
+                    }
+                }
+            }
         });
     </script>
 </body>
