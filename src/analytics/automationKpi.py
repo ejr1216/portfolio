@@ -1,24 +1,46 @@
+# File: src/analytics/automationKpi.py
 from __future__ import annotations
 from pathlib import Path
 import pandas as pd
 
 def loadProjects(csvPath: Path) -> pd.DataFrame:
     df = pd.read_csv(csvPath)
+    # normalize headers
     norm = {c: c.strip().lower().replace(" ", "").replace("_", "") for c in df.columns}
     df.columns = [norm[c] for c in df.columns]
-    aliases = {"startdate": "startDate", "hourssavedperweek": "hoursSavedPerWeek"}
-    df = df.rename(columns={k: v for k, v in aliases.items() if k in df.columns})
+    rename = {
+        "project": "project",
+        "startdate": "startDate",
+        "hourssavedperweek": "hoursSavedPerWeek",
+        "employeesimpacted": "employeesImpacted",
+        "hourlyrate": "hourlyRate",
+        "owner": "owner",
+        "status": "status",
+        "tool": "tool",
+        "costestusd": "costEstUsd",
+    }
+    df = df.rename(columns={k: v for k, v in rename.items() if k in df.columns})
+    # defaults
+    if "employeesImpacted" not in df.columns:
+        df["employeesImpacted"] = 1
+    if "hourlyRate" not in df.columns:
+        df["hourlyRate"] = 22.0
+    # types
     df["startDate"] = pd.to_datetime(df["startDate"])
+    df["hoursSavedPerWeek"] = df["hoursSavedPerWeek"].astype(float)
+    df["employeesImpacted"] = df["employeesImpacted"].astype(float)
+    df["hourlyRate"] = df["hourlyRate"].astype(float)
     return df
 
-def expandMonthly(dfProjects: pd.DataFrame, months: int = 12, hourlyRate: float = 40.0) -> pd.DataFrame:
+def expandMonthly(dfProjects: pd.DataFrame, months: int = 12, hourlyRate: float = 22.0) -> pd.DataFrame:
     end = pd.Timestamp.today().to_period("M")
     monthsIdx = pd.period_range(end - (months - 1), end, freq="M")
     rows = []
     for _, r in dfProjects.iterrows():
+        rate = float(r["hourlyRate"]) if "hourlyRate" in dfProjects.columns else float(hourlyRate)
         for m in monthsIdx:
             if m.to_timestamp(how="end") >= r["startDate"]:
-                monthlyHours = float(r["hoursSavedPerWeek"]) * 4.33
+                monthlyHours = float(r["hoursSavedPerWeek"]) * float(r["employeesImpacted"]) * 4.33
                 rows.append({
                     "month": m.to_timestamp(),
                     "project": r.get("project", ""),
@@ -26,15 +48,17 @@ def expandMonthly(dfProjects: pd.DataFrame, months: int = 12, hourlyRate: float 
                     "tool": r.get("tool", ""),
                     "status": r.get("status", ""),
                     "monthlyHours": monthlyHours,
-                    "monthlyCostSaved": monthlyHours * hourlyRate
+                    "monthlyCostSaved": monthlyHours * rate
                 })
     return pd.DataFrame(rows)
 
 def computeKpis(monthly: pd.DataFrame) -> dict:
-    totalHours = float(monthly["monthlyHours"].sum()) if not monthly.empty else 0.0
-    totalCost = float(monthly["monthlyCostSaved"].sum()) if not monthly.empty else 0.0
-    fteSaved = round(totalHours / 2080, 2) if totalHours else 0.0
-    avgMonthly = round(monthly.groupby("month")["monthlyHours"].sum().mean(), 1) if not monthly.empty else 0.0
+    if monthly.empty:
+        return {"totalHours": 0.0, "totalCost": 0.0, "fteSaved": 0.0, "avgMonthlyHours": 0.0}
+    totalHours = float(monthly["monthlyHours"].sum())
+    totalCost = float(monthly["monthlyCostSaved"].sum())
+    fteSaved = round(totalHours / 2080, 2)
+    avgMonthly = round(monthly.groupby("month")["monthlyHours"].sum().mean(), 1)
     return {"totalHours": round(totalHours, 1), "totalCost": round(totalCost, 2),
             "fteSaved": fteSaved, "avgMonthlyHours": avgMonthly}
 

@@ -3,6 +3,7 @@ description: Automation, RPA, Solutions, AI/ML
 theme: jekyll-theme-minimal
 
 header_pages:
+  - highlights.md
   - projects.md
   - case-studies.md
   - resume.md

@@ -1,3 +1,4 @@
+# File: scripts/generateAutomationKpis.py
 from __future__ import annotations
 
 import sys
@@ -23,7 +24,8 @@ def saveFigure(figPath: Path) -> None:
     plt.savefig(figPath, dpi=150)
     plt.close()
 
-def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path], monthly: pd.DataFrame, leaderboard: pd.DataFrame) -> None:
+def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path],
+                  monthly: pd.DataFrame, leaderboard: pd.DataFrame) -> None:
     lines: list[str] = []
     lines += [
         "---",
@@ -31,9 +33,9 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path], monthly: pd.Data
         "layout: default",
         "---",
         " ",
-        "![spacer](data:image/gif;base64,R0lGODlhAQABAAAAACw=)",  # forces theme spacing
         '<link rel="stylesheet" href="assets/css/custom.css">',
-        '<div class="hero"><h1>Portfolio KPIs</h1><p>Automation hours saved and impact</p>'
+        '<div class="hero"><h1>Automation Impact</h1>'
+        '<p>Hours and cost saved from deployed automations</p>'
         '<a class="btn" href="https://github.com/ejr1216/portfolio">View on GitHub</a></div>',
         "## KPI Summary",
         "",
@@ -67,13 +69,12 @@ def main() -> None:
     ensureDir(chartsDir)
 
     projects = loadProjects(dataPath)
-    monthly = expandMonthly(projects, months=12, hourlyRate=40.0)
+    monthly = expandMonthly(projects, months=12, hourlyRate=22.0)
 
     kpis = computeKpis(monthly)
     monthAgg = monthlySummary(monthly).sort_values("month").reset_index(drop=True)
     leaderboard = projectLeaderboard(monthly)
 
-    # 1) Monthly hours
     plt.figure()
     plt.plot(monthAgg["month"], monthAgg["hours"], marker="o")
     plt.title("Monthly Hours Saved")
@@ -81,7 +82,6 @@ def main() -> None:
     plt.ylabel("Hours")
     saveFigure(chartsDir / "monthly_hours_saved.png")
 
-    # 2) Hours by project
     plt.figure()
     plt.bar(leaderboard["project"], leaderboard["hours"])
     plt.title("Hours Saved by Project")
@@ -90,7 +90,6 @@ def main() -> None:
     plt.xticks(rotation=25, ha="right")
     saveFigure(chartsDir / "hours_by_project.png")
 
-    # 3) Cumulative
     plt.figure()
     monthAgg["cumHours"] = monthAgg["hours"].cumsum()
     plt.plot(monthAgg["month"], monthAgg["cumHours"], marker="o")
