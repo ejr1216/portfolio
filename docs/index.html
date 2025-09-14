@@ -25,6 +25,31 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--light);
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.4;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.3) 0%, transparent 50%);
+            animation: rotateFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes rotateFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(90deg); }
+            50% { transform: translate(0px, 30px) rotate(180deg); }
+            75% { transform: translate(-30px, -20px) rotate(270deg); }
         }
 
         nav {
@@ -41,6 +66,7 @@
             display: flex;
             gap: 2rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -183,78 +209,113 @@
             text-transform: uppercase;
         }
 
+        /* Smaller, more compact charts */
         .charts-section {
             padding: 3rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .chart-container {
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .chart-title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--primary);
-        }
-
-        canvas {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 1rem;
-            max-width: 100%;
-        }
-
-        .ecosystem-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-        }
-
-        .ecosystem-grid {
+        .charts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
             gap: 2rem;
         }
 
-        .ecosystem-category {
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .ecosystem-category h3 {
+        .chart-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
             text-align: center;
         }
 
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
+        /* Network-style Technology Ecosystem */
+        .ecosystem-network {
+            position: relative;
+            height: 600px;
+            background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 2rem 0;
         }
 
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
+        .tech-node {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
             border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border: 2px solid var(--primary);
+            cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-width: 120px;
         }
 
-        .tech-tag:hover {
-            background: var(--primary);
-            transform: scale(1.05);
+        .tech-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+            z-index: 10;
+        }
+
+        .tech-node.central {
+            width: 180px;
+            height: 180px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: #fff;
+            border-width: 3px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .tech-node.category {
+            width: 140px;
+            height: 140px;
+            font-weight: 600;
+        }
+
+        .tech-node.tool {
+            width: 100px;
+            height: 60px;
+            font-size: 0.85rem;
+            padding: 0.5rem;
+        }
+
+        /* Node colors by category */
+        .node-rpa { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .node-ai { background: linear-gradient(135deg, #10b981, #059669); }
+        .node-data { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .node-cloud { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .node-dev { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .node-bi { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+
+        .tech-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transform-origin: left center;
+            opacity: 0.3;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
 
         .proof-section {
@@ -362,11 +423,13 @@
             h1 { font-size: 2rem; }
             .hero-stats { grid-template-columns: 1fr; }
             .proof-content { grid-template-columns: 1fr; }
-            .ecosystem-grid { grid-template-columns: 1fr; }
+            .charts-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+    
     <nav>
         <ul>
             <li><a href="#home">🚀 Impact</a></li>
@@ -472,97 +535,89 @@
     <section id="analytics" class="charts-section">
         <h2>Performance Analytics</h2>
         
-        <div class="chart-container">
-            <h3 class="chart-title">Monthly Hours Saved Trend</h3>
-            <canvas id="trendChart" height="300"></canvas>
-        </div>
-        
-        <div class="chart-container">
-            <h3 class="chart-title">Project Impact Distribution</h3>
-            <canvas id="stackedChart" height="300"></canvas>
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3 class="chart-title">Monthly Hours Saved Trend</h3>
+                <canvas id="trendChart" height="200"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Project Impact Distribution</h3>
+                <canvas id="stackedChart" height="200"></canvas>
+            </div>
         </div>
     </section>
 
     <section id="ecosystem" class="section">
         <h2>Technology Ecosystem</h2>
-        <div class="ecosystem-container">
-            <div class="ecosystem-grid">
-                <div class="ecosystem-category">
-                    <h3>🤖 RPA & Automation</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Power Automate</span>
-                        <span class="tech-tag">UiPath</span>
-                        <span class="tech-tag">n8n</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Smartsheet</span>
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">Monday.com</span>
-                        <span class="tech-tag">Airtable</span>
-                        <span class="tech-tag">Zapier</span>
-                        <span class="tech-tag">TotalCX</span>
-                    </div>
-                </div>
-                
-                <div class="ecosystem-category">
-                    <h3>📊 Presentation & BI</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">PowerPoint</span>
-                        <span class="tech-tag">Smartsheet Dashboard</span>
-                        <span class="tech-tag">Loom</span>
-                        <span class="tech-tag">Excel Pivot Tables</span>
-                        <span class="tech-tag">MS Project</span>
-                    </div>
-                </div>
-                
-                <div class="ecosystem-category">
-                    <h3>🗄️ Database</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Snowflake</span>
-                        <span class="tech-tag">SQLite</span>
-                    </div>
-                </div>
-                
-                <div class="ecosystem-category">
-                    <h3>🧠 AI/ML</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Multi-Model</span>
-                        <span class="tech-tag">Model Training</span>
-                        <span class="tech-tag">Model Evaluation</span>
-                        <span class="tech-tag">Guard-rails</span>
-                        <span class="tech-tag">Prompt Engineering</span>
-                        <span class="tech-tag">Context Engineering</span>
-                        <span class="tech-tag">Open-Source LLMs</span>
-                    </div>
-                </div>
-                
-                <div class="ecosystem-category">
-                    <h3>💻 Software Engineering</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">SDLC</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">CI/CD</span>
-                        <span class="tech-tag">QA Testing</span>
-                        <span class="tech-tag">GitHub</span>
-                        <span class="tech-tag">Linux/Ubuntu</span>
-                        <span class="tech-tag">PowerShell</span>
-                        <span class="tech-tag">RedHat</span>
-                    </div>
-                </div>
-                
-                <div class="ecosystem-category">
-                    <h3>☁️ Cloud Platforms</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Azure</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Google Cloud</span>
-                    </div>
-                </div>
+        <div class="ecosystem-network">
+            <!-- Central Node -->
+            <div class="tech-node central">
+                <span>🌟</span>
+                <span>Automation</span>
+                <span>Core</span>
             </div>
+            
+            <!-- Category Nodes -->
+            <div class="tech-node category node-rpa" style="left: 20%; top: 20%;">
+                <span>🤖</span>
+                <span>RPA</span>
+            </div>
+            <div class="tech-node category node-ai" style="left: 80%; top: 20%;">
+                <span>🧠</span>
+                <span>AI/ML</span>
+            </div>
+            <div class="tech-node category node-data" style="left: 20%; top: 80%;">
+                <span>🗄️</span>
+                <span>Database</span>
+            </div>
+            <div class="tech-node category node-cloud" style="left: 80%; top: 80%;">
+                <span>☁️</span>
+                <span>Cloud</span>
+            </div>
+            <div class="tech-node category node-dev" style="left: 10%; top: 50%;">
+                <span>💻</span>
+                <span>Dev</span>
+            </div>
+            <div class="tech-node category node-bi" style="left: 90%; top: 50%;">
+                <span>📊</span>
+                <span>BI</span>
+            </div>
+            
+            <!-- Tool Nodes -->
+            <div class="tech-node tool" style="left: 5%; top: 30%;">UiPath</div>
+            <div class="tech-node tool" style="left: 15%; top: 35%;">Power Automate</div>
+            <div class="tech-node tool" style="left: 25%; top: 30%;">n8n</div>
+            <div class="tech-node tool" style="left: 10%; top: 15%;">Zapier</div>
+            
+            <div class="tech-node tool" style="left: 70%; top: 10%;">GPT Models</div>
+            <div class="tech-node tool" style="left: 85%; top: 10%;">Claude</div>
+            <div class="tech-node tool" style="left: 90%; top: 30%;">Prompt Eng</div>
+            <div class="tech-node tool" style="left: 75%; top: 35%;">Model Training</div>
+            
+            <div class="tech-node tool" style="left: 10%; top: 70%;">MySQL</div>
+            <div class="tech-node tool" style="left: 20%; top: 90%;">MongoDB</div>
+            <div class="tech-node tool" style="left: 30%; top: 85%;">Snowflake</div>
+            
+            <div class="tech-node tool" style="left: 70%; top: 90%;">Azure</div>
+            <div class="tech-node tool" style="left: 80%; top: 70%;">AWS</div>
+            <div class="tech-node tool" style="left: 90%; top: 85%;">GCP</div>
+            
+            <div class="tech-node tool" style="left: 5%; top: 60%;">Python</div>
+            <div class="tech-node tool" style="left: 15%; top: 65%;">JavaScript</div>
+            <div class="tech-node tool" style="left: 5%; top: 45%;">GitHub</div>
+            
+            <div class="tech-node tool" style="left: 85%; top: 45%;">Power BI</div>
+            <div class="tech-node tool" style="left: 95%; top: 60%;">Smartsheet</div>
+            <div class="tech-node tool" style="left: 90%; top: 65%;">Excel</div>
+            
+            <!-- Connections -->
+            <div class="tech-connection" style="width: 200px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(45deg);"></div>
+            <div class="tech-connection" style="width: 200px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-45deg);"></div>
+            <div class="tech-connection" style="width: 200px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(135deg);"></div>
+            <div class="tech-connection" style="width: 200px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-135deg);"></div>
+            <div class="tech-connection" style="width: 250px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(0deg);"></div>
+            <div class="tech-connection" style="width: 250px; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(90deg);"></div>
         </div>
     </section>
 
@@ -589,17 +644,26 @@
                     </div>
                 </div>
                 <div>
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Ed Napleton Automotive Group Case Study</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Ed Napleton Automotive Group - Journey Insights Implementation</h3>
                     <p style="line-height: 1.8; margin-bottom: 1rem;">
-                        Led the implementation of Journey Insights at Ed Napleton Automotive Group, transforming disconnected customer feedback into actionable intelligence. 
-                        The system became the "heartbeat of our customer experience," enabling daily pulse checks, pattern-focused deep dives, and targeted improvements.
+                        As National CX Director, I led the transformation from disconnected, overwhelming data to actionable intelligence. 
+                        Before Reputation's Journey Insights, we were "hitting the panic button" with confusion from siloed feedback across reviews, surveys, and social media.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        The solution became the "heartbeat of our customer experience," enabling:
+                        • Daily pulse checks for immediate coaching
+                        • Pattern-focused deep dives across 70+ locations
+                        • Targeted improvements at specific journey stages
                     </p>
                     <p style="line-height: 1.8;">
-                        This data-driven approach resulted in unprecedented growth in reviews and ratings, with the platform providing clarity and speed that accelerated 
-                        CX goals by 18 months.
+                        Results: 5,000+ new reviews, improved star ratings, 99% response rate, and 18 months faster progress on CX goals. 
+                        This wasn't just a tool—it became our entire CX program.
                     </p>
-                    <a href="https://www.loom.com/share/b50583103746462ca7909ed22df2e59b" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">
-                        📹 Watch Case Study Video →
+                    <a href="#" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem; margin-right: 1rem;">
+                        📄 Download Full Case Study →
+                    </a>
+                    <a href="https://www.loom.com/share/b50583103746462ca7909ed22df2e59b" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">
+                        📹 Watch RPA Demo →
                     </a>
                 </div>
             </div>
@@ -659,6 +723,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Configure Chart.js with smaller, more compact charts
+        Chart.defaults.font.size = 10;
+        Chart.defaults.color = '#94a3b8';
+        
         // Monthly trend line chart
         const trendCtx = document.getElementById('trendChart');
         new Chart(trendCtx, {
@@ -741,10 +809,20 @@
                 plugins: {
                     legend: {
                         display: true,
-                        labels: { color: '#e2e8f0' }
+                        labels: { color: '#e2e8f0', boxWidth: 15, padding: 10 }
                     }
                 }
             }
+        });
+
+        // Add interactive hover effect to tech nodes
+        document.querySelectorAll('.tech-node').forEach(node => {
+            node.addEventListener('mouseenter', function() {
+                this.style.animation = 'pulse 0.5s ease-in-out';
+            });
+            node.addEventListener('mouseleave', function() {
+                this.style.animation = '';
+            });
         });
     </script>
 </body>
