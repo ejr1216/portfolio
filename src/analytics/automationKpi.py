@@ -1,5 +1,4 @@
-# src/analytics/automationKpi.py
-from __future__ import annotations
+﻿from __future__ import annotations
 from pathlib import Path
 import pandas as pd
 
@@ -41,9 +40,6 @@ def expandMonthly(dfProjects: pd.DataFrame, months: int = 12, hourlyRate: float 
                 rows.append({
                     "month": m.to_timestamp(),
                     "project": r.get("project", ""),
-                    "owner": r.get("owner", ""),
-                    "tool": r.get("tool", ""),
-                    "status": r.get("status", ""),
                     "monthlyHours": monthlyHours,
                     "monthlyCostSaved": monthlyHours * rate
                 })

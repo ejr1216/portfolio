@@ -1,37 +1,37 @@
-# Advanced Portfolio
+﻿# Advanced Portfolio - Eduardo J. Rodriguez
 
-Clean repo structure with KPIs, charts, CI, and GitHub Pages.
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-667eea?style=for-the-badge&logo=github)](https://ejr1216.github.io/portfolio)
+[![Impact](https://img.shields.io/badge/Hours%20Saved-31.5K-10b981?style=for-the-badge)](https://ejr1216.github.io/portfolio)
+[![ROI](https://img.shields.io/badge/ROI-798%25-764ba2?style=for-the-badge)](https://ejr1216.github.io/portfolio)
 
-## Badges
-[![CI](https://github.com/USERNAME/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/ci.yml)
-[![Update KPIs](https://github.com/USERNAME/REPO/actions/workflows/update_kpis.yml/badge.svg)](https://github.com/USERNAME/REPO/actions/workflows/update_kpis.yml)
+ **Live Dashboard**: [ejr1216.github.io/portfolio](https://ejr1216.github.io/portfolio)
 
-## Structure
-```
-.github/workflows/   CI + KPI updater
-src/analytics/       KPI logic
-scripts/             generateKpiCharts.py
-tests/               pytest
-docs/                GitHub Pages site
-docs/charts/         auto charts
-data/                sampleData.csv (replace with your data)
-configs/             future configs
-notebooks/           optional notebooks
-```
+##  Automation Impact
+- **31,540** hours saved across enterprise operations
+- **** in cost savings delivered
+- **15.16** FTE equivalent automated
+- **798%** ROI on automation investments
 
-## Quickstart
-```
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
+##  Technology Stack
+- **Automation**: RPA (UiPath, Automation Anywhere, Power Automate)
+- **AI/ML**: Python, TensorFlow, scikit-learn
+- **Data**: Pandas, NumPy, Excel, Smartsheet
+- **Visualization**: Chart.js, Matplotlib, D3.js
+- **Cloud**: Azure, AWS, Google Cloud
 
+##  Features
+- Interactive real-time dashboards
+- 3D data visualizations
+- Project impact metrics
+- Skills assessment radar
+
+##  Quick Start
+`ash
 pip install -r requirements.txt
-python scripts/generateKpiCharts.py
-```
+python scripts/generateAutomationKpis.py
+`
 
-This will:
-- build charts in `docs/charts/`
-- write a KPI summary to `docs/index.md`
-- you can enable GitHub Pages and point it at `/docs`.
+##  Contact
+- Email: [Ejr1216@icloud.com](mailto:Ejr1216@icloud.com)
+- LinkedIn: [linkedin.com/in/ejr1216](https://www.linkedin.com/in/ejr1216)
+- GitHub: [github.com/ejr1216](https://github.com/ejr1216)

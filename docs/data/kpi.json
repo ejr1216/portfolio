@@ -1,9 +1,9 @@
 {
   "kpis": {
-    "totalHours": 31539.7,
-    "totalCost": 693873.84,
-    "fteSaved": 15.16,
-    "avgMonthlyHours": 2628.3
+    "totalHours": 31401.2,
+    "totalCost": 690825.52,
+    "fteSaved": 15.1,
+    "avgMonthlyHours": 2616.8
   },
   "monthly": [
     {
@@ -28,65 +28,65 @@
     },
     {
       "month": "2025-02",
-      "hours": 2610.99,
-      "cost": 57441.78
+      "hours": 2619.65,
+      "cost": 57632.3
     },
     {
       "month": "2025-03",
-      "hours": 2610.99,
-      "cost": 57441.78
+      "hours": 2619.65,
+      "cost": 57632.3
     },
     {
       "month": "2025-04",
-      "hours": 2610.99,
-      "cost": 57441.78
+      "hours": 2619.65,
+      "cost": 57632.3
     },
     {
       "month": "2025-05",
-      "hours": 2654.29,
-      "cost": 58394.38
+      "hours": 2628.31,
+      "cost": 57822.82
     },
     {
       "month": "2025-06",
-      "hours": 2654.29,
-      "cost": 58394.38
+      "hours": 2628.31,
+      "cost": 57822.82
     },
     {
       "month": "2025-07",
-      "hours": 2654.29,
-      "cost": 58394.38
+      "hours": 2628.31,
+      "cost": 57822.82
     },
     {
       "month": "2025-08",
-      "hours": 2675.94,
-      "cost": 58870.68
+      "hours": 2632.64,
+      "cost": 57918.08
     },
     {
       "month": "2025-09",
-      "hours": 2675.94,
-      "cost": 58870.68
+      "hours": 2632.64,
+      "cost": 57918.08
     }
   ],
-  "leaderboard": [
+  "projects": [
     {
-      "project": "Voice of the Customer (VoC)",
+      "name": "Voice of the Customer (VoC)",
       "hours": 31176.0,
       "cost": 685872.0
     },
     {
-      "project": "Social Review Sorting",
-      "hours": 216.5,
-      "cost": 4763.0
+      "name": "Social Review Sorting",
+      "hours": 173.2,
+      "cost": 3810.3999999999996
     },
     {
-      "project": "Automated Cancellation Input",
-      "hours": 103.92,
-      "cost": 2286.2400000000002
-    },
-    {
-      "project": "OEM Survey ETL + KPI",
+      "name": "Automated Cancellation Input",
       "hours": 43.3,
-      "cost": 952.5999999999999
+      "cost": 952.6
+    },
+    {
+      "name": "OEM Survey ETL + KPI",
+      "hours": 8.66,
+      "cost": 190.52
     }
   ]
 }

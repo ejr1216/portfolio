@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo J. Rodriguez - Automation Impact</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--primary); }
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .stat-label {
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .projects {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .metric {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        .charts-section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        canvas {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1rem;
+        }
+        .contact {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .charts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home"> Impact</a></li>
+            <li><a href="#projects"> Projects</a></li>
+            <li><a href="#charts"> Analytics</a></li>
+            <li><a href="#contact"> Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Eduardo J. Rodriguez</h1>
+        <h2 class="gradient-text">Automation Impact Dashboard</h2>
+        <p>Transforming businesses through intelligent automation, RPA, and AI/ML solutions</p>
+        
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-value">31,540</div>
+                <div class="stat-label">Hours Saved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$693K</div>
+                <div class="stat-label">Cost Savings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">15.16</div>
+                <div class="stat-label">FTE Equivalent</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">798%</div>
+                <div class="stat-label">ROI Growth</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3 class="project-title">Voice of Customer (VoC)</h3>
+                <p>Automated sentiment analysis handling 15x volume with 40 hrs/week savings</p>
+                <div class="project-metrics">
+                    <span class="metric">31,176 hrs</span>
+                    <span class="metric">$686K</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3 class="project-title">Social Review Sorting</h3>
+                <p>ML-powered review categorization across platforms</p>
+                <div class="project-metrics">
+                    <span class="metric">216 hrs</span>
+                    <span class="metric">Real-time</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3 class="project-title">OEM Survey ETL</h3>
+                <p>End-to-end data pipeline with automated KPIs</p>
+                <div class="project-metrics">
+                    <span class="metric">43 hrs/mo</span>
+                    <span class="metric">100%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="charts" class="charts-section">
+        <h2>Performance Analytics</h2>
+        <div class="charts-grid">
+            <canvas id="trendChart" height="300"></canvas>
+            <canvas id="projectChart" height="300"></canvas>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>
+            <a href="mailto:Ejr1216@icloud.com"> Ejr1216@icloud.com</a>
+            <a href="https://linkedin.com/in/ejr1216"> LinkedIn</a>
+            <a href="https://github.com/ejr1216"> GitHub</a>
+        </p>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Simple charts
+        const chartConfig = {
+            type: 'line',
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } }
+            }
+        };
+        
+        // Monthly trend
+        new Chart(document.getElementById('trendChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                datasets: [{
+                    label: 'Hours Saved',
+                    data: [2598, 2598, 2598, 2598, 2611, 2611, 2611, 2654, 2654, 2654, 2676, 2676],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4
+                }]
+            }
+        });
+        
+        // Project breakdown
+        new Chart(document.getElementById('projectChart'), {
+            type: 'bar',
+            data: {
+                labels: ['VoC', 'Social', 'Cancel', 'OEM'],
+                datasets: [{
+                    label: 'Hours',
+                    data: [31176, 217, 104, 43],
+                    backgroundColor: ['#667eea', '#764ba2', '#10b981', '#f59e0b']
+                }]
+            },
+            options: chartConfig.options
+        });
+    </script>
+</body>
+</html>
