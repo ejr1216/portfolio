@@ -1,11 +1,10 @@
-# File: src/analytics/automationKpi.py
+# src/analytics/automationKpi.py
 from __future__ import annotations
 from pathlib import Path
 import pandas as pd
 
 def loadProjects(csvPath: Path) -> pd.DataFrame:
     df = pd.read_csv(csvPath)
-    # normalize headers
     norm = {c: c.strip().lower().replace(" ", "").replace("_", "") for c in df.columns}
     df.columns = [norm[c] for c in df.columns]
     rename = {
@@ -20,12 +19,10 @@ def loadProjects(csvPath: Path) -> pd.DataFrame:
         "costestusd": "costEstUsd",
     }
     df = df.rename(columns={k: v for k, v in rename.items() if k in df.columns})
-    # defaults
     if "employeesImpacted" not in df.columns:
         df["employeesImpacted"] = 1
     if "hourlyRate" not in df.columns:
         df["hourlyRate"] = 22.0
-    # types
     df["startDate"] = pd.to_datetime(df["startDate"])
     df["hoursSavedPerWeek"] = df["hoursSavedPerWeek"].astype(float)
     df["employeesImpacted"] = df["employeesImpacted"].astype(float)

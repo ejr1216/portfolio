@@ -1,48 +1,36 @@
 ---
-title: Portfolio KPIs
+title: Automation Impact
 layout: default
 ---
- 
 <link rel="stylesheet" href="assets/css/custom.css">
-<div class="hero"><h1>Automation Impact</h1><p>Hours and cost saved from deployed automations</p><a class="btn" href="https://github.com/ejr1216/portfolio">View on GitHub</a></div>
+<div class="hero">
+<h1>Automation Impact</h1>
+<p>Hours and cost saved from deployed automations</p>
+<a class="btn" href="projects.html">View Projects</a> 
+<a class="btn" href="highlights.html">Highlights</a>
+</div>
 ## KPI Summary
 
 | KPI | Value |
 | --- | ---: |
-| Total Hours Saved | 32111.3 |
-| Estimated Cost Saved | $706,448 |
-| FTE Saved (est.) | 15.44 |
-| Avg Monthly Hours | 2675.9 |
+| Total Hours Saved | 31539.7 |
+| Estimated Cost Saved | $693,874 |
+| FTE Saved (est.) | 15.16 |
+| Avg Monthly Hours | 2628.3 |
 
 ## Charts
+<div class="charts-grid">
+<canvas id="chartMonthly" height="150"></canvas>
+<canvas id="chartByProject" height="150"></canvas>
+<canvas id="chartCumulative" height="150"></canvas>
+</div>
+
+### Static image fallbacks
 ![monthly_hours_saved](charts/monthly_hours_saved.png)
 
 ![hours_by_project](charts/hours_by_project.png)
 
 ![cumulative_hours](charts/cumulative_hours.png)
 
-## Top Projects by Hours
-
-| Project | Hours | Cost |
-| --- | ---: | ---: |
-| Voice of the Customer (VoC) | 31176.0 | $685,872 |
-| Social Review Sorting | 519.6 | $11,431 |
-| OEM Survey ETL + KPI | 259.8 | $5,716 |
-| Automated Cancellation Input | 155.9 | $3,429 |
-
-## Monthly Summary
-
-| Month | Hours | Cost |
-| --- | ---: | ---: |
-| 2024-10 | 2675.9 | $58,871 |
-| 2024-11 | 2675.9 | $58,871 |
-| 2024-12 | 2675.9 | $58,871 |
-| 2025-01 | 2675.9 | $58,871 |
-| 2025-02 | 2675.9 | $58,871 |
-| 2025-03 | 2675.9 | $58,871 |
-| 2025-04 | 2675.9 | $58,871 |
-| 2025-05 | 2675.9 | $58,871 |
-| 2025-06 | 2675.9 | $58,871 |
-| 2025-07 | 2675.9 | $58,871 |
-| 2025-08 | 2675.9 | $58,871 |
-| 2025-09 | 2675.9 | $58,871 |
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/kpis.js"></script>
