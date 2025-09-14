@@ -2,6 +2,9 @@
 description: Automation, RPA, Solutions, AI/ML
 theme: jekyll-theme-minimal
 
+url: "https://ejr1216.github.io"
+baseurl: "/portfolio"   # important for assets and JSON
+
 header_pages:
   - highlights.md
   - projects.md

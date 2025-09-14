@@ -1,4 +1,3 @@
-# scripts/generateAutomationKpis.py
 from __future__ import annotations
 
 import sys, json
@@ -32,13 +31,16 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path]) -> None:
         "title: Automation Impact",
         "layout: default",
         "---",
-        '<link rel="stylesheet" href="assets/css/custom.css">',
+        '<meta name="baseurl" content="{{ site.baseurl }}">',
+        '<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">',
         '<div class="hero">',
+        '<img class="avatar" src="{{ site.baseurl }}/assets/img/headshot.jpg" alt="Eduardo J. Rodriguez" />',
+        "<div>",
         "<h1>Automation Impact</h1>",
         "<p>Hours and cost saved from deployed automations</p>",
-        '<a class="btn" href="projects.html">View Projects</a> ',
-        '<a class="btn" href="highlights.html">Highlights</a>',
-        "</div>",
+        '<a class="btn" href="{{ site.baseurl }}/projects.html">Projects</a>',
+        '<a class="btn" href="{{ site.baseurl }}/highlights.html">Highlights</a>',
+        "</div></div>",
         "## KPI Summary",
         "",
         "| KPI | Value |",
@@ -50,9 +52,9 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path]) -> None:
         "",
         "## Charts",
         '<div class="charts-grid">',
-        '<canvas id="chartMonthly" height="150"></canvas>',
-        '<canvas id="chartByProject" height="150"></canvas>',
-        '<canvas id="chartCumulative" height="150"></canvas>',
+        '<canvas id="chartMonthly" height="180"></canvas>',
+        '<canvas id="chartByProject" height="180"></canvas>',
+        '<canvas id="chartCumulative" height="180"></canvas>',
         "</div>",
         "",
         "### Static image fallbacks",
@@ -62,7 +64,7 @@ def writeMarkdown(mdPath: Path, kpis: dict, charts: list[Path]) -> None:
         lines += [f"![{p.stem}]({rel})", ""]
     lines += [
         '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>',
-        '<script src="assets/js/kpis.js"></script>',
+        '<script src="{{ site.baseurl }}/assets/js/kpis.js"></script>',
     ]
     mdPath.write_text("\n".join(lines))
 
@@ -94,7 +96,6 @@ def main() -> None:
     monthAgg = monthlySummary(monthly).sort_values("month").reset_index(drop=True)
     leaderboard = projectLeaderboard(monthly)
 
-    # Static charts (cleaner typography and aspect ratios)
     plt.figure()
     plt.plot(monthAgg["month"], monthAgg["hours"], marker="o")
     plt.title("Monthly Hours Saved"); plt.xlabel("Month"); plt.ylabel("Hours")
