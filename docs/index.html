@@ -54,6 +54,12 @@
   .section.wide{max-width:100vw;padding-left:0;padding-right:0}
   h2{text-align:center;font-size:2.25rem;margin-bottom:2rem;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
+  /* Goals section */
+  #goals .goals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1100px;margin:0 auto}
+  .goal-card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem;text-align:center}
+  .goal-canvas{width:100%;height:200px !important}
+  .goal-title{margin-top:.5rem;color:#cbd5e1;font-size:.95rem}
+
   /* Projects */
   .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
   .project-card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.25rem;text-align:center}
@@ -164,6 +170,7 @@
 <nav>
   <ul>
     <li><a href="#home">🚀 <span>Impact</span></a></li>
+    <li><a href="#goals">🎯 <span>Goals</span></a></li>
     <li><a href="#projects">💼 <span>Projects</span></a></li>
     <li><a href="#analytics">📈 <span>Analytics</span></a></li>
     <li><a href="#ecosystem">🌐 <span>Ecosystem</span></a></li>
@@ -200,10 +207,20 @@
 
     <div class="hero-photo">
       <div class="hero-photo-frame">
-        <!-- Use assets path first, then fallbacks automatically -->
         <img id="heroImg" src="assets/img/ejr-headshot-hero.jpg?v=1" alt="Eduardo J. Rodriguez" class="hero-photo-img">
       </div>
     </div>
+  </div>
+</section>
+
+<!-- =====================  GOALS  ===================== -->
+<section id="goals" class="section">
+  <h2>Impact Goals</h2>
+  <div class="goals-grid">
+    <div class="goal-card"><canvas id="goalHours" class="goal-canvas"></canvas><div class="goal-title">Hours Saved toward 100k</div></div>
+    <div class="goal-card"><canvas id="goalReviews" class="goal-canvas"></canvas><div class="goal-title">5‑Star Reviews toward 100k</div></div>
+    <div class="goal-card"><canvas id="goalSavings" class="goal-canvas"></canvas><div class="goal-title">Cost Savings toward $1M</div></div>
+    <div class="goal-card"><canvas id="goalVoc" class="goal-canvas"></canvas><div class="goal-title">VoC Open Cases toward 500k</div></div>
   </div>
 </section>
 
@@ -460,40 +477,129 @@
   });
 })();
 
-/* ---------- Live ticker for Hours Saved ---------- */
-/*
-  Logic:
-  - baselineTotal: cumulative hours as of epochDate
-  - dailyRate: computed from your project metrics
-      VoC 40 hrs per week -> 5.714/day
-      Social Review 216 hrs per month -> 7.200/day
-      OEM ETL 43 hrs per month -> 1.433/day
-      Total ≈ 14.347/day
-  - We update the number each animation frame using seconds elapsed
-*/
+/* ---------- Live ticker for Hours Saved (updated to match ~2680/month) ---------- */
 (function liveHoursTicker(){
-  const baselineTotal = 31540;
-  const epochDate = new Date('2025-09-01T00:00:00Z'); // adjust if needed
-  const dailyRate = 14.347;
-  const perSec = dailyRate/86400;
-  const el = document.getElementById('kpiHoursValue');
-  const lbl = document.getElementById('kpiHoursSub');
-  lbl.textContent = `Live +${dailyRate.toFixed(1)} hrs per day`;
-  const fmt = n => n.toLocaleString('en-US');
+  const baselineNow = 31540;                 // current known total
+  const dailyRate   = 2680/30;               // ≈ 89.3 hrs/day based on last month snapshot
+  const perSec      = dailyRate/86400;
+  const el          = document.getElementById('kpiHoursValue');
+  const lbl         = document.getElementById('kpiHoursSub');
+  lbl.textContent   = `Live +${dailyRate.toFixed(1)} hrs per day`;
+
+  const fmt = n => Math.floor(n).toLocaleString('en-US');
+  const startMs = Date.now();
 
   function tick(){
-    const secs = (Date.now() - epochDate.getTime())/1000;
-    const current = baselineTotal + secs*perSec;
-    el.textContent = fmt(Math.floor(current));
+    const secs = (Date.now() - startMs)/1000;
+    const current = baselineNow + secs*perSec;
+    el.textContent = fmt(current);
+
+    // push to the goal chart if it exists
+    if (window.goalCharts && window.goalCharts.hours){
+      window.goalCharts.hours.setValue(current);
+    }
     requestAnimationFrame(tick);
   }
   tick();
 })();
 
+/* ---------- Chart.js plugin for center text in doughnuts ---------- */
+const centerTextPlugin = {
+  id:'centerText',
+  afterDraw(chart, args, opts){
+    if(!opts || !opts.lines) return;
+    const {ctx} = chart;
+    const meta = chart.getDatasetMeta(0);
+    if(!meta || !meta.data || !meta.data[0]) return;
+    const x = meta.data[0].x, y = meta.data[0].y;
+    ctx.save();
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    opts.lines.forEach((ln, idx)=>{
+      ctx.font = ln.font || '700 20px Inter';
+      ctx.fillStyle = ln.color || '#e2e8f0';
+      ctx.fillText(ln.text, x, y + (idx - (opts.lines.length-1)/2)*18);
+    });
+    ctx.restore();
+  }
+};
+Chart.register(centerTextPlugin);
+
+/* ---------- Helpers ---------- */
+function abbreviate(n, isMoney=false){
+  const abs = Math.abs(n);
+  const sign = n<0 ? '-' : '';
+  const units = [['B',1e9],['M',1e6],['K',1e3]];
+  for(const [u,v] of units){
+    if(abs>=v) return sign + (abs/v).toFixed(1).replace(/\.0$/,'') + (isMoney?u:(u));
+  }
+  return sign + (isMoney?abs.toLocaleString('en-US'):(abs|0).toLocaleString('en-US'));
+}
+
+/* ---------- Goal doughnuts ---------- */
+window.goalCharts = {};
+function makeGoalChart(canvasId, startValue, goalValue, label, color, isMoney=false){
+  const ctx = document.getElementById(canvasId).getContext('2d');
+
+  const chart = new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Progress','Remaining'],
+      datasets:[{
+        data:[Math.min(startValue,goalValue), Math.max(goalValue-startValue,0)],
+        backgroundColor:[color,'rgba(255,255,255,.08)'],
+        borderWidth:0, hoverOffset:0, cutout:'72%'
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        centerText:{
+          lines:[
+            {text:`${Math.min(100, Math.round(startValue/goalValue*100))}%`, font:'800 22px Inter'},
+            {text:`${isMoney?'$':''}${abbreviate(startValue,isMoney)} / ${isMoney?'$':''}${abbreviate(goalValue,isMoney)}`, font:'600 12px Inter', color:'#94a3b8'}
+          ]
+        },
+        tooltip:{enabled:false}
+      },
+      animation:{duration:600}
+    }
+  });
+
+  // setter for live updates (hours)
+  chart.setValue = function(v){
+    const a = Math.min(v,goalValue);
+    const b = Math.max(goalValue - v, 0);
+    this.data.datasets[0].data = [a,b];
+    this.options.plugins.centerText.lines = [
+      {text:`${Math.min(100, Math.round(v/goalValue*100))}%`, font:'800 22px Inter'},
+      {text:`${isMoney?'$':''}${abbreviate(v,isMoney)} / ${isMoney?'$':''}${abbreviate(goalValue,isMoney)}`, font:'600 12px Inter', color:'#94a3b8'}
+    ];
+    this.update('none');
+  };
+
+  return chart;
+}
+
+/* ---------- Build goals after DOM ---------- */
+document.addEventListener('DOMContentLoaded',()=>{
+  // 1) Hours saved goal: live updated to 100k
+  goalCharts.hours   = makeGoalChart('goalHours', 31540, 100000, 'Hours Saved', '#667eea', false);
+
+  // 2) 5-star reviews goal: current 5k to 100k
+  goalCharts.reviews = makeGoalChart('goalReviews', 5000, 100000, '5‑Star Reviews', '#10b981', false);
+
+  // 3) Cost savings goal: $693k to $1M
+  goalCharts.savings = makeGoalChart('goalSavings', 693000, 1000000, 'Cost Savings', '#8b5cf6', true);
+
+  // 4) VoC Open Cases goal: 160k to 500k
+  goalCharts.voc     = makeGoalChart('goalVoc', 160000, 500000, 'VoC Open Cases', '#14b8a6', false);
+});
+
 /* ---------- Analytics charts ---------- */
 window.addEventListener('DOMContentLoaded', function () {
   const months=['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-  const hours=[2598,2598,2598,2598,2611,2611,2611,2654,2654,2654,2676,2676];
+  const hours=[2598,2598,2598,2598,2611,2611,2611,2654,2654,2654,2676,2680]; // last month ≈ 2680
   const costK=[57,57,57,57,58,58,58,60,60,60,61,61];
 
   new Chart(document.getElementById('aHours'),{type:'line',
