@@ -157,6 +157,18 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   @keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 6px rgba(93,209,255,.35))}50%{filter:drop-shadow(0 0 16px rgba(124,58,237,.45))}}
 
+  /* Articles & Press */
+  .articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
+  .article-card{background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.5rem;text-decoration:none;color:inherit;display:block;transition:transform .2s,box-shadow .2s}
+  .article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(93,209,255,.15)}
+  .article-badge{display:inline-block;background:linear-gradient(135deg,#5dd1ff,#7c3aed);color:#fff;font-size:.75rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.5px}
+  .article-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.3}
+  .article-meta{color:#94a3b8;font-size:.85rem;margin-bottom:.75rem}
+  .article-excerpt{color:#cbd5e1;font-size:.95rem;line-height:1.6;margin-bottom:1rem}
+  .article-stats{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+  .article-stats span{background:rgba(93,209,255,.15);color:#5dd1ff;font-size:.8rem;font-weight:600;padding:.25rem .6rem;border-radius:8px}
+  .article-link{color:var(--primary);font-weight:600;font-size:.95rem}
+
   /* Quote of the Month */
   .quote-card{max-width:1000px;margin:0 auto;background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.4rem 1.6rem;text-align:center;position:relative;overflow:hidden}
   .quote-card h3{margin-bottom:.4rem}
@@ -209,6 +221,7 @@
     <li><a href="#education">🎓 <span>Education</span></a></li>
     <li><a href="#certifications">📜 <span>Certifications</span></a></li>
     <li><a href="#awards-badges">🏅 <span>Awards</span></a></li>
+    <li><a href="#articles">📰 <span>Articles</span></a></li>
     <li><a href="#quote">🗣️ <span>Quote</span></a></li>
     <li><a href="#reviews">💬 <span>Reviews</span></a></li>
     <li><a href="#contact">📧 <span>Contact</span></a></li>
@@ -234,8 +247,8 @@
           <div class="kpiLabel">Cost Savings</div>
           <div class="kpiSub" id="kpiCostSub">Live +$0/day</div>
         </div>
-        <div class="kpiCard"><div class="kpiValue">15.16</div><div class="kpiLabel">FTE Equivalent</div></div>
-        <div class="kpiCard"><div class="kpiValue">798%</div><div class="kpiLabel">ROI Growth</div></div>
+        <div class="kpiCard"><div class="kpiValue">20.88</div><div class="kpiLabel">FTE Equivalent</div></div>
+        <div class="kpiCard"><div class="kpiValue">1,524%</div><div class="kpiLabel">ROI Growth</div></div>
       </div>
     </div>
 
@@ -258,7 +271,7 @@
     </div>
     <div class="goal-card">
       <div class="goal-ring" id="ringReviews"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">5‑Star Reviews toward 66k</div>
+      <div class="goal-title">5‑Star Reviews toward 100k</div>
     </div>
     <div class="goal-card">
       <div class="goal-ring" id="ringSavings"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
@@ -459,13 +472,32 @@
   </div>
 </section>
 
+<!-- =====================  ARTICLES & PRESS  ===================== -->
+<section id="articles" class="section">
+  <h2>Articles & Press</h2>
+  <div class="articles-grid">
+    <a href="assets/NADA-Show-Spotlight.pdf" target="_blank" class="article-card autoTrack">
+      <div class="article-badge">NADA Show Spotlight</div>
+      <h3 class="article-title">Napleton's Epiphany Fuels Customer Experience Success</h3>
+      <p class="article-meta">Auto Remarketing &bull; January 2026</p>
+      <p class="article-excerpt">As National CX Director at Ed Napleton Automotive Group, Eduardo Rodriguez transformed disconnected data into actionable intelligence across 63 dealership locations, achieving a 99% review response rate and improving Google ratings from 4.6 to 4.7 stars.</p>
+      <div class="article-stats">
+        <span>63 Dealerships</span>
+        <span>99% Response Rate</span>
+        <span>4.6 → 4.7 Stars</span>
+      </div>
+      <span class="article-link">Read Full Article →</span>
+    </a>
+  </div>
+</section>
+
 <!-- =====================  QUOTE OF THE MONTH  ===================== -->
 <section id="quote" class="section">
-  <h2>Quote of the Month — 10/2025</h2>
+  <h2 id="quoteHeader">Quote of the Month — 01/2026</h2>
   <div class="quote-card">
-    <h3 class="gradient-text">Adapt to Win</h3>
-    <p class="quote-text">“It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.”</p>
-    <p class="quote-meta">Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963).</p>
+    <h3 id="quoteTitle" class="gradient-text">Adapt to Win</h3>
+    <p id="quoteText" class="quote-text">"It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change."</p>
+    <p id="quoteMeta" class="quote-meta">Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963).</p>
   </div>
 </section>
 
@@ -519,10 +551,10 @@
 })();
 
 /* ---------- Live ticker for Hours & Dollars ---------- */
-/* Hours: last month ≈ 2680 -> ~89.3/day */
+/* Hours: 89.3/day from Oct 2023, +30/day from Dec 2025 = 119.3/day */
 (function(){
-  const baselineNow = 31540;
-  const dailyRate   = 2680/30;
+  const baselineNow = 77615;
+  const dailyRate   = 119.3;
   const perSec      = dailyRate/86400;
   const el          = document.getElementById('kpiHoursValue');
   const lbl         = document.getElementById('kpiHoursSub');
@@ -539,10 +571,10 @@
   tick();
 })();
 
-/* Dollars: last month ~$61k -> ~$2.03k/day */
+/* Dollars: 119.3 hrs/day * $35/hr = $4,175.50/day */
 (function(){
-  const baselineUSD = 693000;
-  const dailyUSD    = (61*1000)/30;
+  const baselineUSD = 2716525;
+  const dailyUSD    = 4175.50;
   const perSec      = dailyUSD/86400;
   const el          = document.getElementById('kpiCostValue');
   const lbl         = document.getElementById('kpiCostSub');
@@ -558,6 +590,36 @@
     const current = baselineUSD + secs*perSec;
     el.textContent = fmtMoney(current);
     if (window.goalRings?.savings) window.goalRings.savings.setValue(current);
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* 5-Star Reviews: 3,450/month = ~115/day */
+(function(){
+  const baselineReviews = 55200;
+  const dailyRate = 3450/30;
+  const perSec = dailyRate/86400;
+  const startMs = Date.now();
+  function tick(){
+    const secs = (Date.now() - startMs)/1000;
+    const current = baselineReviews + secs*perSec;
+    if (window.goalRings?.reviews) window.goalRings.reviews.setValue(current);
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* VoC Open Cases: 10,000/month = ~333/day */
+(function(){
+  const baselineVoc = 160000;
+  const dailyRate = 10000/30;
+  const perSec = dailyRate/86400;
+  const startMs = Date.now();
+  function tick(){
+    const secs = (Date.now() - startMs)/1000;
+    const current = baselineVoc + secs*perSec;
+    if (window.goalRings?.voc) window.goalRings.voc.setValue(current);
     requestAnimationFrame(tick);
   }
   tick();
@@ -591,11 +653,11 @@ function buildRing(id,current,goal,opts){
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
-  const currentHours=31540, goalHours=100000;
-  const currentReviews=5000, goalReviews=66000;
-  const currentSavings=693000, goalSavings=1000000;
+  const currentHours=77615, goalHours=100000;
+  const currentReviews=55200, goalReviews=100000;
+  const currentSavings=2716525, goalSavings=3000000;
   const currentVoc=160000, goalVoc=500000;
-  const currentUiPath=14, goalUiPath=100;
+  const currentUiPath=33, goalUiPath=100;
 
   goalRings.hours   = buildRing('ringHours',   currentHours,   goalHours,   {start:'#22d3ee', end:'#7c3aed', money:false});
   goalRings.reviews = buildRing('ringReviews', currentReviews, goalReviews, {start:'#10b981', end:'#5dd1ff', money:false});
@@ -607,8 +669,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 /* ---------- Analytics charts (points pop on hover) ---------- */
 window.addEventListener('DOMContentLoaded', function () {
   const months=['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-  const hours=[2598,2598,2598,2598,2611,2611,2611,2654,2654,2654,2676,2680];
-  const costK=[57,57,57,57,58,58,58,60,60,60,61,61];
+  const hours=[2679,2679,2679,2679,2679,2679,2679,3579,3579,3579,3579,3579];
+  const costK=[94,94,94,94,94,94,94,125,125,125,125,125];
 
   const commonLineOpts = {
     pointRadius: 3,
@@ -754,6 +816,33 @@ window.addEventListener('DOMContentLoaded', function () {
   render();
   window.addEventListener('resize', render);
 });
+
+/* ---------- Quote of the Month Auto-Rotation ---------- */
+(function(){
+  const quotes = [
+    { title: "Adapt to Win", text: "It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.", author: "Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963)." },
+    { title: "Relentless Pursuit", text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "<strong>Winston Churchill</strong>" },
+    { title: "Action Over Intention", text: "The way to get started is to quit talking and begin doing.", author: "<strong>Walt Disney</strong>" },
+    { title: "Growth Mindset", text: "The only way to do great work is to love what you do.", author: "<strong>Steve Jobs</strong>" },
+    { title: "Continuous Improvement", text: "It does not matter how slowly you go as long as you do not stop.", author: "<strong>Confucius</strong>" },
+    { title: "Innovation First", text: "Innovation distinguishes between a leader and a follower.", author: "<strong>Steve Jobs</strong>" },
+    { title: "Embrace Challenge", text: "The greater the difficulty, the more glory in surmounting it.", author: "<strong>Epicurus</strong>" },
+    { title: "Build Excellence", text: "Quality is not an act, it is a habit.", author: "<strong>Aristotle</strong>" },
+    { title: "Think Big", text: "The future belongs to those who believe in the beauty of their dreams.", author: "<strong>Eleanor Roosevelt</strong>" },
+    { title: "Stay Hungry", text: "Your time is limited, so don't waste it living someone else's life.", author: "<strong>Steve Jobs</strong>" },
+    { title: "Take Initiative", text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "<strong>Chinese Proverb</strong>" },
+    { title: "Persistence Wins", text: "I have not failed. I've just found 10,000 ways that won't work.", author: "<strong>Thomas Edison</strong>" }
+  ];
+  const now = new Date();
+  const monthIndex = now.getMonth();
+  const quote = quotes[monthIndex % quotes.length];
+  const monthStr = String(now.getMonth()+1).padStart(2,'0') + '/' + now.getFullYear();
+
+  document.getElementById('quoteHeader').textContent = 'Quote of the Month — ' + monthStr;
+  document.getElementById('quoteTitle').textContent = quote.title;
+  document.getElementById('quoteText').textContent = '"' + quote.text + '"';
+  document.getElementById('quoteMeta').innerHTML = quote.author;
+})();
 </script>
 </body>
 </html>
