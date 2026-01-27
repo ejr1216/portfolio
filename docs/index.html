@@ -238,14 +238,14 @@
 
       <div class="kpiGrid">
         <div class="kpiCard">
-          <div class="kpiValue" id="kpiHoursValue">31,540</div>
+          <div class="kpiValue" id="kpiHoursValue">77,615</div>
           <div class="kpiLabel">Hours Saved</div>
-          <div class="kpiSub" id="kpiHoursSub">Live +0.0 hrs per day</div>
+          <div class="kpiSub" id="kpiHoursSub">Live +119.3 hrs per day</div>
         </div>
         <div class="kpiCard">
-          <div class="kpiValue" id="kpiCostValue">$693K</div>
+          <div class="kpiValue" id="kpiCostValue">$2.7M</div>
           <div class="kpiLabel">Cost Savings</div>
-          <div class="kpiSub" id="kpiCostSub">Live +$0/day</div>
+          <div class="kpiSub" id="kpiCostSub">Live +$4,176/day</div>
         </div>
         <div class="kpiCard"><div class="kpiValue">20.88</div><div class="kpiLabel">FTE Equivalent</div></div>
         <div class="kpiCard"><div class="kpiValue">1,524%</div><div class="kpiLabel">ROI Growth</div></div>
@@ -275,7 +275,7 @@
     </div>
     <div class="goal-card">
       <div class="goal-ring" id="ringSavings"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">Cost Savings toward $1M</div>
+      <div class="goal-title">Cost Savings toward $3M</div>
     </div>
     <div class="goal-card">
       <div class="goal-ring" id="ringVoc"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
@@ -400,8 +400,11 @@
 <section id="certifications" class="section">
   <h2>Certifications</h2>
   <ul class="simple-list cert-list">
-    <li>Agentic Automation Developer Associate Training (UiPath) — Issued Aug 2025 — Expires Aug 2027</li>
-    <li>Six Sigma Yellow Belt — Issued Aug 2025</li>
+    <li>📜 Agentic Automation Developer Associate Training (UiPath) — Issued Aug 2025 — Expires Aug 2027</li>
+    <li>📜 Six Sigma Yellow Belt — Issued Aug 2025</li>
+    <li>📜 TestOut PC Pro — Issued 2024</li>
+    <li>📜 TestOut Network Pro — Issued 2025</li>
+    <li>📜 TestOut Security Pro — Issued 2025</li>
   </ul>
 </section>
 
@@ -669,8 +672,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 /* ---------- Analytics charts (points pop on hover) ---------- */
 window.addEventListener('DOMContentLoaded', function () {
   const months=['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-  const hours=[2679,2679,2679,2679,2679,2679,2679,3579,3579,3579,3579,3579];
-  const costK=[94,94,94,94,94,94,94,125,125,125,125,125];
+  const hours=[2679,2679,3579,3579,3579,3579,3579,3579,3579,3579,3579,3579];
+  const costK=[94,94,125,125,125,125,125,125,125,125,125,125];
 
   const commonLineOpts = {
     pointRadius: 3,
@@ -818,7 +821,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ---------- Quote of the Month Auto-Rotation ---------- */
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   const quotes = [
     { title: "Adapt to Win", text: "It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.", author: "Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963)." },
     { title: "Relentless Pursuit", text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "<strong>Winston Churchill</strong>" },
@@ -842,7 +845,7 @@ window.addEventListener('DOMContentLoaded', function () {
   document.getElementById('quoteTitle').textContent = quote.title;
   document.getElementById('quoteText').textContent = '"' + quote.text + '"';
   document.getElementById('quoteMeta').innerHTML = quote.author;
-})();
+});
 </script>
 </body>
 </html>
