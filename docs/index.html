@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eduardo J. Rodriguez | Automotive CX, AI and Automation</title>
 <meta name="description" content="Eduardo J. Rodriguez, National CX Director, Growth and Digital Transformation. The automation fleet that measures, routes, and improves customer experience across 71 dealership locations.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://api.badgr.io https://badgr.com:443 https://media.badges.parchment.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#07090c">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Eduardo J. Rodriguez | Automotive CX, AI and Automation">
@@ -15,15 +17,15 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307090c'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23d4b483' stroke-width='2'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23ece9e2'%3EEJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="preload" as="image" href="assets/img/ejr-headshot-hero.jpg">
 <style>
   :root{
     --bg:#07090c; --bg2:#0a0d11; --surface:#0f1318; --surface2:#131920;
-    --text:#ece9e2; --muted:#a6a199; --dim:#908b83;
+    --text:#f0ede6; --muted:#b9b4ab; --dim:#9a958d;
     --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
     --gold:#d4b483; --gold-soft:rgba(212,180,131,.14); --gold-line:rgba(212,180,131,.45);
-    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --serif:'Manrope','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
     --wrap:1320px; --pad:clamp(20px,4vw,48px);
@@ -31,10 +33,10 @@
   }
   *,*::before,*::after{box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit}
-  h1,h2,h3,h4{margin:0;font-weight:400}
+  h1,h2,h3,h4{margin:0;font-weight:600}
   p{margin:0}
   ul,ol{margin:0;padding:0;list-style:none}
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
@@ -53,10 +55,10 @@
   .band.tight{padding-top:72px;padding-bottom:72px}
   .band + .band{border-top:1px solid var(--line)}
   .sec-head{margin-bottom:56px;max-width:860px}
-  .eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
-  .eyebrow .idx{font-size:11px;opacity:.9}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .eyebrow .idx{font-size:12px;opacity:.9}
   .eyebrow .rule{display:inline-block;width:32px;height:1px;background:var(--gold-line)}
-  h2.title{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.01em;color:var(--text);font-variation-settings:"opsz" 144}
+  h2.title{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.4vw,46px);line-height:1.1;letter-spacing:-.02em;color:var(--text)}
   .lede{color:var(--muted);font-size:17px;line-height:1.65;margin-top:18px;max-width:720px}
   .rule-h{height:1px;background:var(--line);border:0;margin:0}
 
@@ -72,13 +74,13 @@
   /* ---------- nav ---------- */
   .topbar{position:sticky;top:0;z-index:50;background:rgba(7,9,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{font-family:var(--serif);font-size:20px;letter-spacing:.02em;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:12px}
+  .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:12px}
   .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
   .nav-links{display:flex;gap:2px}
   .nav-links a{display:block;padding:8px 11px;font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none;border-radius:3px;transition:color .2s}
   .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--text)}
   .nav-links a[aria-current="true"]{box-shadow:inset 0 -1px 0 var(--gold)}
-  .menu-btn{display:none;align-items:center;gap:10px;background:none;border:1px solid var(--line2);color:var(--text);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:9px 12px;border-radius:3px;cursor:pointer}
+  .menu-btn{display:none;align-items:center;gap:10px;background:none;border:1px solid var(--line2);color:var(--text);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;border-radius:3px;cursor:pointer}
   .menu-btn svg{width:16px;height:16px}
   @media (max-width:980px){
     .menu-btn{display:inline-flex}
@@ -95,9 +97,9 @@
   .hero + .band{border-top:1px solid var(--line)}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1100px 520px at 72% -10%,rgba(212,180,131,.07),transparent 60%);pointer-events:none}
   .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,420px);gap:64px;align-items:center;position:relative}
-  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .hero-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:30px}
   .hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--gold-line)}
-  h1{font-family:var(--serif);font-weight:300;font-size:clamp(46px,6.2vw,88px);line-height:.98;letter-spacing:-.015em;font-variation-settings:"opsz" 144;color:var(--text)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,5.4vw,74px);line-height:1.04;letter-spacing:-.025em;color:var(--text)}
   .hero-title{margin-top:28px;font-size:18px;line-height:1.55;color:var(--text);max-width:600px}
   .hero-title span{color:var(--muted)}
   .hero-lede{margin-top:18px;font-size:16px;line-height:1.7;color:var(--muted);max-width:620px}
@@ -117,13 +119,13 @@
   .portrait-frame .img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#0d1117}
   .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(.88) contrast(1.03)}
   .portrait-frame .img::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px 24px rgba(7,9,12,.62);pointer-events:none}
-  .portrait-cap{display:flex;justify-content:space-between;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+  .portrait-cap{display:flex;justify-content:space-between;margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 
   .kpi-row{margin-top:84px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .kpi{padding:30px 28px 30px 0;border-left:1px solid var(--line);padding-left:28px;min-width:0}
   .kpi:first-child{border-left:0;padding-left:0}
-  .kpi-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-  .kpi-value{font-family:var(--mono);font-weight:400;font-size:clamp(30px,2.9vw,42px);line-height:1;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .kpi-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .kpi-value{font-family:var(--mono);font-weight:500;font-size:clamp(30px,2.9vw,42px);line-height:1;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
   .kpi-value .frac{font-size:.52em;color:var(--dim);letter-spacing:0;margin-left:1px}
   .kpi-value.ph{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:var(--dim);line-height:1.4;white-space:normal}
   .kpi-sub{margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--muted);display:flex;align-items:flex-start;gap:8px;min-height:18px}
@@ -133,47 +135,32 @@
   .telemetry{display:flex;flex-wrap:wrap;padding:22px 0 0;gap:0}
   .telemetry li{display:flex;align-items:baseline;gap:10px;padding:10px 28px 10px 0;margin-right:28px;border-right:1px solid var(--line)}
   .telemetry li:last-child{border-right:0;margin-right:0}
-  .telemetry b{font-family:var(--mono);font-weight:500;font-size:15px;color:var(--text);letter-spacing:-.01em}
-  .telemetry span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .telemetry b{font-family:var(--mono);font-weight:600;font-size:16px;color:var(--text);letter-spacing:-.01em}
+  .telemetry span{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
     .noscript-note{margin-top:16px;font-size:12.5px;color:var(--muted);font-family:var(--mono)}
 
-  /* ---------- systems ---------- */
-  .runbook-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:0 0 12px}
-  .daystrip-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border:1px solid var(--line);border-bottom:0;padding:18px 16px 6px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
-  .daystrip{display:block;width:100%;min-width:860px;height:auto}
-  .ds-axis{stroke:var(--line2);stroke-width:1}
-  .ds-tick{stroke:rgba(255,255,255,.16);stroke-width:1}
-  .ds-tick-major{stroke:var(--gold-line);stroke-width:1}
-  .ds-h{fill:var(--dim);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em}
-  .ds-span{stroke:var(--gold);stroke-width:4;stroke-linecap:butt;opacity:.85}
-  .ds-lead{stroke:var(--line2);stroke-width:1;fill:none}
-  .ds-ev{fill:var(--gold)}
-  .ds-ev-2{fill:var(--bg);stroke:var(--gold);stroke-width:1.5}
-  .ds-t{fill:var(--text);font-family:var(--sans);font-size:11.5px}
-  .ds-tm{fill:var(--gold);font-family:var(--mono);font-size:11px;letter-spacing:.06em}
-  .ds-ka{stroke:var(--gold-line);stroke-width:1;stroke-dasharray:2 5}
-  .table-scroll{overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
-  table.runbook{width:100%;min-width:780px;border-collapse:collapse;background:var(--surface);border:1px solid var(--line)}
-  .runbook th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:14px 16px;border-bottom:1px solid var(--line);background:var(--surface2);white-space:nowrap}
-  .runbook td{padding:18px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px;line-height:1.55;color:var(--muted)}
-  .runbook tr:last-child td{border-bottom:0}
-  .runbook tbody tr{transition:background .15s}
-  .runbook tbody tr:hover{background:var(--surface2)}
-  .runbook td.t-time{position:relative;padding-left:36px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--gold);white-space:nowrap}
-  .runbook td.t-time::before{content:"";position:absolute;left:14px;top:25px;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:1}
-  .runbook td.t-time::after{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:var(--gold-line)}
-  .runbook tbody tr:first-child td.t-time::after{top:25px}
-  .runbook tbody tr:last-child td.t-time::after{bottom:auto;height:25px}
-  .runbook td.t-loop::before{background:var(--surface);border:1px solid var(--gold);width:6px;height:6px}
-  .runbook td.t-cad{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
-  .runbook td.t-job{font-family:var(--serif);font-size:18px;line-height:1.25;color:var(--text);font-variation-settings:"opsz" 48}
-  .runbook td.t-unit{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
-  .facts{border-top:1px solid var(--line);margin-top:28px}
-  .discipline{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-  .discipline > div{background:var(--bg);padding:26px 24px 28px}
-  .discipline .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-  .discipline h3{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:10px;font-variation-settings:"opsz" 48}
-  .discipline p{font-size:13.5px;color:var(--muted);line-height:1.6}
+  /* ---------- ecosystem ---------- */
+  .eco-stage{position:relative;border:1px solid var(--line);background:var(--surface);overflow:hidden}
+  .eco-stage svg{display:block;width:100%;height:auto}
+  .eco-link{fill:none;stroke-width:1.2;stroke-dasharray:3 7;stroke-linecap:round;opacity:.55}
+  .js:not(.reduce) .eco-link{animation:ecoDash 14s linear infinite}
+  @keyframes ecoDash{to{stroke-dashoffset:-400}}
+  .eco-node circle{fill:var(--bg);stroke-width:1.2}
+  .eco-node.core circle{fill:#0d1116;stroke:var(--gold);stroke-width:1.5}
+  .eco-node text{fill:var(--text);font-family:var(--sans);font-size:11.5px;font-weight:500;text-anchor:middle;dominant-baseline:middle}
+  .eco-node.cat text{font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.02em}
+  .eco-node.core text{font-family:var(--serif);font-weight:700;font-size:14px;fill:var(--gold);letter-spacing:.04em}
+  .eco-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .eco-legend li{display:flex;align-items:center;gap:8px}
+  .eco-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+  .eco-list{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .eco-list > div{background:var(--bg);padding:20px 18px}
+  .eco-list .k{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .eco-list .k i{width:8px;height:8px;border-radius:50%;display:inline-block}
+  .eco-list ul{display:flex;flex-wrap:wrap;gap:8px}
+  .eco-list li{font-size:13px;color:var(--text);border:1px solid var(--line2);padding:5px 10px;border-radius:2px}
+  @media (max-width:760px){.eco-stage,.eco-legend{display:none}.eco-list{display:grid}}
+  @media (max-width:480px){.eco-list{grid-template-columns:1fr}}
 
   /* ---------- demos ---------- */
   .demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -182,13 +169,13 @@
   .demo-shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0d1117;border-bottom:1px solid var(--line)}
   .demo-shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
   .demo-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,12,0) 60%,rgba(7,9,12,.35));pointer-events:none}
-  .demo-idx{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  .demo-idx{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
   .demo-idx .new{color:var(--gold)}
   .demo-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
-  .demo-body h3{font-family:var(--serif);font-size:26px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 72}
+  .demo-body h3{font-family:var(--serif);font-size:26px;line-height:1.15;color:var(--text)}
   .demo-body p{margin-top:12px;font-size:14px;line-height:1.65;color:var(--muted);flex:1}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .chips li{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);border:1px solid var(--line2);padding:6px 10px;border-radius:2px;white-space:nowrap}
+  .chips li{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);border:1px solid var(--line2);padding:6px 10px;border-radius:2px;white-space:nowrap}
   .demo-body .btn{margin-top:22px;align-self:flex-start;padding:12px 18px;font-size:12.5px}
 
   /* ---------- goals ---------- */
@@ -201,9 +188,9 @@
   .gauge .tick{stroke:rgba(255,255,255,.22);stroke-width:1}
   .gauge .tick.major{stroke:var(--gold);stroke-width:1.25}
   .gauge-center{position:absolute;left:0;right:0;top:36%;display:flex;flex-direction:column;align-items:center;gap:6px}
-  .gauge-pct{font-family:var(--mono);font-size:32px;letter-spacing:-.02em;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
-  .gauge-of{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
-  .gauge-title{margin-top:6px;font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
+  .gauge-pct{font-family:var(--mono);font-weight:500;font-size:32px;letter-spacing:-.02em;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
+  .gauge-of{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .gauge-title{margin-top:6px;font-family:var(--serif);font-size:20px;color:var(--text)}
   .gauge-sub{margin-top:6px;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
 
   /* ---------- projects ---------- */
@@ -211,19 +198,19 @@
   .proj{background:var(--surface);border:1px solid var(--line);padding:28px 26px 24px;display:flex;flex-direction:column;transition:border-color .25s}
   .proj:hover{border-color:var(--gold-line)}
   .proj.wide{grid-column:span 2}
-  .proj .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-  .proj h3{font-family:var(--serif);font-size:24px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 72}
+  .proj .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .proj h3{font-family:var(--serif);font-size:24px;line-height:1.15;color:var(--text)}
   .proj p{margin-top:12px;font-size:14px;line-height:1.6;color:var(--muted);flex:1}
   .metrics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--line);padding-top:18px;gap:12px}
   .metrics b{display:block;font-family:var(--mono);font-weight:500;font-size:17px;color:var(--text);letter-spacing:-.01em;white-space:nowrap}
-  .metrics > div > span{display:block;margin-top:5px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
+  .metrics > div > span{display:block;margin-top:5px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
 
   /* ---------- analytics ---------- */
   .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .chart-card{background:var(--surface);border:1px solid var(--line);padding:24px 24px 20px}
   .chart-card .ch-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:16px}
-  .chart-card h3{font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
-  .chart-card .ch-meta{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+  .chart-card h3{font-family:var(--serif);font-size:20px;color:var(--text)}
+  .chart-card .ch-meta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
   .chart-wrap{position:relative;height:240px}
   .chart-wrap canvas{width:100%!important;height:100%!important}
   .chart-fallback{font-size:13px;color:var(--muted);line-height:1.6;padding:8px 0}
@@ -233,37 +220,37 @@
   .stack-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
   .practice li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:20px 0;border-top:1px solid var(--line)}
   .practice li:last-child{border-bottom:1px solid var(--line)}
-  .practice .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);padding-top:4px}
-  .practice h4{font-family:var(--serif);font-size:19px;color:var(--text);font-variation-settings:"opsz" 48}
+  .practice .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--gold);padding-top:4px}
+  .practice h4{font-family:var(--serif);font-size:19px;color:var(--text)}
   .practice p{margin-top:6px;font-size:13.5px;line-height:1.6;color:var(--muted)}
   .stack-groups{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
   .stack-groups > div{background:var(--bg);padding:22px 22px 24px}
   .stack-groups > div:last-child{grid-column:1 / -1}
-  .stack-groups .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .stack-groups .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
   .stack-groups ul{display:flex;flex-wrap:wrap;gap:8px}
   .stack-groups li{font-size:12.5px;color:var(--text);border:1px solid var(--line2);padding:6px 11px;border-radius:2px}
-  .sub-h{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:18px;font-variation-settings:"opsz" 72}
-  .sub-k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .sub-h{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:18px}
+  .sub-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 
   /* ---------- proof ---------- */
   .proof-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
   .proof-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
   .proof-stats div{background:var(--bg);padding:22px 18px 20px}
   .proof-stats b{display:block;font-family:var(--mono);font-weight:500;font-size:22px;color:var(--text);letter-spacing:-.02em;white-space:nowrap}
-  .proof-stats > div > span{display:block;margin-top:6px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
-  .proof-copy p{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--text);font-weight:300;font-variation-settings:"opsz" 72}
+  .proof-stats > div > span{display:block;margin-top:6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
+  .proof-copy p{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--text);font-weight:500}
   .proof-copy .btn{margin-top:28px}
 
   /* ---------- credentials ---------- */
   .cred-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
   .edu li{padding:20px 0;border-top:1px solid var(--line)}
   .edu li:last-child{border-bottom:1px solid var(--line)}
-  .edu h4{font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
+  .edu h4{font-family:var(--serif);font-size:20px;color:var(--text)}
   .edu p{margin-top:6px;font-size:13.5px;color:var(--muted);line-height:1.55}
-  .edu .when{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+  .edu .when{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
   .certs li{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
   .certs li:last-child{border-bottom:1px solid var(--line)}
-  .certs .when{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+  .certs .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
   .certs .iss{color:var(--muted)}
   .badges{margin-top:64px}
   .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -276,8 +263,8 @@
   /* ---------- press ---------- */
   .press-card{display:grid;grid-template-columns:1fr 1fr;gap:48px;border:1px solid var(--line);background:var(--surface);padding:40px;text-decoration:none;color:inherit;transition:border-color .25s}
   .press-card:hover{border-color:var(--gold-line)}
-  .press-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-  .press-card h3{font-family:var(--serif);font-size:30px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 96}
+  .press-card .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .press-card h3{font-family:var(--serif);font-size:30px;line-height:1.15;color:var(--text)}
   .press-card .meta{margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .press-card .excerpt{font-size:15px;line-height:1.7;color:var(--muted)}
   .press-card .link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;letter-spacing:.06em;color:var(--gold)}
@@ -286,13 +273,13 @@
   /* ---------- quote + review ---------- */
   .notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
   .notes-grid > section{background:var(--bg);padding:40px 40px 42px;scroll-margin-top:72px}
-  .quote-text{font-family:var(--serif);font-style:italic;font-weight:300;font-size:24px;line-height:1.45;color:var(--text);margin-top:14px;font-variation-settings:"opsz" 96}
+  .quote-text{font-family:var(--serif);font-style:normal;font-weight:500;font-size:22px;line-height:1.5;color:var(--text);margin-top:14px}
   .quote-meta{margin-top:18px;font-size:13px;color:var(--muted);line-height:1.55}
   .quote-meta strong{color:var(--text);font-weight:500}
   .quote-title{font-family:var(--serif);font-size:20px;color:var(--text)}
-  .review-text{font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.55;color:var(--text);font-variation-settings:"opsz" 72}
+  .review-text{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.6;color:var(--text)}
   .review-author{margin-top:22px;display:flex;align-items:center;gap:14px}
-  .review-mark{width:36px;height:36px;border:1px solid var(--gold-line);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:20px}
+  .review-mark{width:36px;height:36px;border:1px solid var(--gold-line);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;color:var(--gold);font-size:22px}
   .review-author .name{font-size:14px;font-weight:600;color:var(--text)}
   .review-author .role{font-size:12.5px;color:var(--muted);margin-top:2px}
 
@@ -311,7 +298,7 @@
   footer{border-top:1px solid var(--line);padding:36px 0 44px;font-size:12.5px;color:var(--muted)}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;align-items:baseline}
   footer .name{font-family:var(--serif);font-size:16px;color:var(--text)}
-  footer .meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  footer .meta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
   footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
   footer a:hover{color:var(--gold);border-color:var(--gold)}
   footer .note{flex-basis:100%;font-size:12px;color:var(--dim);line-height:1.6;max-width:760px}
@@ -334,28 +321,10 @@
     .kpi:nth-child(even){padding-left:20px}
     .kpi:nth-child(n+3){border-top:1px solid var(--line)}
     .demo-grid{grid-template-columns:minmax(0,1fr)}
-    .discipline{grid-template-columns:1fr 1fr}
     .stack-grid,.proof-grid,.cred-grid,.notes-grid,.press-card{grid-template-columns:1fr}
     .press-card{gap:28px;padding:30px}
     .proof-stats{grid-template-columns:repeat(2,1fr)}
     .chart-grid{grid-template-columns:1fr}
-    .daystrip-wrap{display:none}
-    table.runbook{min-width:0}
-    .runbook thead,.runbook colgroup{display:none}
-    .runbook,.runbook tbody,.runbook tr,.runbook td{display:block}
-    .runbook tr{position:relative;padding:16px 16px 18px 38px;border-bottom:1px solid var(--line)}
-    .runbook tr:last-child{border-bottom:0}
-    .runbook tr::before{content:"";position:absolute;left:16px;top:23px;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:1}
-    .runbook tr::after{content:"";position:absolute;left:19px;top:0;bottom:0;width:1px;background:var(--gold-line)}
-    .runbook tbody tr:first-child::after{top:23px}
-    .runbook tbody tr:last-child::after{bottom:auto;height:23px}
-    .runbook tr.r-loop::before{background:var(--surface);border:1px solid var(--gold);width:6px;height:6px}
-    .runbook td{padding:3px 0;border:0}
-    .runbook td.t-time{display:inline-block;padding-left:0;margin-right:12px}
-    .runbook td.t-time::before,.runbook td.t-time::after{display:none}
-    .runbook td.t-cad{display:inline-block}
-    .runbook td.t-job{padding-top:6px}
-    .runbook td.t-unit{padding-top:8px}
     .contact-grid{grid-template-columns:1fr;gap:32px}
     .contact-list{grid-template-columns:1fr 1fr}
   }
@@ -375,10 +344,9 @@
     .gauge{padding:24px 10px 22px}
     .gauge-pct{font-size:24px}
     .gauge-title{font-size:16px}
-    .gauge-sub{font-size:11px}
+    .gauge-sub{font-size:12px}
     .proj-grid{grid-template-columns:1fr}
     .proj.wide{grid-column:auto}
-    .discipline{grid-template-columns:1fr}
     .badge-grid{grid-template-columns:1fr}
     .stack-groups{grid-template-columns:1fr}
     .contact-list{grid-template-columns:1fr}
@@ -390,7 +358,6 @@
     .demo-body{padding:22px 20px 24px}
     .chips li{white-space:normal;line-height:1.5}
     .hero-title{font-size:16.5px}
-    h1,h2.title{font-weight:400}
     .cta-row .btn{width:100%;justify-content:center}
     .chart-wrap{height:210px}
   }
@@ -409,7 +376,7 @@
     <nav aria-label="Primary">
       <ul class="nav-links" id="navLinks">
         <li><a href="#impact">Impact</a></li>
-        <li><a href="#systems">Systems</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#demos">Demos</a></li>
         <li><a href="#goals">Goals</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -436,7 +403,7 @@
       <p class="hero-lede">He designs and runs the automation fleet that measures, routes, and improves customer experience across <b><span data-s="locations">71</span> dealership locations</b>: <span data-s="oemPortals">18</span> OEM survey portals, every public review, every team, every morning.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#demos">See the live demos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">Download the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg></a>
+        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener noreferrer">Download the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg></a>
       </div>
     </div>
     <figure class="portrait reveal">
@@ -456,7 +423,7 @@
       </div>
       <div class="kpi" role="listitem">
         <div class="kpi-label">Cost savings</div>
-        <div class="kpi-value live" data-kpi="savings">$2,638,775</div>
+        <div class="kpi-value live" data-kpi="savings">$3,414,925</div>
         <div class="kpi-sub" data-kpi="savingsRate"><span class="pip" aria-hidden="true"></span><span>Live, +$3,465 per day</span></div>
       </div>
       <div class="kpi" role="listitem">
@@ -466,7 +433,7 @@
       </div>
       <div class="kpi" role="listitem">
         <div class="kpi-label">Return on investment</div>
-        <div class="kpi-value" data-kpi="roi">1,477%</div>
+        <div class="kpi-value" data-kpi="roi">1,941%</div>
         <div class="kpi-sub static"><span data-kpi="roiSub">On $167,300 implied investment</span></div>
       </div>
     </div>
@@ -482,121 +449,27 @@
   </div>
 </section>
 
-<!-- ===================== SYSTEMS ===================== -->
-<section id="systems" class="band" aria-labelledby="systemsTitle">
+<!-- ===================== ECOSYSTEM ===================== -->
+<section id="ecosystem" class="band" aria-labelledby="ecoTitle">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow"><span class="idx">01</span><span class="rule"></span><span>Systems in production</span></p>
-      <h2 class="title" id="systemsTitle">An unattended fleet that reports on itself.</h2>
-      <p class="lede">It runs on a Linux host with a Windows bridge, seven days a week. Below is the daily runbook, Central time.</p>
+      <p class="eyebrow"><span class="idx">01</span><span class="rule"></span><span>Technology ecosystem</span></p>
+      <h2 class="title" id="ecoTitle">One automation core, six disciplines.</h2>
+      <p class="lede">RPA, AI and machine learning, data, cloud, engineering, and business intelligence, wired together around one operating core.</p>
     </div>
-
-    <div class="reveal">
-      <div class="runbook-cap" aria-hidden="true"><span>Daily runbook, America/Chicago</span><span>Seven days a week, unattended</span></div>
-      <div class="daystrip-wrap" tabindex="0" aria-label="Twenty-four hour schedule, scrolls horizontally on narrow screens">
-        <svg class="daystrip" viewBox="0 0 1000 106" role="img" aria-label="Twenty-four hour schedule: 04:02 session mint, 05:00 review processor, 10:00 CSI sweep for 112 minutes, then the CX Huddle or the Sunday operations report, with a session keepalive every 30 minutes">
-          <line class="ds-axis" x1="40" y1="52" x2="960" y2="52"/>
-          <path class="ds-tick" d="M78.3 48v8M116.7 48v8M155 48v8M193.3 48v8M231.7 48v8M308.3 48v8M346.7 48v8M385 48v8M423.3 48v8M461.7 48v8M538.3 48v8M576.7 48v8M615 48v8M653.3 48v8M691.7 48v8M768.3 48v8M806.7 48v8M845 48v8M883.3 48v8M921.7 48v8"/>
-          <path class="ds-tick-major" d="M40 46v12M270 46v12M500 46v12M730 46v12M960 46v12"/>
-          <text class="ds-h" x="40" y="74" text-anchor="middle">00:00</text>
-          <text class="ds-h" x="270" y="74" text-anchor="middle">06:00</text>
-          <text class="ds-h" x="500" y="74" text-anchor="middle">12:00</text>
-          <text class="ds-h" x="730" y="74" text-anchor="middle">18:00</text>
-          <text class="ds-h" x="960" y="74" text-anchor="middle">24:00</text>
-          <line class="ds-span" x1="423.3" y1="52" x2="494.9" y2="52"/>
-          <path class="ds-lead" d="M194.6 52V21M231.7 52V39M423.3 52V21M494.9 52V39"/>
-          <circle class="ds-ev" cx="194.6" cy="52" r="3.5"/>
-          <circle class="ds-ev" cx="231.7" cy="52" r="3.5"/>
-          <circle class="ds-ev" cx="423.3" cy="52" r="3.5"/>
-          <circle class="ds-ev ds-ev-2" cx="494.9" cy="52" r="3.5"/>
-          <text class="ds-t" x="199" y="17"><tspan class="ds-tm">04:02</tspan>  Session mint</text>
-          <text class="ds-t" x="236" y="35"><tspan class="ds-tm">05:00</tspan>  Review processor</text>
-          <text class="ds-t" x="428" y="17"><tspan class="ds-tm">10:00</tspan>  CSI sweep, 112 min</text>
-          <text class="ds-t" x="499" y="35"><tspan class="ds-tm">After the sweep</tspan>  CX Huddle Mon to Sat, Operations report Sun</text>
-          <line class="ds-ka" x1="40" y1="90" x2="960" y2="90"/>
-          <text class="ds-h" x="960" y="104" text-anchor="end">Session keepalive, every 30 min</text>
-        </svg>
-      </div>
-      <div class="table-scroll" tabindex="0" aria-label="Daily runbook table, scrolls horizontally on narrow screens">
-        <table class="runbook">
-          <thead>
-            <tr><th scope="col">Time</th><th scope="col">Cadence</th><th scope="col">Job</th><th scope="col">What happens</th><th scope="col">Unit</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="t-time">04:02</td>
-              <td class="t-cad">Daily</td>
-              <td class="t-job">Stellantis session mint</td>
-              <td class="t-desc">One-time-passcode relay through Smartsheet, no human in the loop.</td>
-              <td class="t-unit">csi-stellantis-login.timer</td>
-            </tr>
-            <tr>
-              <td class="t-time">05:00</td>
-              <td class="t-cad">Daily, Wed 05:01 weekly</td>
-              <td class="t-job">Social Review Processor</td>
-              <td class="t-desc">Pulls yesterday's reviews from the reputation platform, classifies Sales / Service / Unknown, verifies live status on Google, builds the workbook, emails the summary. Wednesday 05:01 runs the weekly edition.</td>
-              <td class="t-unit">src-daily-review.timer<br>src-weekly-review.timer</td>
-            </tr>
-            <tr>
-              <td class="t-time">10:00</td>
-              <td class="t-cad">Daily</td>
-              <td class="t-job">Daily CSI sweep</td>
-              <td class="t-desc">Logs into <span data-s="oemPortals">18</span> OEM survey portals (Qualtrics, Medallia, BoostCX, InMoment, track360, and more), extracts <span data-s="dailyCsiLines">107</span> store and department lines, self-heals missing coverage, writes the master workbook, mirrors to OneDrive with a sync guard, pushes the scoreboard, emails an executive summary. About <span data-s="sweepMinutes">112</span> minutes, unattended.</td>
-              <td class="t-unit">csi-report.timer</td>
-            </tr>
-            <tr>
-              <td class="t-time">After sweep</td>
-              <td class="t-cad">Monday to Saturday</td>
-              <td class="t-job">Daily CX Huddle</td>
-              <td class="t-desc">One designed email per team (<span data-s="huddleTeams">12</span> teams): where we stand, today's win, three priorities, rescores and reach gaps, store scores with power ranks, online reputation.</td>
-              <td class="t-unit">csi-huddle.service</td>
-            </tr>
-            <tr>
-              <td class="t-time">After sweep</td>
-              <td class="t-cad">Sunday</td>
-              <td class="t-job">Operations report</td>
-              <td class="t-desc">Three PDFs (All Ops, Fixed Ops, Variable Ops), decks, and an audit workbook.</td>
-              <td class="t-unit">csi-operations-report.service</td>
-            </tr>
-            <tr class="r-loop">
-              <td class="t-time t-loop">Every 30 min</td>
-              <td class="t-cad">Continuous</td>
-              <td class="t-job">Session keepalive</td>
-              <td class="t-desc">Keeps sessions warm across portals with wildly different session lifetimes.</td>
-              <td class="t-unit">csi-keepalive.timer</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <ul class="telemetry facts" aria-label="Fleet facts">
-        <li><b data-s="productionAutomations">33</b><span>production automations</span></li>
-        <li><b data-s="systemdUnits">20</b><span>systemd units</span></li>
-        <li><b data-s="pythonLoc">63k</b><span>lines of Python</span></li>
-        <li><b data-s="otpLoginsAutomatedPerSweep">11</b><span>OTP logins automated per sweep</span></li>
-      </ul>
+    <div class="eco-stage reveal" id="ecoStage" aria-label="Technology ecosystem map">
+      <svg id="ecoSvg" viewBox="0 0 1320 760" role="img" aria-label="Network map: an Automation Core linked to RPA, AI/ML, Database, Cloud, Dev, and BI hubs, each with its tools"></svg>
     </div>
-
-    <div class="discipline reveal" aria-label="Engineering discipline">
-      <div>
-        <div class="k">Discipline 01</div>
-        <h3>Identity guards</h3>
-        <p>A row is never written unless the page proved which store it is.</p>
-      </div>
-      <div>
-        <div class="k">Discipline 02</div>
-        <h3>Empty-month rule</h3>
-        <p>Verified store plus working session plus no data records a zero, never a skip.</p>
-      </div>
-      <div>
-        <div class="k">Discipline 03</div>
-        <h3>Self-healing coverage</h3>
-        <p>One retry per store per period, never a portal hammer.</p>
-      </div>
-      <div>
-        <div class="k">Discipline 04</div>
-        <h3>Audit trail</h3>
-        <p>Every send logged and verified against Sent Items.</p>
-      </div>
+    <ul class="eco-legend reveal" aria-hidden="true">
+      <li><i style="background:#5b8de8"></i>RPA</li><li><i style="background:#34b384"></i>AI/ML</li><li><i style="background:#d19a4a"></i>Database</li><li><i style="background:#9a7de0"></i>Cloud</li><li><i style="background:#e06663"></i>Dev</li><li><i style="background:#3fb1b1"></i>BI</li>
+    </ul>
+    <div class="eco-list reveal" aria-label="Technology ecosystem">
+      <div><div class="k"><i style="background:#5b8de8"></i>RPA</div><ul><li>UiPath</li><li>Power Automate</li><li>n8n</li><li>Zapier</li></ul></div>
+      <div><div class="k"><i style="background:#34b384"></i>AI/ML</div><ul><li>LLMs</li><li>Vector DB</li><li>Prompt Eng</li><li>Model Training</li></ul></div>
+      <div><div class="k"><i style="background:#d19a4a"></i>Database</div><ul><li>SQL</li><li>NoSQL</li><li>ETL</li><li>MongoDB</li><li>Snowflake</li><li>MySQL</li></ul></div>
+      <div><div class="k"><i style="background:#9a7de0"></i>Cloud</div><ul><li>Azure</li><li>AWS</li><li>GCP</li><li>Terraform</li></ul></div>
+      <div><div class="k"><i style="background:#e06663"></i>Dev</div><ul><li>Python</li><li>JavaScript</li><li>GitHub</li><li>Kubernetes</li><li>Docker</li><li>CI/CD</li></ul></div>
+      <div><div class="k"><i style="background:#3fb1b1"></i>BI</div><ul><li>Power BI</li><li>Excel</li><li>Smartsheet</li><li>Reporting</li></ul></div>
     </div>
   </div>
 </section>
@@ -619,7 +492,7 @@
           <h3>Daily CX Huddle</h3>
           <p>The morning email every team leader opens first. Passing rates, a combined CX Power Rank (70% CSI, 15% negative-review rate, 15% reputation score), today's win, three priorities, rescore opportunities, and a store-by-store scorecard with prior-month tiles.</p>
           <ul class="chips"><li><span data-s="huddleTeams">12</span> teams</li><li>Mon to Sat</li><li>Production renderer</li></ul>
-          <a class="btn btn-gold" href="demos/cx-huddle.html" target="_blank" rel="noopener">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn btn-gold" href="demos/cx-huddle.html" target="_blank" rel="noopener noreferrer">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </article>
       <article class="demo">
@@ -630,8 +503,8 @@
           <div class="demo-idx"><span>Demo 02</span><span class="new">New, September 2026</span><span>Fictional data</span></div>
           <h3>Daily Social Review Summary</h3>
           <p>The corporate review digest: yesterday's reviews classified by operation, negatives flagged, escalations and review-bomb clusters called out, with the report dashboard rendered straight from the workbook the pipeline built.</p>
-          <ul class="chips"><li>05:00 daily</li><li>Sales / Service / Unknown</li><li>Google verified</li></ul>
-          <a class="btn btn-gold" href="demos/social-review.html" target="_blank" rel="noopener">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <ul class="chips"><li>Daily digest</li><li>Sales / Service / Unknown</li><li>Google verified</li></ul>
+          <a class="btn btn-gold" href="demos/social-review.html" target="_blank" rel="noopener noreferrer">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </article>
       <article class="demo">
@@ -643,7 +516,7 @@
           <h3>Rooftop IQ</h3>
           <p>A product concept for an automotive intelligence platform: review inbox, routing queue, OEM disposition, OEM CSI, KPI reports and grade cards in one shell.</p>
           <ul class="chips"><li>Product teaser</li><li>Interactive</li></ul>
-          <a class="btn btn-ghost" href="https://ejr1216.github.io/rooftop-iq-demo/" target="_blank" rel="noopener">Open the teaser <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn btn-ghost" href="https://ejr1216.github.io/rooftop-iq-demo/" target="_blank" rel="noopener noreferrer">Open the teaser <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </article>
     </div>
@@ -660,7 +533,7 @@
     </div>
     <div class="gauge-grid reveal" id="gaugeGrid">
       <div class="gauge live" data-gauge="hours" data-title="Hours saved" data-goal="hours"><div class="gauge-title">Hours saved</div><div class="gauge-sub">70.4% of goal, 105,551 of 150,000, as of September 14, 2026</div></div>
-      <div class="gauge live" data-gauge="savings" data-title="Cost savings" data-goal="savingsUsd"><div class="gauge-title">Cost savings</div><div class="gauge-sub">52.8% of goal, $2.64M of $5M, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="savings" data-title="Cost savings" data-goal="savingsUsd"><div class="gauge-title">Cost savings</div><div class="gauge-sub">68.3% of goal, $3.41M of $5M, as of September 14, 2026</div></div>
       <div class="gauge live" data-gauge="reviews" data-title="Five-star reviews" data-goal="reviews5star"><div class="gauge-title">Five-star reviews</div><div class="gauge-sub">81.6% of goal, 81,650 of 100,000, as of September 14, 2026</div></div>
       <div class="gauge live" data-gauge="voc" data-title="VoC open cases" data-goal="vocCases"><div class="gauge-title">VoC open cases</div><div class="gauge-sub">70.0% of goal, 350,000 of 500,000, as of September 14, 2026</div></div>
       <div class="gauge" data-gauge="automations" data-title="Production automations" data-goal="productionAutomations"><div class="gauge-title">Production automations</div><div class="gauge-sub">66% of goal, 33 of 50, as of September 14, 2026</div></div>
@@ -676,7 +549,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow"><span class="idx">04</span><span class="rule"></span><span>Key projects</span></p>
       <h2 class="title" id="projectsTitle">Seven systems, one operating model.</h2>
-      <p class="lede">Key projects. Each carries a number that is checked every morning.</p>
+      <p class="lede">Each carries a number that is checked every morning.</p>
     </div>
     <div class="proj-grid reveal">
       <article class="proj wide">
@@ -716,7 +589,7 @@
         <div class="metrics">
           <div><b data-s="reviewsPerDay">~90</b><span>reviews per day</span></div>
           <div><b data-s="srcRegressionTests">268</b><span>regression tests</span></div>
-          <div><b>05:00</b><span>daily</span></div>
+          <div><b>Daily</b><span>plus weekly</span></div>
         </div>
       </article>
       <article class="proj">
@@ -735,7 +608,7 @@
         <p>All / Fixed / Variable Ops PDFs with decks and an audit workbook.</p>
         <div class="metrics">
           <div><b>3</b><span>PDFs</span></div>
-          <div><b>Sunday</b><span>cadence</span></div>
+          <div><b>Weekly</b><span>cadence</span></div>
           <div><b>~770</b><span>reviews merged</span></div>
         </div>
       </article>
@@ -794,8 +667,8 @@
         <div class="sub-k">AI practice</div>
         <ol class="practice">
           <li><span class="n">01</span><div><h4>LLM-assisted review classification</h4><p>Prototypes that route customer reviews by operation, measured against the rule-based production classifier.</p></div></li>
-          <li><span class="n">02</span><div><h4>Retrieval-augmented generation</h4><p>Proof of concept grounded on operating documents and runbooks.</p></div></li>
-          <li><span class="n">03</span><div><h4>AI-assisted engineering workflow</h4><p>Claude Code and Codex drive the build, tests, and runbooks.</p></div></li>
+          <li><span class="n">02</span><div><h4>Retrieval-augmented generation</h4><p>Proof of concept grounded on operating documents and procedures.</p></div></li>
+          <li><span class="n">03</span><div><h4>AI-assisted engineering workflow</h4><p>Claude Code and Codex drive the build, the tests, and the documentation.</p></div></li>
           <li><span class="n">04</span><div><h4>Shabti</h4><p>A Windows process recorder that exports AI-ready automation packages.</p></div></li>
           <li><span class="n">05</span><div><h4>M.S. in Computer Science, AI concentration</h4><p>In progress.</p></div></li>
         </ol>
@@ -836,7 +709,7 @@
       </div>
       <div class="proof-copy">
         <p>As National CX Director he standardized the operating model across <span data-s="locations">71</span> locations, turning disconnected survey, review, and service signals into daily, owned actions.</p>
-        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">Read the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener noreferrer">Read the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </div>
     </div>
   </div>
@@ -882,51 +755,51 @@
     <div class="badges reveal" id="awards">
       <div class="sub-k">Awards and badges</div>
       <div class="badge-grid">
-        <a class="badge" href="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw/image" alt="IT Support Specialist badge" width="56" height="56">
           <div><h4>IT Support Specialist</h4><p>Hands-on support across hardware, OS, security, and user troubleshooting.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg/image" alt="Business Leadership badge" width="56" height="56">
           <div><h4>Business Leadership</h4><p>Ethical, adaptive leadership that supports open culture and change.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ/image" alt="Network Administrator badge" width="56" height="56">
           <div><h4>Network Administrator</h4><p>Configure, secure, and troubleshoot networks for reliable ops.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA/image" alt="Organizational Change Management badge" width="56" height="56">
           <div><h4>Organizational Change Management</h4><p>Strategies that drive engagement, improvement, and culture.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg/image" alt="Performance Management badge" width="56" height="56">
           <div><h4>Performance Management</h4><p>Assessments, discipline, and training programs for global teams.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg/image" alt="Project Planning badge" width="56" height="56">
           <div><h4>Project Planning</h4><p>Schedules, WBS, costing, and risk identification.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ/image" alt="Project Risk Management badge" width="56" height="56">
           <div><h4>Project Risk Management</h4><p>Identify, analyze, mitigate, and respond to project risks.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg/image" alt="Python Programming badge" width="56" height="56">
           <div><h4>Python Programming</h4><p>Object-oriented apps with industry tooling and patterns.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA/image" alt="SQL Programming badge" width="56" height="56">
           <div><h4>SQL Programming</h4><p>Design, query, and secure databases at scale.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ/image" alt="Security Architect badge" width="56" height="56">
           <div><h4>Security Architect</h4><p>Threats, vulnerabilities, secure architecture, governance.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A/image" alt="Peer Mentor Level 3 badge" width="56" height="56">
           <div><h4>Peer Mentor Level 3</h4><p>Active peer mentor for five or more terms.</p></div>
         </a>
-        <a class="badge" href="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw" target="_blank" rel="noopener">
+        <a class="badge" href="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw" target="_blank" rel="noopener noreferrer">
           <img src="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw/image" alt="President's List badge" width="56" height="56">
           <div><h4>President's List</h4><p>4.0 GPA term recognition for academic excellence.</p></div>
         </a>
@@ -942,7 +815,7 @@
       <p class="eyebrow"><span class="idx">09</span><span class="rule"></span><span>Press</span></p>
       <h2 class="title" id="pressTitle">Articles &amp; Press</h2>
     </div>
-    <a class="press-card reveal" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">
+    <a class="press-card reveal" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener noreferrer">
       <div>
         <div class="k">NADA Show Spotlight</div>
         <h3>Napleton's Epiphany Fuels Customer Experience Success</h3>
@@ -1002,10 +875,10 @@
         <ul class="contact-list">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:ejr1216@icloud.com">ejr1216@icloud.com</a></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:708-719-0854">(708) 719-0854</a></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://linkedin.com/in/ejr1216">LinkedIn</a></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://github.com/ejr1216">GitHub</a></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://x.com/ejr1216">@ejr1216</a></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://huggingface.co/ejr1216">Hugging Face</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/ejr1216">LinkedIn</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener noreferrer" href="https://github.com/ejr1216">GitHub</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener noreferrer" href="https://x.com/ejr1216">@ejr1216</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener noreferrer" href="https://huggingface.co/ejr1216">Hugging Face</a></li>
         </ul>
         <p class="location">Based in Chicago &bull; Will consider relocation for the right opportunity</p>
       </div>
@@ -1019,13 +892,13 @@
   <div class="wrap">
     <span class="name">Eduardo J. Rodriguez</span>
     <span class="meta">Last updated <span data-i="lastUpdatedLabel">September 14, 2026</span></span>
-    <a href="https://github.com/ejr1216" target="_blank" rel="noopener">github.com/ejr1216</a>
-    <p class="note">Impact figures are modeled estimates derived from production automation logs: hours, savings, reviews, and cases accrue from published daily rates at the modeled hourly rate. They are indicators, not audited financials.</p>
+    <a href="https://github.com/ejr1216" target="_blank" rel="noopener noreferrer">github.com/ejr1216</a>
+    <p class="note">Impact figures are modeled estimates derived from production automation logs: hours, reviews, and cases accrue from published daily rates; savings build on the January 2026 baseline at $25 per hour saved. They are indicators, not audited financials.</p>
   </div>
 </footer>
 
 <script src="data/impact.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
 <script>
 (function(){
   'use strict';
@@ -1121,7 +994,7 @@
       hours += days(s, t) * inc.hoursPerDay;
       if (s <= t) daily += inc.hoursPerDay;
     }
-    var savings = hours * I.hourlyRate;
+    var savings = (typeof I.anchor.savingsUsd === 'number' ? I.anchor.savingsUsd : I.anchor.hours * I.hourlyRate) + (hours - I.anchor.hours) * I.hourlyRate;
     return {
       hours: hours,
       savings: savings,
@@ -1237,6 +1110,60 @@
     note.textContent = 'Figures shown are as of ' + ($('[data-i="lastUpdatedLabel"]') ? $('[data-i="lastUpdatedLabel"]').textContent : 'the last update') + '. The live engine did not load.';
     if (kpiEls.hours && kpiEls.hours.closest('.wrap')) kpiEls.hours.closest('.wrap').appendChild(note);
   }
+
+  /* ---------- ecosystem map ---------- */
+  (function(){
+    var svg = $('#ecoSvg'); if (!svg) return;
+    if (reduce) root.classList.add('reduce');
+    var NS = 'http://www.w3.org/2000/svg';
+    var cats = [
+      { name: 'RPA',      color: '#5b8de8', tools: ['UiPath', 'Power Automate', 'n8n', 'Zapier'] },
+      { name: 'AI/ML',    color: '#34b384', tools: ['LLMs', 'Vector DB', 'Prompt Eng', 'Model Training'] },
+      { name: 'Database', color: '#d19a4a', tools: ['SQL', 'NoSQL', 'ETL', 'MongoDB', 'Snowflake', 'MySQL'] },
+      { name: 'Cloud',    color: '#9a7de0', tools: ['Azure', 'AWS', 'GCP', 'Terraform'] },
+      { name: 'Dev',      color: '#e06663', tools: ['Python', 'JavaScript', 'GitHub', 'Kubernetes', 'Docker', 'CI/CD'] },
+      { name: 'BI',       color: '#3fb1b1', tools: ['Power BI', 'Excel', 'Smartsheet', 'Reporting'] }
+    ];
+    var W = 1320, H = 760, cx = W / 2, cy = H / 2, R = 252, orbit = 90;
+    function el(tag, attrs){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    function link(x1, y1, x2, y2, color, curv){
+      var mx = (x1 + x2) / 2, my = (y1 + y2) / 2, vx = x2 - x1, vy = y2 - y1, len = Math.hypot(vx, vy) || 1;
+      var qx = mx + (-vy / len) * len * curv, qy = my + (vx / len) * len * curv;
+      var p = el('path', { d: 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' Q ' + qx.toFixed(1) + ' ' + qy.toFixed(1) + ' ' + x2.toFixed(1) + ' ' + y2.toFixed(1), 'class': 'eco-link', stroke: color });
+      svg.appendChild(p);
+    }
+    function node(x, y, r, label, cls, color){
+      var g = el('g', { 'class': 'eco-node ' + cls, transform: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')' });
+      g.appendChild(el('circle', { r: r, stroke: color }));
+      var parts = (label.length > 9 && label.indexOf(' ') > 0) ? label.split(' ') : [label];
+      var t = el('text', { y: parts.length > 1 ? -6 : 0 });
+      parts.forEach(function(p, i){ var ts = el('tspan', { x: 0, dy: i ? 13 : 0 }); ts.textContent = p; t.appendChild(ts); });
+      g.appendChild(t);
+      svg.appendChild(g);
+    }
+    var hubs = cats.map(function(c, i){
+      var a = -Math.PI / 2 + i * (2 * Math.PI / cats.length);
+      return { x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), c: c, a: a };
+    });
+    // links first so nodes sit on top
+    hubs.forEach(function(h, i){
+      link(cx, cy, h.x, h.y, h.c.color, .16);
+      var n = h.c.tools.length, orb = n > 4 ? 120 : orbit, spread = Math.PI * (n > 4 ? 1.0 : .75), start = h.a - spread / 2;
+      h.c.tools.forEach(function(t, j){
+        var ang = start + (n === 1 ? spread / 2 : j * (spread / (n - 1)));
+        var tx = h.x + orb * Math.cos(ang), ty = h.y + orb * Math.sin(ang);
+        link(h.x, h.y, tx, ty, h.c.color, .22);
+        h.c._pos = h.c._pos || []; h.c._pos.push([tx, ty, t]);
+      });
+      var nx = hubs[(i + 1) % hubs.length];
+      link(h.x, h.y, nx.x, nx.y, h.c.color, .1);
+    });
+    hubs.forEach(function(h){
+      (h.c._pos || []).forEach(function(p){ node(p[0], p[1], 27, p[2], 'tool', h.c.color); });
+      node(h.x, h.y, 38, h.c.name, 'cat', h.c.color);
+    });
+    node(cx, cy, 52, 'Automation Core', 'core', '#d4b483');
+  })();
 
   /* ---------- quote of the month ---------- */
   (function(){

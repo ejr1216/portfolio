@@ -2,7 +2,7 @@
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-0b2545?style=for-the-badge&logo=github)](https://ejr1216.github.io/portfolio)
 [![Hours Saved](https://img.shields.io/badge/Hours%20Saved-105K%2B-0f4c3a?style=for-the-badge)](https://ejr1216.github.io/portfolio)
-[![Savings](https://img.shields.io/badge/Cost%20Savings-%242.6M-b08d57?style=for-the-badge)](https://ejr1216.github.io/portfolio)
+[![Savings](https://img.shields.io/badge/Cost%20Savings-%243.4M-b08d57?style=for-the-badge)](https://ejr1216.github.io/portfolio)
 [![Updated](https://img.shields.io/badge/Updated-Sep%2014%2C%202026-555?style=for-the-badge)](https://ejr1216.github.io/portfolio)
 
 **Live site:** [ejr1216.github.io/portfolio](https://ejr1216.github.io/portfolio)
@@ -11,7 +11,7 @@ National CX Director at a 71-location automotive group. I design and run the aut
 
 ## Impact (modeled from production automation logs, as of September 14, 2026)
 - **105,000+** hours returned to the business (live counter on the site)
-- **$2.6M** in cost savings at a $25/hr blended rate
+- **$3.4M** in cost savings (January 2026 baseline, hours since then valued at $25/hr)
 - **24.3** FTE equivalent, running unattended
 - **71** locations, **18** OEM portals, **107** CSI lines captured daily, **12** team huddles every morning
 
@@ -20,18 +20,16 @@ National CX Director at a 71-location automotive group. I design and run the aut
 - [Daily Social Review Summary](https://ejr1216.github.io/portfolio/demos/social-review.html): the corporate review digest with the rendered report dashboard
 - [Rooftop IQ](https://ejr1216.github.io/rooftop-iq-demo/): automotive intelligence platform teaser
 
-## Systems in production
-| Time (Central) | System | What it does |
-| --- | --- | --- |
-| 04:02 | Portal session mint | One-time passcode relayed through Smartsheet, no human in the loop |
-| 05:00 | Social Review Processor | Pulls yesterday's reviews, classifies Sales / Service / Unknown, verifies live status on Google, emails the summary |
-| 10:00 | Daily CSI sweep | 18 OEM portals, 107 store and department lines, self-healing coverage, executive summary, about 112 minutes |
-| After the sweep, Mon to Sat | Daily CX Huddle | One designed email per team (12 teams) |
-| Sunday | Operations report | All Ops, Fixed Ops, and Variable Ops PDFs with decks and an audit workbook |
-| Every 30 min | Session keepalive | Keeps portal sessions alive across very different lifetimes |
+## Technology ecosystem
+- **RPA:** UiPath, Power Automate, n8n, Zapier
+- **AI/ML:** LLMs, vector databases, prompt engineering, model training
+- **Data:** SQL, NoSQL, ETL, MongoDB, Snowflake, MySQL
+- **Cloud:** Azure, AWS, GCP, Terraform
+- **Dev:** Python, JavaScript, GitHub, Kubernetes, Docker, CI/CD
+- **BI:** Power BI, Excel, Smartsheet, executive reporting
 
 ## How the numbers work
-`docs/data/impact.js` is the single source of truth. The page computes every live figure from an anchor date, a base daily rate, and per-automation increments with start dates, so the counters stay honest on any day the page is opened. Edit that file, never the HTML.
+`docs/data/impact.js` is the single source of truth. The page computes every live figure from an anchor date (January 27, 2026), a base daily rate, and per-automation increments with start dates, so the counters stay honest on any day the page is opened. Savings start from the January cumulative figure and grow at $25 per hour saved. Edit that file, never the HTML.
 
 ## Repository layout
 ```

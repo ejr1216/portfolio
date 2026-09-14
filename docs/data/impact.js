@@ -11,7 +11,9 @@ window.IMPACT = {
     "hours": 77615,
     "reviews5star": 55200,
     "vocCases": 273340,
-    "_note": "Hours and reviews are the values the site showed when it was last published on 2026-01-27. vocCases was re-based 2026-09-14 per the owner: about 350,000 cases on 2026-09-14 (120k per year since October 2023), so the anchor is 350,000 minus 230 days x 333.3. Everything accrues from the daily rates below."
+    "_note": "Hours and reviews are the values the site showed when it was last published on 2026-01-27. vocCases was re-based 2026-09-14 per the owner: about 350,000 cases on 2026-09-14 (120k per year since October 2023), so the anchor is 350,000 minus 230 days x 333.3. Everything accrues from the daily rates below.",
+    "savingsUsd": 2716525,
+    "_savingsNote": "Cumulative savings the site showed on 2026-01-27 (at the $35/hr rate then in use). Kept as the floor per the owner (2026-09-14); hours accrued after the anchor are valued at hourlyRate."
   },
   "baseDailyRates": {
     "hours": 119.3,
@@ -67,7 +69,7 @@ window.IMPACT = {
   },
   "static": {
     "productionAutomations": 33,
-    "_productionAutomationsNote": "18 OEM extraction packages + 15 supporting automations (CX Huddle, review processor daily, review processor weekly, operations report, KIA ledger importer, Mazda ledger importer, scoreboard write-back, executive summary, OneDrive mirror + sync guard, coverage healer, session keepalive, Stellantis morning login, OTP relay, reputation pull, report downloads).",
+    "_productionAutomationsNote": "18 OEM extraction packages + 15 supporting automations (huddle, review processor daily and weekly, operations report, ledger importers, scoreboard write-back, executive summary, cloud mirror and sync guard, coverage healer, session keepalive, portal logins, reputation pull, report downloads).",
     "uipathWorkflows": 33,
     "_uipathNote": "Carried over from January 2026; no newer count available.",
     "oemPortals": 18,
@@ -80,8 +82,6 @@ window.IMPACT = {
     "reviewsPerDay": 90,
     "reviewsPerMonth": 2600,
     "sweepMinutes": 112,
-    "otpLoginsAutomatedPerSweep": 11,
-    "systemdUnits": 20,
     "pythonLoc": 63000,
     "srcRegressionTests": 268,
     "kiaLedgerChecks": 20431,
@@ -103,7 +103,6 @@ window.IMPACT = {
     "resume": "Eduardo_J_Rodriguez_Ford_Director_AI_Strategy_Resume.docx (2026-09-10): 71 locations, +15% CSI, +12.5% retention, 99.9% uptime, 120k+ requests/yr, team of 21, 100% adoption, +5 CSAT, +10% CSI and +20% reach from survey automation",
     "csiRepo": "github.com/ejr1216/csi-report-automation: 18 *_automation packages, 107 lines/day in DAILY CSI.xlsx, 51k tracked Python lines, 87 commits since 2026-07-23",
     "srcRepo": "github.com/ejr1216/SRC-Department: 12k Python lines, 268/268 regression baseline, ~90 reviews/day",
-    "systemd": "20 csi-*/src-* user units on the production Linux host",
     "nadaArticle": "Auto Remarketing, January 2026: 99% response rate, 4.6 to 4.7 stars, 63 dealerships at the time"
   }
 };
