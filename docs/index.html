@@ -1,851 +1,1335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Eduardo J. Rodriguez - Automation Impact Portfolio</title>
-
-<!-- =====================  GLOBAL STYLES  ===================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo J. Rodriguez | Automotive CX, AI and Automation</title>
+<meta name="description" content="Eduardo J. Rodriguez, National CX Director, Growth and Digital Transformation. The automation fleet that measures, routes, and improves customer experience across 71 dealership locations.">
+<meta name="theme-color" content="#07090c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eduardo J. Rodriguez | Automotive CX, AI and Automation">
+<meta property="og:description" content="National CX Director, Growth and Digital Transformation. The automation fleet that measures, routes, and improves customer experience across 71 dealership locations.">
+<meta property="og:url" content="https://ejr1216.github.io/portfolio/">
+<meta property="og:image" content="https://ejr1216.github.io/portfolio/assets/img/ejr-headshot-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307090c'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23d4b483' stroke-width='2'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23ece9e2'%3EEJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="assets/img/ejr-headshot-hero.jpg">
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
   :root{
-    --primary:#5dd1ff; --secondary:#7c3aed; --accent:#10b981; --warning:#f59e0b; --danger:#ef4444;
-    --dark:#0f172a; --light:#e2e8f0; --glass:rgba(255,255,255,.05);
-    --photo: clamp(280px, 32vw, 460px);
+    --bg:#07090c; --bg2:#0a0d11; --surface:#0f1318; --surface2:#131920;
+    --text:#ece9e2; --muted:#a6a199; --dim:#908b83;
+    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
+    --gold:#d4b483; --gold-soft:rgba(212,180,131,.14); --gold-line:rgba(212,180,131,.45);
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --wrap:1320px; --pad:clamp(20px,4vw,48px);
+    --ease:cubic-bezier(.2,.7,.2,1);
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:var(--light);min-height:100vh;overflow-x:hidden}
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3,h4{margin:0;font-weight:400}
+  p{margin:0}
+  ul,ol{margin:0;padding:0;list-style:none}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  ::selection{background:rgba(212,180,131,.28);color:#fff}
 
-  /* slow, gentle background motion */
-  .bg-animation{
-    position:fixed;inset:0;z-index:-1;opacity:.45;background:
-      radial-gradient(circle at 20% 50%,rgba(93,209,255,.35) 0%,transparent 50%),
-      radial-gradient(circle at 80% 80%,rgba(124,58,237,.35) 0%,transparent 50%),
-      radial-gradient(circle at 40% 20%,rgba(16,185,129,.28) 0%,transparent 50%);
-    animation:float 55s linear infinite;
+  .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--gold);color:#0a0c10;padding:10px 14px;font-size:13px;text-decoration:none;border-radius:3px}
+  .skip:focus{top:12px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+  .mono{font-family:var(--mono)}
+  .serif{font-family:var(--serif)}
+  .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+  /* ---------- section chrome ---------- */
+  section{position:relative;scroll-margin-top:72px}
+  .band{padding:104px 0}
+  .band.tight{padding-top:72px;padding-bottom:72px}
+  .band + .band{border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:56px;max-width:860px}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .eyebrow .idx{font-size:11px;opacity:.9}
+  .eyebrow .rule{display:inline-block;width:32px;height:1px;background:var(--gold-line)}
+  h2.title{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.01em;color:var(--text);font-variation-settings:"opsz" 144}
+  .lede{color:var(--muted);font-size:17px;line-height:1.65;margin-top:18px;max-width:720px}
+  .rule-h{height:1px;background:var(--line);border:0;margin:0}
+
+  /* ---------- reveal ---------- */
+  .js .reveal{opacity:0;transform:translateY(12px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none;transition:none}
+    *{animation:none!important;transition:none!important}
   }
-  @keyframes float{
-    0%,100%{transform:translate(0,0) rotate(0)}
-    25%{transform:translate(18px,-18px) rotate(90deg)}
-    50%{transform:translate(0,18px) rotate(180deg)}
-    75%{transform:translate(-18px,-12px) rotate(270deg)}
+
+  /* ---------- nav ---------- */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(7,9,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:var(--serif);font-size:20px;letter-spacing:.02em;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:12px}
+  .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .nav-links{display:flex;gap:2px}
+  .nav-links a{display:block;padding:8px 11px;font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none;border-radius:3px;transition:color .2s}
+  .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--text)}
+  .nav-links a[aria-current="true"]{box-shadow:inset 0 -1px 0 var(--gold)}
+  .menu-btn{display:none;align-items:center;gap:10px;background:none;border:1px solid var(--line2);color:var(--text);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:9px 12px;border-radius:3px;cursor:pointer}
+  .menu-btn svg{width:16px;height:16px}
+  @media (max-width:980px){
+    .menu-btn{display:inline-flex}
+    .js .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px var(--pad) 18px}
+    .js.menu-open .nav-links{display:flex}
+    .nav-links a{padding:12px 4px;font-size:15px;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:0}
+    html:not(.js) .nav-links{flex-wrap:wrap;gap:0 10px}
+    html:not(.js) .topbar .wrap{height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   }
 
-  /* NAV */
-  nav{backdrop-filter:blur(10px);background:rgba(255,255,255,.05);padding:.8rem 1.2rem;position:sticky;top:0;z-index:100}
-  nav ul{list-style:none;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-  nav a{color:var(--light);text-decoration:none;display:flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:8px}
-  nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 44px;position:relative;overflow:hidden}
+  .hero + .band{border-top:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1100px 520px at 72% -10%,rgba(212,180,131,.07),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,420px);gap:64px;align-items:center;position:relative}
+  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--gold-line)}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(46px,6.2vw,88px);line-height:.98;letter-spacing:-.015em;font-variation-settings:"opsz" 144;color:var(--text)}
+  .hero-title{margin-top:28px;font-size:18px;line-height:1.55;color:var(--text);max-width:600px}
+  .hero-title span{color:var(--muted)}
+  .hero-lede{margin-top:18px;font-size:16px;line-height:1.7;color:var(--muted);max-width:620px}
+  .hero-lede b{font-weight:500;color:var(--text)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;font-size:13px;letter-spacing:.06em;text-decoration:none;border-radius:3px;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s;font-weight:500;line-height:1}
+  .btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .btn-gold{background:var(--gold);color:#0a0c10;border-color:var(--gold)}
+  .btn-gold:hover{background:#e2c896;border-color:#e2c896}
+  .btn-ghost{border-color:var(--line2);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .btn-sm{padding:10px 16px;font-size:12px}
 
-  /* HERO */
-  .hero{padding:2.5rem 2rem}
-  .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1.1fr;gap:2rem;align-items:stretch}
-  .hero-copy{display:flex;flex-direction:column;min-height:calc(var(--photo) + 16px);text-align:center}
-  .hero-copy h1{font-size:3rem;line-height:1.05;margin:0 0 .25rem}
-  .gradient-text{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .hero-sub{margin:.4rem 0 1.25rem;font-style:italic;font-size:1.2rem}
-  .kpiGrid{margin-top:auto;align-self:center;display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:min(520px,95%)}
-  .kpiCard{background:var(--glass);backdrop-filter:blur(10px);padding:1rem;border-radius:14px;border:1px solid rgba(255,255,255,.1);text-align:center}
-  .kpiValue{font-size:1.8rem;font-weight:900;color:var(--primary)}
-  .kpiLabel{color:#94a3b8;text-transform:uppercase;letter-spacing:1px;font-size:.8rem;margin-top:.25rem}
-  .kpiSub{color:#9fb3d0;font-style:italic;font-size:.85rem;margin-top:.25rem}
+  .portrait{margin:0;justify-self:end;width:100%;max-width:400px;position:relative}
+  .portrait-frame{position:relative;border:1px solid var(--gold);padding:12px;background:var(--bg)}
+  .portrait-frame::before{content:"";position:absolute;inset:-14px;border:1px solid var(--line);pointer-events:none}
+  .portrait-frame .img{position:relative;aspect-ratio:3/4;overflow:hidden;background:#0d1117}
+  .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:saturate(.88) contrast(1.03)}
+  .portrait-frame .img::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px 24px rgba(7,9,12,.62);pointer-events:none}
+  .portrait-cap{display:flex;justify-content:space-between;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
 
-  .hero-photo{justify-self:center;align-self:center;position:relative}
-  .hero-photo-frame{position:relative;padding:8px;border-radius:24px;background:linear-gradient(135deg,var(--primary),var(--secondary));overflow:hidden}
-  .hero-photo-img{display:block;width:var(--photo);height:var(--photo);object-fit:cover;border-radius:20px}
-  .hero-photo-frame::after{
-    content:"";position:absolute;inset:-10px;border-radius:28px;border:2px solid rgba(93,209,255,.6);
-    box-shadow:0 0 24px rgba(93,209,255,.6);animation:ripple 6.5s ease-in-out infinite;
+  .kpi-row{margin-top:84px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .kpi{padding:30px 28px 30px 0;border-left:1px solid var(--line);padding-left:28px;min-width:0}
+  .kpi:first-child{border-left:0;padding-left:0}
+  .kpi-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .kpi-value{font-family:var(--mono);font-weight:400;font-size:clamp(30px,2.9vw,42px);line-height:1;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .kpi-value .frac{font-size:.52em;color:var(--dim);letter-spacing:0;margin-left:1px}
+  .kpi-value.ph{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:var(--dim);line-height:1.4;white-space:normal}
+  .kpi-sub{margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--muted);display:flex;align-items:flex-start;gap:8px;min-height:18px}
+  .kpi-sub .pip{width:6px;height:6px;margin-top:7px;border-radius:50%;background:var(--gold);flex:none;opacity:.9}
+  .kpi-sub.static .pip{display:none}
+
+  .telemetry{display:flex;flex-wrap:wrap;padding:22px 0 0;gap:0}
+  .telemetry li{display:flex;align-items:baseline;gap:10px;padding:10px 28px 10px 0;margin-right:28px;border-right:1px solid var(--line)}
+  .telemetry li:last-child{border-right:0;margin-right:0}
+  .telemetry b{font-family:var(--mono);font-weight:500;font-size:15px;color:var(--text);letter-spacing:-.01em}
+  .telemetry span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+    .noscript-note{margin-top:16px;font-size:12.5px;color:var(--muted);font-family:var(--mono)}
+
+  /* ---------- systems ---------- */
+  .runbook-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:0 0 12px}
+  .daystrip-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border:1px solid var(--line);border-bottom:0;padding:18px 16px 6px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+  .daystrip{display:block;width:100%;min-width:860px;height:auto}
+  .ds-axis{stroke:var(--line2);stroke-width:1}
+  .ds-tick{stroke:rgba(255,255,255,.16);stroke-width:1}
+  .ds-tick-major{stroke:var(--gold-line);stroke-width:1}
+  .ds-h{fill:var(--dim);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em}
+  .ds-span{stroke:var(--gold);stroke-width:4;stroke-linecap:butt;opacity:.85}
+  .ds-lead{stroke:var(--line2);stroke-width:1;fill:none}
+  .ds-ev{fill:var(--gold)}
+  .ds-ev-2{fill:var(--bg);stroke:var(--gold);stroke-width:1.5}
+  .ds-t{fill:var(--text);font-family:var(--sans);font-size:11.5px}
+  .ds-tm{fill:var(--gold);font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+  .ds-ka{stroke:var(--gold-line);stroke-width:1;stroke-dasharray:2 5}
+  .table-scroll{overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+  table.runbook{width:100%;min-width:780px;border-collapse:collapse;background:var(--surface);border:1px solid var(--line)}
+  .runbook th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:14px 16px;border-bottom:1px solid var(--line);background:var(--surface2);white-space:nowrap}
+  .runbook td{padding:18px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px;line-height:1.55;color:var(--muted)}
+  .runbook tr:last-child td{border-bottom:0}
+  .runbook tbody tr{transition:background .15s}
+  .runbook tbody tr:hover{background:var(--surface2)}
+  .runbook td.t-time{position:relative;padding-left:36px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--gold);white-space:nowrap}
+  .runbook td.t-time::before{content:"";position:absolute;left:14px;top:25px;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:1}
+  .runbook td.t-time::after{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:var(--gold-line)}
+  .runbook tbody tr:first-child td.t-time::after{top:25px}
+  .runbook tbody tr:last-child td.t-time::after{bottom:auto;height:25px}
+  .runbook td.t-loop::before{background:var(--surface);border:1px solid var(--gold);width:6px;height:6px}
+  .runbook td.t-cad{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+  .runbook td.t-job{font-family:var(--serif);font-size:18px;line-height:1.25;color:var(--text);font-variation-settings:"opsz" 48}
+  .runbook td.t-unit{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+  .facts{border-top:1px solid var(--line);margin-top:28px}
+  .discipline{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .discipline > div{background:var(--bg);padding:26px 24px 28px}
+  .discipline .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .discipline h3{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:10px;font-variation-settings:"opsz" 48}
+  .discipline p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+  /* ---------- demos ---------- */
+  .demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .demo{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .25s}
+  .demo:hover{border-color:var(--gold-line)}
+  .demo-shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0d1117;border-bottom:1px solid var(--line)}
+  .demo-shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .demo-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,12,0) 60%,rgba(7,9,12,.35));pointer-events:none}
+  .demo-idx{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  .demo-idx .new{color:var(--gold)}
+  .demo-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+  .demo-body h3{font-family:var(--serif);font-size:26px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 72}
+  .demo-body p{margin-top:12px;font-size:14px;line-height:1.65;color:var(--muted);flex:1}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips li{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);border:1px solid var(--line2);padding:6px 10px;border-radius:2px;white-space:nowrap}
+  .demo-body .btn{margin-top:22px;align-self:flex-start;padding:12px 18px;font-size:12.5px}
+
+  /* ---------- goals ---------- */
+  .gauge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .gauge{background:var(--bg);padding:34px 20px 30px;text-align:center;position:relative}
+  .gauge-dial{position:relative;width:min(100%,200px);margin:0 auto}
+  .gauge svg{width:100%;height:auto;display:block;overflow:visible}
+  .gauge .track{fill:none;stroke:rgba(255,255,255,.1);stroke-width:2}
+  .gauge .fill{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:butt}
+  .gauge .tick{stroke:rgba(255,255,255,.22);stroke-width:1}
+  .gauge .tick.major{stroke:var(--gold);stroke-width:1.25}
+  .gauge-center{position:absolute;left:0;right:0;top:36%;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .gauge-pct{font-family:var(--mono);font-size:32px;letter-spacing:-.02em;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
+  .gauge-of{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .gauge-title{margin-top:6px;font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
+  .gauge-sub{margin-top:6px;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- projects ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .proj{background:var(--surface);border:1px solid var(--line);padding:28px 26px 24px;display:flex;flex-direction:column;transition:border-color .25s}
+  .proj:hover{border-color:var(--gold-line)}
+  .proj.wide{grid-column:span 2}
+  .proj .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .proj h3{font-family:var(--serif);font-size:24px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 72}
+  .proj p{margin-top:12px;font-size:14px;line-height:1.6;color:var(--muted);flex:1}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;border-top:1px solid var(--line);padding-top:18px;gap:12px}
+  .metrics b{display:block;font-family:var(--mono);font-weight:500;font-size:17px;color:var(--text);letter-spacing:-.01em;white-space:nowrap}
+  .metrics > div > span{display:block;margin-top:5px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
+
+  /* ---------- analytics ---------- */
+  .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .chart-card{background:var(--surface);border:1px solid var(--line);padding:24px 24px 20px}
+  .chart-card .ch-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:16px}
+  .chart-card h3{font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
+  .chart-card .ch-meta{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+  .chart-wrap{position:relative;height:240px}
+  .chart-wrap canvas{width:100%!important;height:100%!important}
+  .chart-fallback{font-size:13px;color:var(--muted);line-height:1.6;padding:8px 0}
+  .chart-fallback b{font-family:var(--mono);font-weight:500;color:var(--text)}
+
+  /* ---------- stack ---------- */
+  .stack-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+  .practice li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:20px 0;border-top:1px solid var(--line)}
+  .practice li:last-child{border-bottom:1px solid var(--line)}
+  .practice .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);padding-top:4px}
+  .practice h4{font-family:var(--serif);font-size:19px;color:var(--text);font-variation-settings:"opsz" 48}
+  .practice p{margin-top:6px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+  .stack-groups{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .stack-groups > div{background:var(--bg);padding:22px 22px 24px}
+  .stack-groups > div:last-child{grid-column:1 / -1}
+  .stack-groups .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .stack-groups ul{display:flex;flex-wrap:wrap;gap:8px}
+  .stack-groups li{font-size:12.5px;color:var(--text);border:1px solid var(--line2);padding:6px 11px;border-radius:2px}
+  .sub-h{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:18px;font-variation-settings:"opsz" 72}
+  .sub-k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+
+  /* ---------- proof ---------- */
+  .proof-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+  .proof-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .proof-stats div{background:var(--bg);padding:22px 18px 20px}
+  .proof-stats b{display:block;font-family:var(--mono);font-weight:500;font-size:22px;color:var(--text);letter-spacing:-.02em;white-space:nowrap}
+  .proof-stats > div > span{display:block;margin-top:6px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.35}
+  .proof-copy p{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--text);font-weight:300;font-variation-settings:"opsz" 72}
+  .proof-copy .btn{margin-top:28px}
+
+  /* ---------- credentials ---------- */
+  .cred-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+  .edu li{padding:20px 0;border-top:1px solid var(--line)}
+  .edu li:last-child{border-bottom:1px solid var(--line)}
+  .edu h4{font-family:var(--serif);font-size:20px;color:var(--text);font-variation-settings:"opsz" 48}
+  .edu p{margin-top:6px;font-size:13.5px;color:var(--muted);line-height:1.55}
+  .edu .when{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+  .certs li{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);font-size:14px}
+  .certs li:last-child{border-bottom:1px solid var(--line)}
+  .certs .when{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+  .certs .iss{color:var(--muted)}
+  .badges{margin-top:64px}
+  .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .badge{background:var(--bg);padding:22px 20px;display:grid;grid-template-columns:56px 1fr;gap:16px;text-decoration:none;color:inherit;align-items:start;transition:background .25s}
+  .badge:hover{background:var(--surface)}
+  .badge img{width:56px;height:56px;object-fit:contain}
+  .badge h4{font-size:14px;font-weight:600;color:var(--text);line-height:1.3}
+  .badge p{margin-top:5px;font-size:12.5px;line-height:1.5;color:var(--muted)}
+
+  /* ---------- press ---------- */
+  .press-card{display:grid;grid-template-columns:1fr 1fr;gap:48px;border:1px solid var(--line);background:var(--surface);padding:40px;text-decoration:none;color:inherit;transition:border-color .25s}
+  .press-card:hover{border-color:var(--gold-line)}
+  .press-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .press-card h3{font-family:var(--serif);font-size:30px;line-height:1.15;color:var(--text);font-variation-settings:"opsz" 96}
+  .press-card .meta{margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .press-card .excerpt{font-size:15px;line-height:1.7;color:var(--muted)}
+  .press-card .link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;letter-spacing:.06em;color:var(--gold)}
+  .press-card .link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- quote + review ---------- */
+  .notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .notes-grid > section{background:var(--bg);padding:40px 40px 42px;scroll-margin-top:72px}
+  .quote-text{font-family:var(--serif);font-style:italic;font-weight:300;font-size:24px;line-height:1.45;color:var(--text);margin-top:14px;font-variation-settings:"opsz" 96}
+  .quote-meta{margin-top:18px;font-size:13px;color:var(--muted);line-height:1.55}
+  .quote-meta strong{color:var(--text);font-weight:500}
+  .quote-title{font-family:var(--serif);font-size:20px;color:var(--text)}
+  .review-text{font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.55;color:var(--text);font-variation-settings:"opsz" 72}
+  .review-author{margin-top:22px;display:flex;align-items:center;gap:14px}
+  .review-mark{width:36px;height:36px;border:1px solid var(--gold-line);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:20px}
+  .review-author .name{font-size:14px;font-weight:600;color:var(--text)}
+  .review-author .role{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+  .contact-photo{width:168px;border:1px solid var(--gold);padding:8px;position:relative}
+  .contact-photo .img{aspect-ratio:1;overflow:hidden}
+  .contact-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:saturate(.9)}
+  .contact-list{display:grid;grid-template-columns:repeat(3,auto);gap:14px 40px;justify-content:start;margin-top:26px}
+  .contact-list li{display:flex;align-items:center;gap:12px;font-size:15px}
+  .contact-list a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px;transition:border-color .2s,color .2s}
+  .contact-list a:hover{color:var(--gold);border-color:var(--gold)}
+  .contact-list svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .location{margin-top:26px;font-size:13.5px;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 44px;font-size:12.5px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;align-items:baseline}
+  footer .name{font-family:var(--serif);font-size:16px;color:var(--text)}
+  footer .meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+  footer .note{flex-basis:100%;font-size:12px;color:var(--dim);line-height:1.6;max-width:760px}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1180px){
+    .proj-grid{grid-template-columns:repeat(2,1fr)}
+    .proj.wide{grid-column:span 2}
+    .badge-grid{grid-template-columns:repeat(3,1fr)}
+    .proof-stats{grid-template-columns:repeat(5,1fr)}
   }
-  @keyframes ripple{0%{transform:scale(1);opacity:.9}70%{transform:scale(1.12);opacity:.18}100%{transform:scale(1);opacity:.9}}
-  .img-fb{display:none;align-items:center;justify-content:center;width:var(--photo);height:var(--photo);border-radius:20px;background:linear-gradient(135deg,#5dd1ff,#7c3aed);font-weight:800;font-size:clamp(48px,8vw,120px);color:#fff}
-  .contact-fb{display:none;align-items:center;justify-content:center;width:140px;height:140px;border-radius:20px;background:linear-gradient(135deg,#5dd1ff,#7c3aed);font-weight:800;font-size:48px;color:#fff}
-
-  .section{padding:3rem 2rem;max-width:1400px;margin:0 auto}
-  .section.wide{max-width:100vw;padding-left:0;padding-right:0}
-  h2{text-align:center;font-size:2.25rem;margin-bottom:1.4rem;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-  /* Card accent util kept for badges/certs */
-  .cardAccent{position:relative;overflow:hidden}
-  .cardAccent::before,
-  .cardAccent::after{
-    content:"";position:absolute;inset:-20%;border-radius:inherit;pointer-events:none;
-    background:
-      radial-gradient(160px 160px at 15% 15%, rgba(93,209,255,.15), transparent 60%),
-      radial-gradient(180px 180px at 85% 80%, rgba(124,58,237,.14), transparent 60%),
-      repeating-linear-gradient(115deg, rgba(93,209,255,.18) 0 2px, transparent 2px 14px);
-    mix-blend-mode:screen;opacity:.35;animation:float 55s linear infinite;
+  @media (max-width:980px){
+    .band{padding:72px 0}
+    .hero{padding-top:56px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .portrait{justify-self:start;max-width:320px}
+    .kpi-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:56px}
+    .kpi{padding:24px 20px 24px 0}
+    .kpi:nth-child(odd){border-left:0;padding-left:0}
+    .kpi:nth-child(even){padding-left:20px}
+    .kpi:nth-child(n+3){border-top:1px solid var(--line)}
+    .demo-grid{grid-template-columns:minmax(0,1fr)}
+    .discipline{grid-template-columns:1fr 1fr}
+    .stack-grid,.proof-grid,.cred-grid,.notes-grid,.press-card{grid-template-columns:1fr}
+    .press-card{gap:28px;padding:30px}
+    .proof-stats{grid-template-columns:repeat(2,1fr)}
+    .chart-grid{grid-template-columns:1fr}
+    .daystrip-wrap{display:none}
+    table.runbook{min-width:0}
+    .runbook thead,.runbook colgroup{display:none}
+    .runbook,.runbook tbody,.runbook tr,.runbook td{display:block}
+    .runbook tr{position:relative;padding:16px 16px 18px 38px;border-bottom:1px solid var(--line)}
+    .runbook tr:last-child{border-bottom:0}
+    .runbook tr::before{content:"";position:absolute;left:16px;top:23px;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:1}
+    .runbook tr::after{content:"";position:absolute;left:19px;top:0;bottom:0;width:1px;background:var(--gold-line)}
+    .runbook tbody tr:first-child::after{top:23px}
+    .runbook tbody tr:last-child::after{bottom:auto;height:23px}
+    .runbook tr.r-loop::before{background:var(--surface);border:1px solid var(--gold);width:6px;height:6px}
+    .runbook td{padding:3px 0;border:0}
+    .runbook td.t-time{display:inline-block;padding-left:0;margin-right:12px}
+    .runbook td.t-time::before,.runbook td.t-time::after{display:none}
+    .runbook td.t-cad{display:inline-block}
+    .runbook td.t-job{padding-top:6px}
+    .runbook td.t-unit{padding-top:8px}
+    .contact-grid{grid-template-columns:1fr;gap:32px}
+    .contact-list{grid-template-columns:1fr 1fr}
   }
-  .cardAccent::after{opacity:.22;filter:blur(.4px);animation-direction:reverse}
-
-  /* Goals - clean rings */
-  #goals .goals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1200px;margin:0 auto}
-  .goal-card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem;text-align:center;position:relative}
-  .goal-ring{--progress:0;--thickness:16px;--colorStart:#22d3ee;--colorEnd:#7c3aed;--rest:rgba(255,255,255,.08);
-    width:100%;max-width:220px;aspect-ratio:1;position:relative;border-radius:50%;margin:0 auto;filter:drop-shadow(0 0 10px rgba(93,209,255,.35))}
-  .goal-ring::before{content:"";position:absolute;inset:0;border-radius:inherit;background:conic-gradient(from -90deg,var(--colorStart) 0deg,var(--colorEnd) calc(var(--progress)*360deg),var(--rest) 0)}
-  .goal-ring::after{content:"";position:absolute;inset:calc(var(--thickness));border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03))}
-  .goal-center{position:absolute;inset:calc(var(--thickness));display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:inherit}
-  .goal-val{font-weight:800;font-size:22px}.goal-sub{color:#94a3b8;font-size:12px;margin-top:2px}.goal-title{margin-top:.6rem;color:#cbd5e1;font-size:.95rem}
-
-  /* Projects */
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
-  .project-card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.25rem;text-align:center}
-  .project-icon{font-size:1.5rem}
-  .project-title{font-weight:700;color:var(--primary);margin:.4rem 0}
-  .project-description{color:#cbd5e1;margin-bottom:.8rem}
-  .project-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
-  .metric{background:rgba(93,209,255,.12);padding:.6rem;border-radius:10px}
-  .metric-value{display:block;color:var(--primary);font-weight:700}
-
-  /* Analytics */
-  #analytics .cards{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:1rem;max-width:1100px;margin:0 auto}
-  @media (max-width:900px){#analytics .cards{grid-template-columns:1fr}}
-  .analytic-card{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.6rem;min-height:170px}
-  .analytic-title{text-align:center;color:var(--primary);font-weight:700;margin-bottom:.35rem;font-size:.95rem}
-  .analytic-canvas{display:block;width:100%;height:140px !important}
-
-  /* Ecosystem: SVG dotted curves */
-  #ecosystem > h2{position:relative;z-index:5}
-  .ecosystem-network{
-    position:relative;z-index:0;margin-top:28px;margin-bottom:200px;width:99vw;height:1500px;margin-left:auto;margin-right:auto;background:none;overflow:visible;
+  @media (max-width:600px){
+    body{font-size:14.5px}
+    .band{padding:60px 0}
+    .sec-head{margin-bottom:36px}
+    .kpi-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    .kpi-value{font-size:clamp(19px,6.2vw,24px)}
+    .telemetry{display:grid;grid-template-columns:1fr 1fr;padding-top:18px}
+    .telemetry li{flex-direction:column;align-items:flex-start;gap:3px;padding:12px 0;margin:0;border-right:0;border-bottom:1px solid var(--line)}
+    .telemetry li:nth-child(odd){padding-right:14px;border-right:1px solid var(--line)}
+    .telemetry li:nth-child(even){padding-left:16px}
+    .telemetry li:nth-last-child(-n+2){border-bottom:0}
+    .telemetry b{font-size:16px}
+    .gauge-grid{grid-template-columns:1fr 1fr}
+    .gauge{padding:24px 10px 22px}
+    .gauge-pct{font-size:24px}
+    .gauge-title{font-size:16px}
+    .gauge-sub{font-size:11px}
+    .proj-grid{grid-template-columns:1fr}
+    .proj.wide{grid-column:auto}
+    .discipline{grid-template-columns:1fr}
+    .badge-grid{grid-template-columns:1fr}
+    .stack-groups{grid-template-columns:1fr}
+    .contact-list{grid-template-columns:1fr}
+    .certs li{grid-template-columns:1fr;gap:4px}
+    .proof-copy p{font-size:19px}
+    .press-card h3{font-size:25px}
+    .notes-grid > section{padding:28px 22px}
+    .quote-text{font-size:21px}
+    .demo-body{padding:22px 20px 24px}
+    .chips li{white-space:normal;line-height:1.5}
+    .hero-title{font-size:16.5px}
+    h1,h2.title{font-weight:400}
+    .cta-row .btn{width:100%;justify-content:center}
+    .chart-wrap{height:210px}
   }
-  .tech-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));border:2px solid rgba(255,255,255,.4);border-radius:50%;backdrop-filter:blur(8px);width:110px;height:110px;animation:glow 3s ease-in-out infinite;transform:translate(-50%,-50%)}
-  .tech-node.category{width:160px;height:160px;font-weight:700}
-  .tech-node.central{width:200px;height:200px;border:3px solid #fff;background:linear-gradient(135deg,#5dd1ff,#7c3aed);font-weight:800}
-  @keyframes glow{0%,100%{box-shadow:0 0 0 rgba(93,209,255,0)}50%{box-shadow:0 0 22px rgba(93,209,255,.7)}}
-  .node-rpa{background:linear-gradient(135deg,#2563eb,#1e40af)}
-  .node-ai{background:linear-gradient(135deg,#10b981,#047857)}
-  .node-data{background:linear-gradient(135deg,#f59e0b,#b45309)}
-  .node-cloud{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
-  .node-dev{background:linear-gradient(135deg,#ef4444,#b91c1c)}
-  .node-bi{background:linear-gradient(135deg,#14b8a6,#0f766e)}
-
-  .eco-link{
-    fill:none;stroke:var(--dash,#5dd1ff);stroke-width:3;stroke-linecap:round;stroke-dasharray:6 10;
-    animation:ecoDash 12s linear infinite;filter:drop-shadow(0 0 6px color-mix(in srgb, var(--dash) 60%, transparent));opacity:.95;
-  }
-  @keyframes ecoDash{to{stroke-dashoffset:-500}}
-
-  /* Proof */
-  .proof-wrap{background:linear-gradient(135deg,rgba(93,209,255,.1),rgba(124,58,237,.1));border-radius:18px;padding:1.5rem;max-width:1100px;margin:0 auto}
-  .proof-grid{display:grid;grid-template-columns:1fr 2fr;gap:1.25rem;align-items:center}
-  .proof-stats{display:grid;gap:.75rem}
-  .proof-stat{background:var(--glass);padding:1rem;border-radius:12px;text-align:center}
-  .proof-stat-value{font-size:1.4rem;font-weight:800;color:var(--accent)}
-  .proof-stat-label{color:#94a3b8}
-
-  /* Showcase */
-  .showcase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
-  .showcase-item{background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem;text-align:center}
-  .showcase-item h3{color:var(--primary)}
-  .showcase-link{display:inline-block;margin-top:.5rem;font-weight:700;color:var(--primary);text-decoration:none}
-
-  /* Lists */
-  .simple-list{list-style:none;padding:0;margin:0 auto;max-width:900px}
-  .simple-list li{margin:.45rem 0}
-  .cert-list li::before{content:"📜 "}
-
-  /* Awards & Badges */
-  #awards-badges .badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;max-width:1200px;margin:0 auto}
-  #awards-badges .badge-card{background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:1rem;text-align:center;position:relative;overflow:hidden}
-  #awards-badges .badge-card img{width:80px;height:80px;object-fit:contain;margin-bottom:.5rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
-  #awards-badges .badge-title{font-weight:800;color:var(--primary);margin:.4rem 0}
-  #awards-badges .badge-description{color:#cbd5e1;font-size:.95rem;line-height:1.45}
-  .pulse-border::after{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from 0deg,#5dd1ff,#7c3aed,#10b981,#5dd1ff);
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 8s linear infinite,glowPulse 3s ease-in-out infinite;opacity:.75;pointer-events:none}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  @keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 6px rgba(93,209,255,.35))}50%{filter:drop-shadow(0 0 16px rgba(124,58,237,.45))}}
-
-  /* Articles & Press */
-  .articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-  .article-card{background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.5rem;text-decoration:none;color:inherit;display:block;transition:transform .2s,box-shadow .2s}
-  .article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(93,209,255,.15)}
-  .article-badge{display:inline-block;background:linear-gradient(135deg,#5dd1ff,#7c3aed);color:#fff;font-size:.75rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.5px}
-  .article-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.3}
-  .article-meta{color:#94a3b8;font-size:.85rem;margin-bottom:.75rem}
-  .article-excerpt{color:#cbd5e1;font-size:.95rem;line-height:1.6;margin-bottom:1rem}
-  .article-stats{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
-  .article-stats span{background:rgba(93,209,255,.15);color:#5dd1ff;font-size:.8rem;font-weight:600;padding:.25rem .6rem;border-radius:8px}
-  .article-link{color:var(--primary);font-weight:600;font-size:.95rem}
-
-  /* Quote of the Month */
-  .quote-card{max-width:1000px;margin:0 auto;background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.4rem 1.6rem;text-align:center;position:relative;overflow:hidden}
-  .quote-card h3{margin-bottom:.4rem}
-  .quote-text{font-size:1.25rem;line-height:1.7;font-style:italic}
-  .quote-meta{margin-top:.6rem;color:#94a3b8;font-size:.95rem}
-
-  /* Reviews — clean, no overlay lines */
-  .review-box.autoTrack{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:2rem 2.25rem;position:relative;overflow:hidden}
-  .review-box.autoTrack::after{content:none}
-  .review-box:before{content:"“";position:absolute;top:.4rem;left:1rem;font-size:48px;color:#7c8db0;opacity:.65}
-  .review-text{font-size:1.1rem;line-height:1.75;margin-left:1.6rem}
-  .review-author{display:flex;align-items:center;margin-top:1.25rem;gap:.8rem;margin-left:1.6rem}
-  .review-dot{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary))}
-  .review-meta .name{font-weight:700;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .review-meta .title{color:#94a3b8;font-size:.95rem}
-
-  /* Contact */
-  .contact{background:rgba(255,255,255,.05);padding:2.2rem 2rem;text-align:center}
-  .contact-content{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-top:1rem}
-  .contact-headshot{width:140px;height:140px;border-radius:20px;object-fit:cover}
-  .contact-avatar-fallback{display:none;width:140px;height:140px;border-radius:20px;background:linear-gradient(135deg,#5dd1ff,#7c3aed);font-weight:800;font-size:48px;color:#fff;align-items:center;justify-content:center}
-  .contact-info{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1rem 0}
-  .contact-item{display:flex;align-items:center;gap:.5rem}
-  .contact a{color:var(--primary);text-decoration:none}
-  .location-note{color:#94a3b8;font-style:italic}
-
-  @media (max-width:1000px){
-    .hero-inner{grid-template-columns:1fr}
-    .hero-copy{min-height:auto}
-    .kpiGrid{margin-top:1rem}
-  }
-  @media (max-width:768px){.proof-grid{grid-template-columns:1fr}.ecosystem-network{height:1200px}}
 </style>
-<link rel="preload" as="image" href="assets/img/ejr-headshot-hero.jpg?v=6">
-<link rel="preload" as="image" href="assets/img/ejr-headshot-contact.jpg?v=6">
 </head>
 <body>
-<div class="bg-animation"></div>
+<a class="skip" href="#impact">Skip to content</a>
 
-<!-- =====================  NAV  ===================== -->
-<nav>
-  <ul>
-    <li><a href="#home">🚀 <span>Impact</span></a></li>
-    <li><a href="#goals">🎯 <span>Goals</span></a></li>
-    <li><a href="#projects">💼 <span>Projects</span></a></li>
-    <li><a href="#analytics">📈 <span>Analytics</span></a></li>
-    <li><a href="#ecosystem">🌐 <span>Ecosystem</span></a></li>
-    <li><a href="#proof">🏆 <span>Proof</span></a></li>
-    <li><a href="#showcase">✨ <span>Showcase</span></a></li>
-    <li><a href="#education">🎓 <span>Education</span></a></li>
-    <li><a href="#certifications">📜 <span>Certifications</span></a></li>
-    <li><a href="#awards-badges">🏅 <span>Awards</span></a></li>
-    <li><a href="#articles">📰 <span>Articles</span></a></li>
-    <li><a href="#quote">🗣️ <span>Quote</span></a></li>
-    <li><a href="#reviews">💬 <span>Reviews</span></a></li>
-    <li><a href="#contact">📧 <span>Contact</span></a></li>
-  </ul>
-</nav>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#impact" aria-label="Eduardo J. Rodriguez, top of page"><span class="dot" aria-hidden="true"></span>E. J. Rodriguez</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
+    </button>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#systems">Systems</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#press">Press</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<!-- =====================  HERO  ===================== -->
-<section id="home" class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <h1>Eduardo J. Rodriguez</h1>
-      <h2 class="gradient-text">Automation Impact Dashboard</h2>
-      <p class="hero-sub">Transforming businesses through intelligent automation, RPA, and AI/ML solutions</p>
+<main>
 
-      <div class="kpiGrid">
-        <div class="kpiCard">
-          <div class="kpiValue" id="kpiHoursValue">77,615</div>
-          <div class="kpiLabel">Hours Saved</div>
-          <div class="kpiSub" id="kpiHoursSub">Live +119.3 hrs per day</div>
-        </div>
-        <div class="kpiCard">
-          <div class="kpiValue" id="kpiCostValue">$2.7M</div>
-          <div class="kpiLabel">Cost Savings</div>
-          <div class="kpiSub" id="kpiCostSub">Live +$4,176/day</div>
-        </div>
-        <div class="kpiCard"><div class="kpiValue">20.88</div><div class="kpiLabel">FTE Equivalent</div></div>
-        <div class="kpiCard"><div class="kpiValue">1,524%</div><div class="kpiLabel">ROI Growth</div></div>
+<!-- ===================== HERO / IMPACT ===================== -->
+<section id="impact" class="hero" aria-labelledby="heroName">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <p class="hero-eyebrow">Automotive retail. AI and automation. One operator.</p>
+      <h1 id="heroName">Eduardo J. Rodriguez</h1>
+      <p class="hero-title">National CX Director, Growth &amp; Digital Transformation. <span>AI strategy, automation engineering, enterprise enablement.</span></p>
+      <p class="hero-lede">He designs and runs the automation fleet that measures, routes, and improves customer experience across <b><span data-s="locations">71</span> dealership locations</b>: <span data-s="oemPortals">18</span> OEM survey portals, every public review, every team, every morning.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#demos">See the live demos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">Download the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg></a>
       </div>
     </div>
+    <figure class="portrait reveal">
+      <div class="portrait-frame">
+        <div class="img"><img src="assets/img/ejr-headshot-hero.jpg" alt="Eduardo J. Rodriguez, portrait in a boardroom" width="896" height="1152" fetchpriority="high"></div>
+      </div>
+      <figcaption class="portrait-cap"><span>National CX Director</span><span>Chicago</span></figcaption>
+    </figure>
+  </div>
 
-    <div class="hero-photo">
-      <div class="hero-photo-frame">
-        <img id="heroImg" src="assets/img/ejr-headshot-hero.jpg?v=6" alt="Eduardo J. Rodriguez" class="hero-photo-img">
-        <div id="heroFB" class="img-fb">EJR</div>
+  <div class="wrap">
+    <div class="kpi-row reveal" role="list" aria-label="Live impact figures">
+      <div class="kpi" role="listitem">
+        <div class="kpi-label">Hours saved</div>
+        <div class="kpi-value live" data-kpi="hours">105,551</div>
+        <div class="kpi-sub" data-kpi="hoursRate"><span class="pip" aria-hidden="true"></span><span>Live, +138.6 hrs per day</span></div>
+      </div>
+      <div class="kpi" role="listitem">
+        <div class="kpi-label">Cost savings</div>
+        <div class="kpi-value live" data-kpi="savings">$2,638,775</div>
+        <div class="kpi-sub" data-kpi="savingsRate"><span class="pip" aria-hidden="true"></span><span>Live, +$3,465 per day</span></div>
+      </div>
+      <div class="kpi" role="listitem">
+        <div class="kpi-label">FTE equivalent</div>
+        <div class="kpi-value" data-kpi="fte">24.3</div>
+        <div class="kpi-sub static"><span data-kpi="fteSub">138.6 hrs per day, annualized over 2,080</span></div>
+      </div>
+      <div class="kpi" role="listitem">
+        <div class="kpi-label">Return on investment</div>
+        <div class="kpi-value" data-kpi="roi">1,477%</div>
+        <div class="kpi-sub static"><span data-kpi="roiSub">On $167,300 implied investment</span></div>
       </div>
     </div>
+    <ul class="telemetry reveal" aria-label="Operating footprint">
+      <li><b data-s="locations">71</b><span>locations</span></li>
+      <li><b data-s="oemPortals">18</b><span>OEM portals</span></li>
+      <li><b data-s="dailyCsiLines">107</b><span>daily CSI lines</span></li>
+      <li><b data-s="huddleTeams">12</b><span>team huddles</span></li>
+      <li><b data-s="uptimePct">99.9%</b><span>uptime</span></li>
+      <li><b data-s="annualRequests">120k+</b><span>requests per year</span></li>
+    </ul>
+    <noscript><p class="noscript-note">Figures shown are as of September 14, 2026. With JavaScript enabled they accrue live from the published daily rates.</p></noscript>
   </div>
 </section>
 
-<!-- =====================  GOALS  ===================== -->
-<section id="goals" class="section">
-  <h2>Impact Goals</h2>
-  <div class="goals-grid">
-    <div class="goal-card">
-      <div class="goal-ring" id="ringHours"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">Hours Saved toward 100k</div>
+<!-- ===================== SYSTEMS ===================== -->
+<section id="systems" class="band" aria-labelledby="systemsTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">01</span><span class="rule"></span><span>Systems in production</span></p>
+      <h2 class="title" id="systemsTitle">An unattended fleet that reports on itself.</h2>
+      <p class="lede">It runs on a Linux host with a Windows bridge, seven days a week. Below is the daily runbook, Central time.</p>
     </div>
-    <div class="goal-card">
-      <div class="goal-ring" id="ringReviews"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">5‑Star Reviews toward 100k</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-ring" id="ringSavings"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">Cost Savings toward $3M</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-ring" id="ringVoc"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">VoC Open Cases toward 500k</div>
-    </div>
-    <div class="goal-card">
-      <div class="goal-ring" id="ringUiPath"><div class="goal-center"><div class="goal-val"></div><div class="goal-sub"></div></div></div>
-      <div class="goal-title">UiPath Workflows toward 100</div>
-    </div>
-  </div>
-</section>
 
-<!-- =====================  PROJECTS  ===================== -->
-<section id="projects" class="section">
-  <h2>Key Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-icon">🎯</div>
-      <h3 class="project-title">Voice of Customer (VoC)</h3>
-      <p class="project-description">Automated sentiment analysis handling 15x volume with 40 hrs per week savings</p>
-      <div class="project-metrics">
-        <div class="metric"><span class="metric-value">31,176</span><span class="metric-label">Hours Saved</span></div>
-        <div class="metric"><span class="metric-value">$686K</span><span class="metric-label">Cost Saved</span></div>
-        <div class="metric"><span class="metric-value">15x</span><span class="metric-label">Volume Scale</span></div>
+    <div class="reveal">
+      <div class="runbook-cap" aria-hidden="true"><span>Daily runbook, America/Chicago</span><span>Seven days a week, unattended</span></div>
+      <div class="daystrip-wrap" tabindex="0" aria-label="Twenty-four hour schedule, scrolls horizontally on narrow screens">
+        <svg class="daystrip" viewBox="0 0 1000 106" role="img" aria-label="Twenty-four hour schedule: 04:02 session mint, 05:00 review processor, 10:00 CSI sweep for 112 minutes, then the CX Huddle or the Sunday operations report, with a session keepalive every 30 minutes">
+          <line class="ds-axis" x1="40" y1="52" x2="960" y2="52"/>
+          <path class="ds-tick" d="M78.3 48v8M116.7 48v8M155 48v8M193.3 48v8M231.7 48v8M308.3 48v8M346.7 48v8M385 48v8M423.3 48v8M461.7 48v8M538.3 48v8M576.7 48v8M615 48v8M653.3 48v8M691.7 48v8M768.3 48v8M806.7 48v8M845 48v8M883.3 48v8M921.7 48v8"/>
+          <path class="ds-tick-major" d="M40 46v12M270 46v12M500 46v12M730 46v12M960 46v12"/>
+          <text class="ds-h" x="40" y="74" text-anchor="middle">00:00</text>
+          <text class="ds-h" x="270" y="74" text-anchor="middle">06:00</text>
+          <text class="ds-h" x="500" y="74" text-anchor="middle">12:00</text>
+          <text class="ds-h" x="730" y="74" text-anchor="middle">18:00</text>
+          <text class="ds-h" x="960" y="74" text-anchor="middle">24:00</text>
+          <line class="ds-span" x1="423.3" y1="52" x2="494.9" y2="52"/>
+          <path class="ds-lead" d="M194.6 52V21M231.7 52V39M423.3 52V21M494.9 52V39"/>
+          <circle class="ds-ev" cx="194.6" cy="52" r="3.5"/>
+          <circle class="ds-ev" cx="231.7" cy="52" r="3.5"/>
+          <circle class="ds-ev" cx="423.3" cy="52" r="3.5"/>
+          <circle class="ds-ev ds-ev-2" cx="494.9" cy="52" r="3.5"/>
+          <text class="ds-t" x="199" y="17"><tspan class="ds-tm">04:02</tspan>  Session mint</text>
+          <text class="ds-t" x="236" y="35"><tspan class="ds-tm">05:00</tspan>  Review processor</text>
+          <text class="ds-t" x="428" y="17"><tspan class="ds-tm">10:00</tspan>  CSI sweep, 112 min</text>
+          <text class="ds-t" x="499" y="35"><tspan class="ds-tm">After the sweep</tspan>  CX Huddle Mon to Sat, Operations report Sun</text>
+          <line class="ds-ka" x1="40" y1="90" x2="960" y2="90"/>
+          <text class="ds-h" x="960" y="104" text-anchor="end">Session keepalive, every 30 min</text>
+        </svg>
       </div>
-    </div>
-    <div class="project-card">
-      <div class="project-icon">🤖</div>
-      <h3 class="project-title">Social Review Sorting</h3>
-      <p class="project-description">ML-powered review categorization across platforms</p>
-      <div class="project-metrics">
-        <div class="metric"><span class="metric-value">216</span><span class="metric-label">Hours per Month</span></div>
-        <div class="metric"><span class="metric-value">99%</span><span class="metric-label">Accuracy</span></div>
-        <div class="metric"><span class="metric-value">&lt;5min</span><span class="metric-label">Response Time</span></div>
+      <div class="table-scroll" tabindex="0" aria-label="Daily runbook table, scrolls horizontally on narrow screens">
+        <table class="runbook">
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Cadence</th><th scope="col">Job</th><th scope="col">What happens</th><th scope="col">Unit</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="t-time">04:02</td>
+              <td class="t-cad">Daily</td>
+              <td class="t-job">Stellantis session mint</td>
+              <td class="t-desc">One-time-passcode relay through Smartsheet, no human in the loop.</td>
+              <td class="t-unit">csi-stellantis-login.timer</td>
+            </tr>
+            <tr>
+              <td class="t-time">05:00</td>
+              <td class="t-cad">Daily, Wed 05:01 weekly</td>
+              <td class="t-job">Social Review Processor</td>
+              <td class="t-desc">Pulls yesterday's reviews from the reputation platform, classifies Sales / Service / Unknown, verifies live status on Google, builds the workbook, emails the summary. Wednesday 05:01 runs the weekly edition.</td>
+              <td class="t-unit">src-daily-review.timer<br>src-weekly-review.timer</td>
+            </tr>
+            <tr>
+              <td class="t-time">10:00</td>
+              <td class="t-cad">Daily</td>
+              <td class="t-job">Daily CSI sweep</td>
+              <td class="t-desc">Logs into <span data-s="oemPortals">18</span> OEM survey portals (Qualtrics, Medallia, BoostCX, InMoment, track360, and more), extracts <span data-s="dailyCsiLines">107</span> store and department lines, self-heals missing coverage, writes the master workbook, mirrors to OneDrive with a sync guard, pushes the scoreboard, emails an executive summary. About <span data-s="sweepMinutes">112</span> minutes, unattended.</td>
+              <td class="t-unit">csi-report.timer</td>
+            </tr>
+            <tr>
+              <td class="t-time">After sweep</td>
+              <td class="t-cad">Monday to Saturday</td>
+              <td class="t-job">Daily CX Huddle</td>
+              <td class="t-desc">One designed email per team (<span data-s="huddleTeams">12</span> teams): where we stand, today's win, three priorities, rescores and reach gaps, store scores with power ranks, online reputation.</td>
+              <td class="t-unit">csi-huddle.service</td>
+            </tr>
+            <tr>
+              <td class="t-time">After sweep</td>
+              <td class="t-cad">Sunday</td>
+              <td class="t-job">Operations report</td>
+              <td class="t-desc">Three PDFs (All Ops, Fixed Ops, Variable Ops), decks, and an audit workbook.</td>
+              <td class="t-unit">csi-operations-report.service</td>
+            </tr>
+            <tr class="r-loop">
+              <td class="t-time t-loop">Every 30 min</td>
+              <td class="t-cad">Continuous</td>
+              <td class="t-job">Session keepalive</td>
+              <td class="t-desc">Keeps sessions warm across portals with wildly different session lifetimes.</td>
+              <td class="t-unit">csi-keepalive.timer</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <ul class="telemetry facts" aria-label="Fleet facts">
+        <li><b data-s="productionAutomations">33</b><span>production automations</span></li>
+        <li><b data-s="systemdUnits">20</b><span>systemd units</span></li>
+        <li><b data-s="pythonLoc">63k</b><span>lines of Python</span></li>
+        <li><b data-s="otpLoginsAutomatedPerSweep">11</b><span>OTP logins automated per sweep</span></li>
+      </ul>
     </div>
-    <div class="project-card">
-      <div class="project-icon">📊</div>
-      <h3 class="project-title">OEM Survey ETL</h3>
-      <p class="project-description">End-to-end data pipeline with automated KPIs</p>
-      <div class="project-metrics">
-        <div class="metric"><span class="metric-value">43</span><span class="metric-label">Hours per Month</span></div>
-        <div class="metric"><span class="metric-value">0</span><span class="metric-label">Manual Errors</span></div>
-        <div class="metric"><span class="metric-value">24/7</span><span class="metric-label">Availability</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- =====================  ANALYTICS  ===================== -->
-<section id="analytics" class="section">
-  <h2>Analytics Snapshots</h2>
-  <div class="cards">
-    <div class="analytic-card"><div class="analytic-title">Monthly Hours Saved</div><canvas id="aHours" class="analytic-canvas" height="140"></canvas></div>
-    <div class="analytic-card"><div class="analytic-title">Monthly Cost Savings ($K)</div><canvas id="aCost" class="analytic-canvas" height="140"></canvas></div>
-    <div class="analytic-card"><div class="analytic-title">Project Mix (Hours)</div><canvas id="aMix" class="analytic-canvas" height="140"></canvas></div>
-    <div class="analytic-card"><div class="analytic-title">KPI Radar</div><canvas id="aKPI" class="analytic-canvas" height="140"></canvas></div>
-  </div>
-</section>
-
-<!-- =====================  ECOSYSTEM  ===================== -->
-<section id="ecosystem" class="section wide">
-  <h2>Technology Ecosystem</h2>
-  <div class="ecosystem-network" id="eco">
-    <svg id="ecoSvg" style="position:absolute; inset:0; overflow:visible;"></svg>
-    <div id="ecoNodes" class="eco-nodes" style="position:absolute; inset:0;"></div>
-  </div>
-</section>
-
-<!-- =====================  PROOF OF WORK  ===================== -->
-<section id="proof" class="section">
-  <h2>Proof of Work</h2>
-  <div class="proof-wrap">
-    <div class="proof-grid">
-      <div class="proof-stats">
-        <div class="proof-stat"><div class="proof-stat-value">5,000+</div><div class="proof-stat-label">New Google Reviews</div></div>
-        <div class="proof-stat"><div class="proof-stat-value">4.6 → 4.7</div><div class="proof-stat-label">Star Rating</div></div>
-        <div class="proof-stat"><div class="proof-stat-value">99%</div><div class="proof-stat-label">Response Rate</div></div>
-        <div class="proof-stat"><div class="proof-stat-value">+12.5%</div><div class="proof-stat-label">OEM CSI Increase</div></div>
+    <div class="discipline reveal" aria-label="Engineering discipline">
+      <div>
+        <div class="k">Discipline 01</div>
+        <h3>Identity guards</h3>
+        <p>A row is never written unless the page proved which store it is.</p>
       </div>
       <div>
-        <h3 style="color:var(--primary);margin-bottom:.6rem">Journey Insights Implementation</h3>
-        <p style="line-height:1.65;margin-bottom:.5rem">As National CX Director, I transformed disconnected data into actionable intelligence across 70+ locations through daily pulse checks, pattern-focused deep dives, and stage-based improvements.</p>
-        <a href="#" class="showcase-link">📄 Download Full Case Study →</a>
+        <div class="k">Discipline 02</div>
+        <h3>Empty-month rule</h3>
+        <p>Verified store plus working session plus no data records a zero, never a skip.</p>
+      </div>
+      <div>
+        <div class="k">Discipline 03</div>
+        <h3>Self-healing coverage</h3>
+        <p>One retry per store per period, never a portal hammer.</p>
+      </div>
+      <div>
+        <div class="k">Discipline 04</div>
+        <h3>Audit trail</h3>
+        <p>Every send logged and verified against Sent Items.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =====================  SHOWCASE  ===================== -->
-<section id="showcase" class="section">
-  <h2>Live Showcases</h2>
-  <div class="showcase-grid">
-    <div class="showcase-item">
-      <h3>🎯 Interactive Analytics Dashboard</h3>
-      <p>Real-time visualization and insights.</p>
-      <a class="showcase-link" target="_blank" href="#">View Live Demo →</a>
+<!-- ===================== DEMOS ===================== -->
+<section id="demos" class="band" aria-labelledby="demosTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">02</span><span class="rule"></span><span>Demos</span></p>
+      <h2 class="title" id="demosTitle">Live Demos</h2>
+      <p class="lede">Real production renderers, fictional data. Every store, team, and customer below is invented.</p>
     </div>
-    <div class="showcase-item">
-      <h3>📊 Smartsheet Automation</h3>
-      <p>Enterprise workflow automation with alerts and reporting.</p>
-      <a class="showcase-link" target="_blank" href="#">View Solution →</a>
-    </div>
-    <div class="showcase-item">
-      <h3>🤖 RPA Demo</h3>
-      <p>End-to-end automation in action.</p>
-      <a class="showcase-link" target="_blank" href="#">Watch RPA Demo →</a>
+    <div class="demo-grid reveal">
+      <article class="demo">
+        <div class="demo-shot">
+          <img src="assets/img/demo-cx-huddle.png" alt="Screenshot of the Daily CX Huddle email demo showing passing rates, power ranks, and priorities" width="1350" height="1140">
+        </div>
+        <div class="demo-body">
+          <div class="demo-idx"><span>Demo 01</span><span class="new">New, September 2026</span><span>Fictional data</span></div>
+          <h3>Daily CX Huddle</h3>
+          <p>The morning email every team leader opens first. Passing rates, a combined CX Power Rank (70% CSI, 15% negative-review rate, 15% reputation score), today's win, three priorities, rescore opportunities, and a store-by-store scorecard with prior-month tiles.</p>
+          <ul class="chips"><li><span data-s="huddleTeams">12</span> teams</li><li>Mon to Sat</li><li>Production renderer</li></ul>
+          <a class="btn btn-gold" href="demos/cx-huddle.html" target="_blank" rel="noopener">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+      <article class="demo">
+        <div class="demo-shot">
+          <img src="assets/img/demo-social-review.png" alt="Screenshot of the Daily Social Review Summary demo with classified reviews and the report dashboard" width="1350" height="1140">
+        </div>
+        <div class="demo-body">
+          <div class="demo-idx"><span>Demo 02</span><span class="new">New, September 2026</span><span>Fictional data</span></div>
+          <h3>Daily Social Review Summary</h3>
+          <p>The corporate review digest: yesterday's reviews classified by operation, negatives flagged, escalations and review-bomb clusters called out, with the report dashboard rendered straight from the workbook the pipeline built.</p>
+          <ul class="chips"><li>05:00 daily</li><li>Sales / Service / Unknown</li><li>Google verified</li></ul>
+          <a class="btn btn-gold" href="demos/social-review.html" target="_blank" rel="noopener">Open the demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+      <article class="demo">
+        <div class="demo-shot">
+          <img src="assets/img/demo-rooftop-iq.png" alt="Screenshot of the Rooftop IQ product teaser dashboard" width="1280" height="800">
+        </div>
+        <div class="demo-body">
+          <div class="demo-idx"><span>Demo 03</span><span>Product concept</span><span>Fictional data</span></div>
+          <h3>Rooftop IQ</h3>
+          <p>A product concept for an automotive intelligence platform: review inbox, routing queue, OEM disposition, OEM CSI, KPI reports and grade cards in one shell.</p>
+          <ul class="chips"><li>Product teaser</li><li>Interactive</li></ul>
+          <a class="btn btn-ghost" href="https://ejr1216.github.io/rooftop-iq-demo/" target="_blank" rel="noopener">Open the teaser <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- =====================  EDUCATION  ===================== -->
-<section id="education" class="section">
-  <h2>Education</h2>
-  <ul class="simple-list">
-    <li><strong>B.S. in Computer Science</strong> — Graduated 09/2025 — Concentration: Data Analysis</li>
-    <li><strong>M.S. in Computer Science (AI/ML)</strong> — Strayer University — Start 10/06/2025</li>
-  </ul>
-</section>
-
-<!-- =====================  CERTIFICATIONS  ===================== -->
-<section id="certifications" class="section">
-  <h2>Certifications</h2>
-  <ul class="simple-list cert-list">
-    <li>📜 Agentic Automation Developer Associate Training (UiPath) — Issued Aug 2025 — Expires Aug 2027</li>
-    <li>📜 Six Sigma Yellow Belt — Issued Aug 2025</li>
-    <li>📜 TestOut PC Pro — Issued 2024</li>
-    <li>📜 TestOut Network Pro — Issued 2025</li>
-    <li>📜 TestOut Security Pro — Issued 2025</li>
-  </ul>
-</section>
-
-<!-- =====================  AWARDS & BADGES  ===================== -->
-<section id="awards-badges" class="section">
-  <h2>Awards & Badges</h2>
-  <div class="badge-grid">
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw/image" alt="IT Support Specialist badge">
-      <h3 class="badge-title">IT Support Specialist</h3>
-      <p class="badge-description">Hands-on support across hardware, OS, security, and user troubleshooting.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg/image" alt="Business Leadership badge">
-      <h3 class="badge-title">Business Leadership</h3>
-      <p class="badge-description">Ethical, adaptive leadership that supports open culture and change.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ/image" alt="Network Administrator badge">
-      <h3 class="badge-title">Network Administrator</h3>
-      <p class="badge-description">Configure, secure, and troubleshoot networks for reliable ops.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA/image" alt="Organizational Change Management badge">
-      <h3 class="badge-title">Organizational Change Management</h3>
-      <p class="badge-description">Strategies that drive engagement, improvement, and culture.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg/image" alt="Performance Management badge">
-      <h3 class="badge-title">Performance Management</h3>
-      <p class="badge-description">Assessments, discipline, and training programs for global teams.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg/image" alt="Project Planning badge">
-      <h3 class="badge-title">Project Planning</h3>
-      <p class="badge-description">Schedules, WBS, costing, and risk identification.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ/image" alt="Project Risk Management badge">
-      <h3 class="badge-title">Project Risk Management</h3>
-      <p class="badge-description">Identify, analyze, mitigate, and respond to project risks.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg/image" alt="Python Programming badge">
-      <h3 class="badge-title">Python Programming</h3>
-      <p class="badge-description">Object-oriented apps with industry tooling and patterns.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA/image" alt="SQL Programming badge">
-      <h3 class="badge-title">SQL Programming</h3>
-      <p class="badge-description">Design, query, and secure databases at scale.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ/image" alt="Security Architect badge">
-      <h3 class="badge-title">Security Architect</h3>
-      <p class="badge-description">Threats, vulnerabilities, secure architecture, governance.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A/image" alt="Peer Mentor Level 3 badge">
-      <h3 class="badge-title">Peer Mentor Level 3</h3>
-      <p class="badge-description">Active peer mentor for five or more terms.</p>
-    </a>
-    <a class="badge-card pulse-border cardAccent" href="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw/image" alt="President's List badge">
-      <h3 class="badge-title">President's List</h3>
-      <p class="badge-description">4.0 GPA term recognition for academic excellence.</p>
-    </a>
+<!-- ===================== GOALS ===================== -->
+<section id="goals" class="band" aria-labelledby="goalsTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">03</span><span class="rule"></span><span>Impact goals</span></p>
+      <h2 class="title" id="goalsTitle">Where the needles sit.</h2>
+      <p class="lede">Four dials move with the engine. Two count the fleet itself.</p>
+    </div>
+    <div class="gauge-grid reveal" id="gaugeGrid">
+      <div class="gauge live" data-gauge="hours" data-title="Hours saved" data-goal="hours"><div class="gauge-title">Hours saved</div><div class="gauge-sub">70.4% of goal, 105,551 of 150,000, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="savings" data-title="Cost savings" data-goal="savingsUsd"><div class="gauge-title">Cost savings</div><div class="gauge-sub">52.8% of goal, $2.64M of $5M, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="reviews" data-title="Five-star reviews" data-goal="reviews5star"><div class="gauge-title">Five-star reviews</div><div class="gauge-sub">81.6% of goal, 81,650 of 100,000, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="voc" data-title="VoC open cases" data-goal="vocCases"><div class="gauge-title">VoC open cases</div><div class="gauge-sub">70.0% of goal, 350,000 of 500,000, as of September 14, 2026</div></div>
+      <div class="gauge" data-gauge="automations" data-title="Production automations" data-goal="productionAutomations"><div class="gauge-title">Production automations</div><div class="gauge-sub">66% of goal, 33 of 50, as of September 14, 2026</div></div>
+      <div class="gauge" data-gauge="uipath" data-title="UiPath workflows" data-goal="uipathWorkflows"><div class="gauge-title">UiPath workflows</div><div class="gauge-sub">33% of goal, 33 of 100, as of September 14, 2026</div></div>
+    </div>
+    <noscript><p class="noscript-note">Dial values are as of September 14, 2026. With JavaScript enabled they move with the live engine.</p></noscript>
   </div>
 </section>
 
-<!-- =====================  ARTICLES & PRESS  ===================== -->
-<section id="articles" class="section">
-  <h2>Articles & Press</h2>
-  <div class="articles-grid">
-    <a href="assets/NADA-Show-Spotlight.pdf" target="_blank" class="article-card autoTrack">
-      <div class="article-badge">NADA Show Spotlight</div>
-      <h3 class="article-title">Napleton's Epiphany Fuels Customer Experience Success</h3>
-      <p class="article-meta">Auto Remarketing &bull; January 2026</p>
-      <p class="article-excerpt">As National CX Director at Ed Napleton Automotive Group, Eduardo Rodriguez transformed disconnected data into actionable intelligence across 63 dealership locations, achieving a 99% review response rate and improving Google ratings from 4.6 to 4.7 stars.</p>
-      <div class="article-stats">
-        <span>63 Dealerships</span>
-        <span>99% Response Rate</span>
-        <span>4.6 → 4.7 Stars</span>
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="band" aria-labelledby="projectsTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">04</span><span class="rule"></span><span>Key projects</span></p>
+      <h2 class="title" id="projectsTitle">Seven systems, one operating model.</h2>
+      <p class="lede">Key projects. Each carries a number that is checked every morning.</p>
+    </div>
+    <div class="proj-grid reveal">
+      <article class="proj wide">
+        <div class="k">Intake</div>
+        <h3>Voice of the Customer intake and routing</h3>
+        <p>Replaced manual cold calling with automated intake, store alerts, ownership handoffs, escalation logic, and SLA controls. Intake, routing, alerts, exception handling, and escalation paths now run the same way at every one of the <span data-s="locations">71</span> locations, and every request carries an owner and a clock.</p>
+        <div class="metrics">
+          <div><b data-s="annualRequests">120k+</b><span>requests per year</span></div>
+          <div><b data-s="uptimePct">99.9%</b><span>uptime</span></div>
+          <div><b data-s="csatPoints">+5</b><span>CSAT points</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Extraction</div>
+        <h3>Daily CSI Report Automation</h3>
+        <p><span data-s="oemPortals">18</span> OEM portals, one master workbook, one executive summary, every day.</p>
+        <div class="metrics">
+          <div><b data-s="dailyCsiLines">107</b><span>daily lines</span></div>
+          <div><b><span data-s="sweepMinutes">112</span> min</b><span>unattended</span></div>
+          <div><b data-s="oemPortals">18</b><span>portals</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Enablement</div>
+        <h3>Daily CX Huddle</h3>
+        <p>Per-team morning email with power rankings and priorities.</p>
+        <div class="metrics">
+          <div><b data-s="huddleTeams">12</b><span>teams</span></div>
+          <div><b>6</b><span>days a week</span></div>
+          <div><b>70/15/15</b><span>rank formula</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Reputation</div>
+        <h3>Social Review Processor</h3>
+        <p>Classification, live Google verification, review-bomb and terms-of-service handling.</p>
+        <div class="metrics">
+          <div><b data-s="reviewsPerDay">~90</b><span>reviews per day</span></div>
+          <div><b data-s="srcRegressionTests">268</b><span>regression tests</span></div>
+          <div><b>05:00</b><span>daily</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Surveys</div>
+        <h3>Survey completion automation</h3>
+        <p>UiPath extraction, Python REST uploads, validation, exception handling, manager escalation.</p>
+        <div class="metrics">
+          <div><b data-s="surveyCsiLiftPct">+10%</b><span>CSI</span></div>
+          <div><b data-s="surveyReachLiftPct">+20%</b><span>survey reach</span></div>
+          <div><b data-s="adoptionPct">100%</b><span>adoption</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Reporting</div>
+        <h3>Weekly Operations Report</h3>
+        <p>All / Fixed / Variable Ops PDFs with decks and an audit workbook.</p>
+        <div class="metrics">
+          <div><b>3</b><span>PDFs</span></div>
+          <div><b>Sunday</b><span>cadence</span></div>
+          <div><b>~770</b><span>reviews merged</span></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="k">Ledger</div>
+        <h3>KIA Survey Ledger</h3>
+        <p>Four Smartsheets kept in sync by an idempotent daily delta.</p>
+        <div class="metrics">
+          <div><b>20k+</b><span>archive rows</span></div>
+          <div><b data-s="kiaLedgerChecks">20,431</b><span>checks</span></div>
+          <div><b>0</b><span>failures</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ANALYTICS ===================== -->
+<section id="analytics" class="band" aria-labelledby="analyticsTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">05</span><span class="rule"></span><span>Analytics</span></p>
+      <h2 class="title" id="analyticsTitle">Twelve months, four views.</h2>
+      <p class="lede">October 2025 through September 2026. Modeled from production automation logs.</p>
+    </div>
+    <div class="chart-grid reveal">
+      <div class="chart-card">
+        <div class="ch-head"><h3>Monthly hours saved</h3><span class="ch-meta">Hours</span></div>
+        <div class="chart-wrap"><canvas id="chHours" aria-label="Line chart of monthly hours saved, October 2025 to September 2026, rising from 2,679 to 4,063" role="img"></canvas></div>
       </div>
-      <span class="article-link">Read Full Article →</span>
+      <div class="chart-card">
+        <div class="ch-head"><h3>Monthly cost savings</h3><span class="ch-meta">USD, thousands</span></div>
+        <div class="chart-wrap"><canvas id="chCost" aria-label="Line chart of monthly cost savings, October 2025 to September 2026, rising from $67K to $102K at $25 per hour" role="img"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="ch-head"><h3>Automation mix</h3><span class="ch-meta">Hours per month</span></div>
+        <div class="chart-wrap"><canvas id="chMix" aria-label="Automation mix, hours per month by system" role="img"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="ch-head"><h3>Reliability</h3><span class="ch-meta">Percent</span></div>
+        <div class="chart-wrap"><canvas id="chRadar" aria-label="Reliability radar: accuracy, availability, response, adoption, coverage" role="img"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STACK ===================== -->
+<section id="stack" class="band" aria-labelledby="stackTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">06</span><span class="rule"></span><span>Stack</span></p>
+      <h2 class="title" id="stackTitle">AI practice, and the tooling that ships.</h2>
+    </div>
+    <div class="stack-grid reveal">
+      <div>
+        <div class="sub-k">AI practice</div>
+        <ol class="practice">
+          <li><span class="n">01</span><div><h4>LLM-assisted review classification</h4><p>Prototypes that route customer reviews by operation, measured against the rule-based production classifier.</p></div></li>
+          <li><span class="n">02</span><div><h4>Retrieval-augmented generation</h4><p>Proof of concept grounded on operating documents and runbooks.</p></div></li>
+          <li><span class="n">03</span><div><h4>AI-assisted engineering workflow</h4><p>Claude Code and Codex drive the build, tests, and runbooks.</p></div></li>
+          <li><span class="n">04</span><div><h4>Shabti</h4><p>A Windows process recorder that exports AI-ready automation packages.</p></div></li>
+          <li><span class="n">05</span><div><h4>M.S. in Computer Science, AI concentration</h4><p>In progress.</p></div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="sub-k">Production stack</div>
+        <div class="stack-groups">
+          <div><div class="k">Automation</div><ul><li>Python</li><li>Playwright</li><li>UiPath</li><li>Power Automate</li><li>systemd</li></ul></div>
+          <div><div class="k">Data</div><ul><li>pandas</li><li>openpyxl</li><li>Excel</li><li>Smartsheet API</li><li>Reputation.com API</li><li>SQL</li></ul></div>
+          <div><div class="k">Platforms</div><ul><li>Qualtrics</li><li>Medallia</li><li>BoostCX</li><li>InMoment</li><li>track360</li><li>GBX</li></ul></div>
+          <div><div class="k">Delivery</div><ul><li>Linux</li><li>Windows VM bridge</li><li>Outlook and Excel COM</li><li>LibreOffice</li><li>Node</li><li>GitHub</li><li>CI</li></ul></div>
+          <div><div class="k">BI</div><ul><li>Power BI</li><li>Chart.js</li><li>Executive dashboards</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROOF ===================== -->
+<section id="proof" class="band" aria-labelledby="proofTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">07</span><span class="rule"></span><span>Proof of work</span></p>
+      <h2 class="title" id="proofTitle">What changed across <span data-s="locations">71</span> locations.</h2>
+    </div>
+    <div class="proof-grid reveal">
+      <div class="proof-stats" aria-label="Outcomes">
+        <div><b data-s="locations">71</b><span>locations</span></div>
+        <div><b data-s="csiImprovementPct">+15%</b><span>CSI</span></div>
+        <div><b data-s="retentionGrowthPct">+12.5%</b><span>retention</span></div>
+        <div><b data-s="uptimePct">99.9%</b><span>uptime</span></div>
+        <div><b data-s="adoptionPct">100%</b><span>adoption</span></div>
+        <div><b data-s="annualRequests">120k+</b><span>annual requests</span></div>
+        <div><b data-s="reviewResponseRatePct">99%</b><span>review response rate</span></div>
+        <div><b data-s="googleRating">4.6 to 4.7</b><span>Google rating</span></div>
+        <div><b data-s="newGoogleReviews">5,000+</b><span>new Google reviews</span></div>
+        <div><b>Team of <span data-s="teamSize">21</span></b><span>direct organization</span></div>
+      </div>
+      <div class="proof-copy">
+        <p>As National CX Director he standardized the operating model across <span data-s="locations">71</span> locations, turning disconnected survey, review, and service signals into daily, owned actions.</p>
+        <a class="btn btn-ghost" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">Read the NADA feature <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CREDENTIALS ===================== -->
+<section id="credentials" class="band" aria-labelledby="credTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">08</span><span class="rule"></span><span>Credentials</span></p>
+      <h2 class="title" id="credTitle">Education, certifications, and badges.</h2>
+    </div>
+    <div class="cred-grid reveal">
+      <div>
+        <div class="sub-k">Education</div>
+        <ul class="edu">
+          <li>
+            <span class="when">Expected March 2027</span>
+            <h4>M.S. Computer Science, AI concentration</h4>
+            <p>Strayer University</p>
+          </li>
+          <li>
+            <span class="when">September 2025</span>
+            <h4>B.S. Computer Science</h4>
+            <p>Strayer University. GPA 4.0, Summa Cum Laude, President's List.</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-k">Certifications</div>
+        <ul class="certs">
+          <li><span>UiPath Certified RPA Developer (UiARD)</span><span class="when">2025</span></li>
+          <li><span>Agentic Automation Developer Associate Training <span class="iss">(UiPath)</span></span><span class="when">Aug 2025 to Aug 2027</span></li>
+          <li><span>Six Sigma Yellow Belt</span><span class="when">Aug 2025</span></li>
+          <li><span>Managerial Accounting Certificate <span class="iss">(University of Illinois)</span></span><span class="when">2020</span></li>
+          <li><span>TestOut PC Pro</span><span class="when">2024</span></li>
+          <li><span>TestOut Network Pro</span><span class="when">2025</span></li>
+          <li><span>TestOut Security Pro</span><span class="when">2025</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="badges reveal" id="awards">
+      <div class="sub-k">Awards and badges</div>
+      <div class="badge-grid">
+        <a class="badge" href="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/_shxUvG5R1ini-UZirzcCw/image" alt="IT Support Specialist badge" width="56" height="56">
+          <div><h4>IT Support Specialist</h4><p>Hands-on support across hardware, OS, security, and user troubleshooting.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/DE3gFgqbRfeQ5Uzx5LWzlg/image" alt="Business Leadership badge" width="56" height="56">
+          <div><h4>Business Leadership</h4><p>Ethical, adaptive leadership that supports open culture and change.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/yZWKtv5wSvqirK3r2G4TVQ/image" alt="Network Administrator badge" width="56" height="56">
+          <div><h4>Network Administrator</h4><p>Configure, secure, and troubleshoot networks for reliable ops.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/Mup0fvd3SzayU6IIkTBslA/image" alt="Organizational Change Management badge" width="56" height="56">
+          <div><h4>Organizational Change Management</h4><p>Strategies that drive engagement, improvement, and culture.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/tgrx1qQmRK-QYGtTS0yXGg/image" alt="Performance Management badge" width="56" height="56">
+          <div><h4>Performance Management</h4><p>Assessments, discipline, and training programs for global teams.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/9iGaSW1dRG2y9QG5dB0wCg/image" alt="Project Planning badge" width="56" height="56">
+          <div><h4>Project Planning</h4><p>Schedules, WBS, costing, and risk identification.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/dhlp4qdtQ5eUHIivgSFiqQ/image" alt="Project Risk Management badge" width="56" height="56">
+          <div><h4>Project Risk Management</h4><p>Identify, analyze, mitigate, and respond to project risks.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/9jX0QPY1TvKhYEGgAgA5lg/image" alt="Python Programming badge" width="56" height="56">
+          <div><h4>Python Programming</h4><p>Object-oriented apps with industry tooling and patterns.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/M9uKGIk8SnKGRrQu-Nw7SA/image" alt="SQL Programming badge" width="56" height="56">
+          <div><h4>SQL Programming</h4><p>Design, query, and secure databases at scale.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/C1z_0RbUTei7VvNdN2sAkQ/image" alt="Security Architect badge" width="56" height="56">
+          <div><h4>Security Architect</h4><p>Threats, vulnerabilities, secure architecture, governance.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/btupPQFURqWWBZZHwu2A_A/image" alt="Peer Mentor Level 3 badge" width="56" height="56">
+          <div><h4>Peer Mentor Level 3</h4><p>Active peer mentor for five or more terms.</p></div>
+        </a>
+        <a class="badge" href="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw" target="_blank" rel="noopener">
+          <img src="https://api.badgr.io/public/badges/pyWshLsJSL-Rk-ChQOJQEw/image" alt="President's List badge" width="56" height="56">
+          <div><h4>President's List</h4><p>4.0 GPA term recognition for academic excellence.</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRESS ===================== -->
+<section id="press" class="band" aria-labelledby="pressTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">09</span><span class="rule"></span><span>Press</span></p>
+      <h2 class="title" id="pressTitle">Articles &amp; Press</h2>
+    </div>
+    <a class="press-card reveal" href="assets/NADA-Show-Spotlight.pdf" target="_blank" rel="noopener">
+      <div>
+        <div class="k">NADA Show Spotlight</div>
+        <h3>Napleton's Epiphany Fuels Customer Experience Success</h3>
+        <p class="meta">Auto Remarketing, January 2026</p>
+      </div>
+      <div>
+        <p class="excerpt">As National CX Director at Ed Napleton Automotive Group, Eduardo Rodriguez transformed disconnected data into actionable intelligence across 63 dealership locations, achieving a 99% review response rate and improving Google ratings from 4.6 to 4.7 stars.</p>
+        <ul class="chips"><li>63 dealerships</li><li>99% response rate</li><li>4.6 to 4.7 stars</li></ul>
+        <span class="link">Read the full article <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </div>
     </a>
   </div>
 </section>
 
-<!-- =====================  QUOTE OF THE MONTH  ===================== -->
-<section id="quote" class="section">
-  <h2 id="quoteHeader">Quote of the Month — 01/2026</h2>
-  <div class="quote-card">
-    <h3 id="quoteTitle" class="gradient-text">Adapt to Win</h3>
-    <p id="quoteText" class="quote-text">"It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change."</p>
-    <p id="quoteMeta" class="quote-meta">Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963).</p>
+<!-- ===================== QUOTE + REVIEW ===================== -->
+<section id="notes" class="band" aria-labelledby="notesTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">10</span><span class="rule"></span><span>Notes</span></p>
+      <h2 class="title" id="notesTitle">A quote, and a reference.</h2>
+    </div>
+    <div class="notes-grid reveal">
+      <section id="quote" aria-labelledby="quoteHeader">
+        <div class="sub-k" id="quoteHeader">Quote of the Month, 09/2026</div>
+        <h3 class="quote-title" id="quoteTitle">Think Big</h3>
+        <p class="quote-text" id="quoteText">"The future belongs to those who believe in the beauty of their dreams."</p>
+        <p class="quote-meta" id="quoteMeta"><strong>Eleanor Roosevelt</strong></p>
+      </section>
+      <section id="review" aria-labelledby="reviewHeader">
+        <div class="sub-k" id="reviewHeader">Review</div>
+        <p class="review-text">Eduardo brings a unique combination of deep technical expertise and business acumen. His automation solutions don't just save time; they transform entire workflows. The Voice of Customer system he built handles 15x our previous capacity while improving accuracy. That is the kind of impact that changes organizations.</p>
+        <div class="review-author">
+          <div class="review-mark" aria-hidden="true">&ldquo;</div>
+          <div>
+            <div class="name">VP, Strategic Operations</div>
+            <div class="role">Fortune 500 Automotive Leader</div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </section>
 
-<!-- =====================  REVIEWS  ===================== -->
-<section id="reviews" class="section">
-  <h2>Reviews</h2>
-  <div class="review-box autoTrack">
-    <p class="review-text">Eduardo brings a unique combination of deep technical expertise and business acumen. His automation solutions don't just save time; they transform entire workflows. The Voice of Customer system he built handles 15x our previous capacity while improving accuracy. That is the kind of impact that changes organizations.</p>
-    <div class="review-author">
-      <div class="review-dot"></div>
-      <div class="review-meta">
-        <div class="name">VP, Strategic Operations</div>
-        <div class="title">Fortune 500 Automotive Leader</div>
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="band" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="idx">11</span><span class="rule"></span><span>Contact</span></p>
+      <h2 class="title" id="contactTitle">Get in touch.</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-photo">
+        <div class="img"><img src="assets/img/ejr-headshot-contact.jpg" alt="Eduardo J. Rodriguez" width="896" height="1152"></div>
+      </div>
+      <div>
+        <p class="lede" style="margin-top:0">Automotive retail leadership with an engineering practice behind it. Conversations about CX operations, automation, and applied AI are welcome.</p>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:ejr1216@icloud.com">ejr1216@icloud.com</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:708-719-0854">(708) 719-0854</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://linkedin.com/in/ejr1216">LinkedIn</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://github.com/ejr1216">GitHub</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://x.com/ejr1216">@ejr1216</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><a target="_blank" rel="noopener" href="https://huggingface.co/ejr1216">Hugging Face</a></li>
+        </ul>
+        <p class="location">Based in Chicago &bull; Will consider relocation for the right opportunity</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =====================  CONTACT  ===================== -->
-<section id="contact" class="contact">
-  <h2>Get In Touch</h2>
-  <div class="contact-content">
-    <img id="contactImg" src="assets/img/ejr-headshot-contact.jpg?v=6" alt="Eduardo J. Rodriguez" class="contact-headshot">
-    <div id="contactFB" class="contact-avatar-fallback">EJR</div>
-    <div>
-      <div class="contact-info">
-        <div class="contact-item"><span>📧</span><a href="mailto:ejr1216@icloud.com">ejr1216@icloud.com</a></div>
-        <div class="contact-item"><span>📱</span><a href="tel:708-719-0854">(708) 719-0854</a></div>
-        <div class="contact-item"><span>💼</span><a target="_blank" href="https://linkedin.com/in/ejr1216">LinkedIn</a></div>
-        <div class="contact-item"><span>🐙</span><a target="_blank" href="https://github.com/ejr1216">GitHub</a></div>
-        <div class="contact-item"><span>𝕏</span><a target="_blank" href="https://x.com/ejr1216">@ejr1216</a></div>
-        <div class="contact-item"><span>🤗</span><a target="_blank" href="https://huggingface.co/ejr1216">Hugging Face</a></div>
-      </div>
-      <p class="location-note">📍 Based in Chicago • Will consider relocation for the right opportunity</p>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- =====================  SCRIPTS  ===================== -->
+<footer>
+  <div class="wrap">
+    <span class="name">Eduardo J. Rodriguez</span>
+    <span class="meta">Last updated <span data-i="lastUpdatedLabel">September 14, 2026</span></span>
+    <a href="https://github.com/ejr1216" target="_blank" rel="noopener">github.com/ejr1216</a>
+    <p class="note">Impact figures are modeled estimates derived from production automation logs: hours, savings, reviews, and cases accrue from published daily rates at the modeled hourly rate. They are indicators, not audited financials.</p>
+  </div>
+</footer>
+
+<script src="data/impact.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-/* ---- image robust fallbacks ---- */
 (function(){
-  const hero = document.getElementById('heroImg');
-  const heroFB = document.getElementById('heroFB');
-  hero.onerror=()=>{ hero.style.display='none'; heroFB.style.display='flex'; };
+  'use strict';
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var I = window.IMPACT || null;
+  var hasEngine = !!(I && I.anchor && I.baseDailyRates && I.increments && I.goals && I.static);
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var nf = new Intl.NumberFormat('en-US');
+  function setText(el, t){ if (el && el.textContent !== t) el.textContent = t; }
 
-  const contact = document.getElementById('contactImg');
-  const contactFB = document.getElementById('contactFB');
-  contact.onerror=()=>{ contact.style.display='none'; contactFB.style.display='flex'; };
-})();
-
-/* ---------- Live ticker for Hours & Dollars ---------- */
-/* Hours: 89.3/day from Oct 2023, +30/day from Dec 2025 = 119.3/day */
-(function(){
-  const baselineNow = 77615;
-  const dailyRate   = 119.3;
-  const perSec      = dailyRate/86400;
-  const el          = document.getElementById('kpiHoursValue');
-  const lbl         = document.getElementById('kpiHoursSub');
-  lbl.textContent   = `Live +${dailyRate.toFixed(1)} hrs per day`;
-  const fmt = n => Math.floor(n).toLocaleString('en-US');
-  const startMs = Date.now();
-  function tick(){
-    const secs = (Date.now() - startMs)/1000;
-    const current = baselineNow + secs*perSec;
-    el.textContent = fmt(current);
-    if (window.goalRings?.hours) window.goalRings.hours.setValue(current);
-    requestAnimationFrame(tick);
+  /* ---------- mobile menu ---------- */
+  var menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', function(){
+      var open = root.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.addEventListener('click', function(e){
+      if (e.target && e.target.tagName === 'A') { root.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && root.classList.contains('menu-open')) { root.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus(); }
+    });
   }
-  tick();
-})();
 
-/* Dollars: 119.3 hrs/day * $35/hr = $4,175.50/day */
-(function(){
-  const baselineUSD = 2716525;
-  const dailyUSD    = 4175.50;
-  const perSec      = dailyUSD/86400;
-  const el          = document.getElementById('kpiCostValue');
-  const lbl         = document.getElementById('kpiCostSub');
-  lbl.textContent   = `Live +$${Math.round(dailyUSD).toLocaleString('en-US')}/day`;
-  const fmtMoney = v=>{
-    if (v>=1_000_000) return '$'+(v/1_000_000).toFixed(1).replace(/\.0$/,'')+'M';
-    if (v>=1_000)     return '$'+Math.round(v/1000)+'K';
-    return '$'+Math.round(v).toLocaleString('en-US');
-  };
-  const start = Date.now();
-  function tick(){
-    const secs = (Date.now()-start)/1000;
-    const current = baselineUSD + secs*perSec;
-    el.textContent = fmtMoney(current);
-    if (window.goalRings?.savings) window.goalRings.savings.setValue(current);
-    requestAnimationFrame(tick);
+  /* ---------- scroll-spy: aria-current on the nav link for the section in view ---------- */
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var links = $$('.nav-links a[href^="#"]'), map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var current = null;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) current = en.target.id; });
+      links.forEach(function(a){ if (a === map[current]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    Object.keys(map).forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+  })();
+
+  /* ---------- reveal: one soft cascade on load (never gated on scroll, so
+     full-page captures and printers always see the whole document) ---------- */
+  var revealEls = $$('.reveal');
+  if (reduce) {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    revealEls.forEach(function(el, i){ el.style.transitionDelay = Math.min(i * 55, 440) + 'ms'; });
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+      setTimeout(function(){ revealEls.forEach(function(el){ el.style.transitionDelay = ''; }); }, 1400);
+    }); });
   }
-  tick();
-})();
 
-/* 5-Star Reviews: 3,450/month = ~115/day */
-(function(){
-  const baselineReviews = 55200;
-  const dailyRate = 3450/30;
-  const perSec = dailyRate/86400;
-  const startMs = Date.now();
-  function tick(){
-    const secs = (Date.now() - startMs)/1000;
-    const current = baselineReviews + secs*perSec;
-    if (window.goalRings?.reviews) window.goalRings.reviews.setValue(current);
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
-
-/* VoC Open Cases: 10,000/month = ~333/day */
-(function(){
-  const baselineVoc = 160000;
-  const dailyRate = 10000/30;
-  const perSec = dailyRate/86400;
-  const startMs = Date.now();
-  function tick(){
-    const secs = (Date.now() - startMs)/1000;
-    const current = baselineVoc + secs*perSec;
-    if (window.goalRings?.voc) window.goalRings.voc.setValue(current);
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
-
-/* ---------- Helpers ---------- */
-function abbreviate(n,isMoney=false){
-  const abs=Math.abs(n), sign=n<0?'-':'';
-  if(abs>=1e9) return sign+(abs/1e9).toFixed(1).replace(/\.0$/,'')+(isMoney?'B':'B');
-  if(abs>=1e6) return sign+(abs/1e6).toFixed(1).replace(/\.0$/,'')+(isMoney?'M':'M');
-  if(abs>=1e3) return sign+Math.round(abs/1e3)+(isMoney?'K':'K');
-  return sign+(isMoney?abs.toLocaleString('en-US'):(abs|0).toLocaleString('en-US'));
-}
-
-/* ---------- Goal rings ---------- */
-window.goalRings = {};
-function buildRing(id,current,goal,opts){
-  const root = document.getElementById(id);
-  const val = root.querySelector('.goal-val');
-  const sub = root.querySelector('.goal-sub');
-  root.style.setProperty('--colorStart',opts.start);
-  root.style.setProperty('--colorEnd',opts.end);
-  function setValue(v){
-    const pct = Math.max(0,Math.min(1,v/goal));
-    root.style.setProperty('--progress',pct);
-    val.textContent = Math.round(pct*100)+'%';
-    sub.textContent = `${opts.money?'$':''}${abbreviate(v,opts.money)} / ${opts.money?'$':''}${abbreviate(goal,opts.money)}`;
-  }
-  setValue(current);
-  return {setValue};
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  const currentHours=77615, goalHours=100000;
-  const currentReviews=55200, goalReviews=100000;
-  const currentSavings=2716525, goalSavings=3000000;
-  const currentVoc=160000, goalVoc=500000;
-  const currentUiPath=33, goalUiPath=100;
-
-  goalRings.hours   = buildRing('ringHours',   currentHours,   goalHours,   {start:'#22d3ee', end:'#7c3aed', money:false});
-  goalRings.reviews = buildRing('ringReviews', currentReviews, goalReviews, {start:'#10b981', end:'#5dd1ff', money:false});
-  goalRings.savings = buildRing('ringSavings', currentSavings, goalSavings, {start:'#7c3aed', end:'#22d3ee', money:true});
-  goalRings.voc     = buildRing('ringVoc',     currentVoc,     goalVoc,     {start:'#14b8a6', end:'#5dd1ff', money:false});
-  goalRings.uiPath  = buildRing('ringUiPath',  currentUiPath,  goalUiPath,  {start:'#2563eb', end:'#7c3aed', money:false});
-});
-
-/* ---------- Analytics charts (points pop on hover) ---------- */
-window.addEventListener('DOMContentLoaded', function () {
-  const months=['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-  const hours=[2679,2679,3579,3579,3579,3579,3579,3579,3579,3579,3579,3579];
-  const costK=[94,94,125,125,125,125,125,125,125,125,125,125];
-
-  const commonLineOpts = {
-    pointRadius: 3,
-    pointHoverRadius: 8,
-    pointHitRadius: 12,
-    pointHoverBorderWidth: 2
-  };
-
-  const onHoverCursor = (event, elements) => {
-    const canvas = event?.native?.target || event?.chart?.canvas;
-    if (canvas) canvas.style.cursor = elements && elements.length ? 'pointer' : 'default';
-  };
-
-  new Chart(document.getElementById('aHours'),{
-    type:'line',
-    data:{labels:months,datasets:[{
-      data:hours, borderColor:'#5dd1ff', backgroundColor:'rgba(93,209,255,.12)', fill:true, tension:.35,
-      ...commonLineOpts, pointHoverBackgroundColor:'#ffffff', pointHoverBorderColor:'#5dd1ff'
-    }]},
-    options:{
-      responsive:true, maintainAspectRatio:false, onHover:onHoverCursor,
-      interaction:{mode:'nearest',intersect:true},
-      plugins:{legend:{display:false}, tooltip:{enabled:true}},
-      elements:{point:{radius:3, hoverRadius:8}},
-      scales:{x:{grid:{color:'rgba(255,255,255,.05)'}},y:{grid:{color:'rgba(255,255,255,.05)'}}}
+  /* ---------- static facts from IMPACT.static ---------- */
+  function staticText(key){
+    if (!hasEngine) return null;
+    var S = I.static;
+    switch (key) {
+      case 'uptimePct': return S.uptimePct + '%';
+      case 'adoptionPct': return S.adoptionPct + '%';
+      case 'reviewResponseRatePct': return S.reviewResponseRatePct + '%';
+      case 'csiImprovementPct': return '+' + S.csiImprovementPct + '%';
+      case 'retentionGrowthPct': return '+' + S.retentionGrowthPct + '%';
+      case 'surveyCsiLiftPct': return '+' + S.surveyCsiLiftPct + '%';
+      case 'surveyReachLiftPct': return '+' + S.surveyReachLiftPct + '%';
+      case 'csatPoints': return '+' + S.csatPoints;
+      case 'annualRequests': return Math.round(S.annualRequests / 1000) + 'k+';
+      case 'newGoogleReviews': return nf.format(S.newGoogleReviews) + '+';
+      case 'reviewsPerDay': return '~' + S.reviewsPerDay;
+      case 'googleRating': return S.googleRatingFrom + ' to ' + S.googleRatingTo;
+      case 'pythonLoc': return Math.round(S.pythonLoc / 1000) + 'k';
+      default:
+        if (typeof S[key] === 'number') return nf.format(S[key]);
+        if (typeof S[key] === 'string') return S[key];
+        return null;
     }
-  });
+  }
+  $$('[data-s]').forEach(function(el){ var t = staticText(el.getAttribute('data-s')); if (t !== null) setText(el, t); });
+  $$('[data-i]').forEach(function(el){ if (hasEngine && typeof I[el.getAttribute('data-i')] === 'string') setText(el, I[el.getAttribute('data-i')]); });
 
-  new Chart(document.getElementById('aCost'),{
-    type:'line',
-    data:{labels:months,datasets:[{
-      data:costK, borderColor:'#10b981', backgroundColor:'rgba(16,185,129,.15)', fill:true, tension:.35,
-      ...commonLineOpts, pointHoverBackgroundColor:'#ffffff', pointHoverBorderColor:'#10b981'
-    }]},
-    options:{
-      responsive:true, maintainAspectRatio:false, onHover:onHoverCursor,
-      interaction:{mode:'nearest',intersect:true},
-      plugins:{legend:{display:false}}, elements:{point:{radius:3, hoverRadius:8}},
-      scales:{x:{grid:{color:'rgba(255,255,255,.05)'}},y:{grid:{color:'rgba(255,255,255,.05)'}}}
+  /* ---------- live KPI engine ---------- */
+  var DAY = 86400000;
+  function toMs(d){ return Date.parse(d + 'T06:00:00Z'); }
+  function days(a, b){ return Math.max(0, (b - a) / DAY); }
+  function compute(t){
+    var a = toMs(I.anchor.date);
+    var d = days(a, t);
+    var hours = I.anchor.hours + d * I.baseDailyRates.hours;
+    var daily = I.baseDailyRates.hours;
+    for (var i = 0; i < I.increments.length; i++) {
+      var inc = I.increments[i], s = toMs(inc.start);
+      hours += days(s, t) * inc.hoursPerDay;
+      if (s <= t) daily += inc.hoursPerDay;
     }
-  });
-
-  new Chart(document.getElementById('aMix'),{
-    type:'doughnut',
-    data:{labels:['VoC','Social Review','OEM Survey','Auto Cancel'],
-      datasets:[{data:[2400,180,43,43],backgroundColor:['#5dd1ff','#7c3aed','#10b981','#f59e0b'], hoverOffset:8}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#e2e8f0'}}},cutout:'55%'}
-  });
-
-  new Chart(document.getElementById('aKPI'),{
-    type:'radar',
-    data:{labels:['Accuracy','Availability','Response','ROI Index'],
-      datasets:[{data:[99,100,98,100],borderColor:'#5dd1ff',backgroundColor:'rgba(93,209,255,.15)',
-        pointRadius:3, pointHoverRadius:8, pointHoverBackgroundColor:'#ffffff', pointHoverBorderColor:'#5dd1ff'}]},
-    options:{responsive:true,maintainAspectRatio:false,onHover:onHoverCursor,
-      plugins:{legend:{display:false}},
-      scales:{r:{angleLines:{color:'rgba(255,255,255,.08)'},grid:{color:'rgba(255,255,255,.08)'},pointLabels:{color:'#94a3b8'},ticks:{display:false}}}}
-  });
-});
-
-/* ---------- Ecosystem (SVG dotted multicolor curves) ---------- */
-window.addEventListener('DOMContentLoaded', function () {
-  const eco = document.getElementById('eco');
-  const svg = document.getElementById('ecoSvg');
-  const nodesHost = document.getElementById('ecoNodes');
-
-  const palette = {
-    rpa:'#4f9efc', ai:'#10b981', data:'#f59e0b', cloud:'#8b5cf6', dev:'#ef4444', bi:'#14b8a6'
-  };
-
-  const categories = [
-    {name:'RPA',     cls:'node-rpa',   color:palette.rpa,   tools:['UiPath','Power Automate','n8n','Zapier']},
-    {name:'AI/ML',   cls:'node-ai',    color:palette.ai,    tools:['LLMs','Vector DB','Prompt Eng','Model Training']},
-    {name:'Database',cls:'node-data',  color:palette.data,  tools:['SQL','NoSQL','ETL','MongoDB','Snowflake','MySQL']},
-    {name:'Cloud',   cls:'node-cloud', color:palette.cloud, tools:['Azure','AWS','GCP','Terraform']},
-    {name:'Dev',     cls:'node-dev',   color:palette.dev,   tools:['Python','JavaScript','GitHub','Kubernetes','Docker','CI/CD']},
-    {name:'BI',      cls:'node-bi',    color:palette.bi,    tools:['Power BI','Excel','Smartsheet','Reporting']}
-  ];
-
-  function makeNode(label, classes, size){
-    const el = document.createElement('div');
-    el.className = `tech-node ${classes||''}`;
-    if(size) el.style.cssText += `width:${size}px;height:${size}px;`;
-    el.innerHTML = label;
-    nodesHost.appendChild(el);
+    var savings = hours * I.hourlyRate;
+    return {
+      hours: hours,
+      savings: savings,
+      reviews: I.anchor.reviews5star + d * I.baseDailyRates.reviews5star,
+      voc: I.anchor.vocCases + d * I.baseDailyRates.vocCases,
+      daily: daily,
+      dailyUsd: daily * I.hourlyRate,
+      fte: daily * 365 / 2080,
+      roiPct: (savings - I.impliedInvestmentUsd) / I.impliedInvestmentUsd * 100
+    };
+  }
+  var nf2 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function fInt(v){ return nf.format(Math.floor(v)); }
+  function fHours(v){ return nf2.format(Math.floor(v * 100) / 100); }
+  function fUsd(v){ return '$' + nf.format(Math.floor(v)); }
+  function pad(n, w){ var t = String(n); while (t.length < w) t = '0' + t; return t; }
+  function splitEl(el){
+    if (!el._int) { el.textContent = ''; var a = document.createElement('span'); var b = document.createElement('span'); b.className = 'frac'; el.appendChild(a); el.appendChild(b); el._int = a; el._frac = b; }
     return el;
   }
+  function setSplit(el, i, f){ splitEl(el); setText(el._int, i); setText(el._frac, f); }
+  function fM(v){ return '$' + (v / 1e6).toFixed(2) + 'M'; }
+  function fGoalM(v){ return '$' + String(+(v / 1e6).toFixed(1)) + 'M'; }
+  function ease(p){ return 1 - Math.pow(1 - p, 3); }
 
-  function drawLink(x1,y1,x2,y2,color,curv=.25){
-    const midX=(x1+x2)/2, midY=(y1+y2)/2;
-    const vx=x2-x1, vy=y2-y1;
-    const len=Math.hypot(vx,vy)||1;
-    const nx=-vy/len, ny=vx/len;
-    const cx = midX + nx * len * curv;
-    const cy = midY + ny * len * curv;
-
-    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d',`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`);
-    p.setAttribute('class','eco-link');
-    p.setAttribute('stroke', color);
-    svg.appendChild(p);
-  }
-
-  function place(el,x,y){ el.style.left = x+'px'; el.style.top = y+'px'; el.style.transform='translate(-50%,-50%)'; }
-
-  function render(){
-    svg.innerHTML = ''; nodesHost.innerHTML = '';
-    const r = eco.getBoundingClientRect();
-    const cx = r.width/2;
-    const cy = r.height/2 + 120;
-
-    const core = makeNode('Automation<br>Core','central',200); place(core,cx,cy);
-
-    const ringR = Math.min(r.width,r.height)*0.36;
-    const orbitR = 130;
-
-    const hubs = categories.map((c,i)=>{
-      const ang = -Math.PI/2 + i*(2*Math.PI/categories.length);
-      const x = cx + ringR*Math.cos(ang);
-      const y = cy + ringR*Math.sin(ang);
-      const hub = makeNode(c.name,`category ${c.cls}`,160); place(hub,x,y);
-
-      drawLink(cx,cy, x,y, c.color, .18);
-
-      const step = (2*Math.PI)/c.tools.length;
-      c.tools.forEach((t,j)=>{
-        const a = j*step + (i%2? step/3 : 0);
-        const tx = x + orbitR*Math.cos(a);
-        const ty = y + orbitR*Math.sin(a);
-        const tool = makeNode(t,'',110); place(tool,tx,ty);
-
-        drawLink(x,y, tx,ty, c.color, .28);
-      });
-      return {x,y,color:c.color};
-    });
-
-    for(let i=0;i<hubs.length;i++){
-      const a = hubs[i], b = hubs[(i+1)%hubs.length];
-      drawLink(a.x,a.y, b.x,b.y, a.color, .12);
+  /* ---------- gauges ---------- */
+  var gauges = [];
+  function buildGauge(el){
+    var cx = 100, cy = 100, r = 80;
+    var pt = function(deg, rad){ var a = deg * Math.PI / 180; return [cx + rad * Math.cos(a), cy + rad * Math.sin(a)]; };
+    var s = pt(135, r), e = pt(405, r);
+    var d = 'M ' + s[0].toFixed(2) + ' ' + s[1].toFixed(2) + ' A ' + r + ' ' + r + ' 0 1 1 ' + e[0].toFixed(2) + ' ' + e[1].toFixed(2);
+    var ticks = '';
+    for (var i = 0; i <= 30; i++) {
+      var deg = 135 + i * 9, major = (i % 5 === 0);
+      var a = pt(deg, major ? 87 : 89), b = pt(deg, major ? 96 : 94);
+      ticks += '<line class="tick' + (major ? ' major' : '') + '" x1="' + a[0].toFixed(2) + '" y1="' + a[1].toFixed(2) + '" x2="' + b[0].toFixed(2) + '" y2="' + b[1].toFixed(2) + '"/>';
     }
+    el.innerHTML =
+      '<div class="gauge-dial"><svg viewBox="0 0 200 200" aria-hidden="true">' +
+        '<g>' + ticks + '</g>' +
+        '<path class="track" d="' + d + '" pathLength="100"/>' +
+        '<path class="fill" d="' + d + '" pathLength="100" stroke-dasharray="0 100"/>' +
+      '</svg><div class="gauge-center"><div class="gauge-pct">0%</div><div class="gauge-of">of goal</div></div></div>' +
+      '<div class="gauge-title">' + el.getAttribute('data-title') + '</div>' +
+      '<div class="gauge-sub"></div>';
+    return { el: el, key: el.getAttribute('data-gauge'), goalKey: el.getAttribute('data-goal'),
+             fill: $('.fill', el), pct: $('.gauge-pct', el), sub: $('.gauge-sub', el), startedAt: null, ramped: false };
+  }
+  function gaugeValue(g, c){
+    switch (g.key) {
+      case 'hours': return { v: c.hours, txt: fInt(c.hours), goalTxt: nf.format(I.goals.hours) };
+      case 'savings': return { v: c.savings, txt: fM(c.savings), goalTxt: fGoalM(I.goals.savingsUsd) };
+      case 'reviews': return { v: c.reviews, txt: fInt(c.reviews), goalTxt: nf.format(I.goals.reviews5star) };
+      case 'voc': return { v: c.voc, txt: fInt(c.voc), goalTxt: nf.format(I.goals.vocCases) };
+      case 'automations': return { v: I.static.productionAutomations, txt: nf.format(I.static.productionAutomations), goalTxt: nf.format(I.goals.productionAutomations) };
+      case 'uipath': return { v: I.static.uipathWorkflows, txt: nf.format(I.static.uipathWorkflows), goalTxt: nf.format(I.goals.uipathWorkflows) };
+    }
+    return null;
+  }
+  function paintGauge(g, c, k){
+    var gv = gaugeValue(g, c); if (!gv) return;
+    var goal = I.goals[g.goalKey];
+    var pct = Math.max(0, Math.min(1, gv.v / goal));
+    var shown = pct * k;
+    g.fill.setAttribute('stroke-dasharray', (shown * 100).toFixed(2) + ' 100');
+    setText(g.pct, (g.el.classList.contains('live') ? (shown * 100).toFixed(1) : String(Math.round(shown * 100))) + '%');
+    setText(g.sub, gv.txt + ' of ' + gv.goalTxt);
   }
 
-  render();
-  window.addEventListener('resize', render);
-});
+  var kpiEls = { hours: $('[data-kpi="hours"]'), savings: $('[data-kpi="savings"]'), fte: $('[data-kpi="fte"]'), roi: $('[data-kpi="roi"]'),
+                 hoursRate: $('[data-kpi="hoursRate"]'), savingsRate: $('[data-kpi="savingsRate"]'), fteSub: $('[data-kpi="fteSub"]'), roiSub: $('[data-kpi="roiSub"]') };
 
-/* ---------- Quote of the Month Auto-Rotation ---------- */
-document.addEventListener('DOMContentLoaded', function(){
-  const quotes = [
-    { title: "Adapt to Win", text: "It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.", author: "Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963)." },
-    { title: "Relentless Pursuit", text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "<strong>Winston Churchill</strong>" },
-    { title: "Action Over Intention", text: "The way to get started is to quit talking and begin doing.", author: "<strong>Walt Disney</strong>" },
-    { title: "Growth Mindset", text: "The only way to do great work is to love what you do.", author: "<strong>Steve Jobs</strong>" },
-    { title: "Continuous Improvement", text: "It does not matter how slowly you go as long as you do not stop.", author: "<strong>Confucius</strong>" },
-    { title: "Innovation First", text: "Innovation distinguishes between a leader and a follower.", author: "<strong>Steve Jobs</strong>" },
-    { title: "Embrace Challenge", text: "The greater the difficulty, the more glory in surmounting it.", author: "<strong>Epicurus</strong>" },
-    { title: "Build Excellence", text: "Quality is not an act, it is a habit.", author: "<strong>Aristotle</strong>" },
-    { title: "Think Big", text: "The future belongs to those who believe in the beauty of their dreams.", author: "<strong>Eleanor Roosevelt</strong>" },
-    { title: "Stay Hungry", text: "Your time is limited, so don't waste it living someone else's life.", author: "<strong>Steve Jobs</strong>" },
-    { title: "Take Initiative", text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "<strong>Chinese Proverb</strong>" },
-    { title: "Persistence Wins", text: "I have not failed. I've just found 10,000 ways that won't work.", author: "<strong>Thomas Edison</strong>" }
-  ];
-  const now = new Date();
-  const monthIndex = now.getMonth();
-  const quote = quotes[monthIndex % quotes.length];
-  const monthStr = String(now.getMonth()+1).padStart(2,'0') + '/' + now.getFullYear();
+  if (hasEngine) {
+    $$('.gauge').forEach(function(el){ gauges.push(buildGauge(el)); });
+    var RAMP = reduce ? 0 : 1400, GRAMP = reduce ? 0 : 1200;
+    var t0 = null;
 
-  document.getElementById('quoteHeader').textContent = 'Quote of the Month — ' + monthStr;
-  document.getElementById('quoteTitle').textContent = quote.title;
-  document.getElementById('quoteText').textContent = '"' + quote.text + '"';
-  document.getElementById('quoteMeta').innerHTML = quote.author;
-});
+    var rateHours = null, rateUsd = null;
+    function paintRates(c){
+      var rh = 'Live, +' + c.daily.toFixed(1) + ' hrs per day';
+      var ru = 'Live, +$' + nf.format(Math.round(c.dailyUsd)) + ' per day';
+      if (rh !== rateHours) { rateHours = rh; kpiEls.hoursRate.innerHTML = '<span class="pip" aria-hidden="true"></span><span>' + rh + '</span>'; }
+      if (ru !== rateUsd) { rateUsd = ru; kpiEls.savingsRate.innerHTML = '<span class="pip" aria-hidden="true"></span><span>' + ru + '</span>'; }
+      setText(kpiEls.fteSub, c.daily.toFixed(1) + ' hrs per day, annualized over 2,080');
+      setText(kpiEls.roiSub, 'On $' + nf.format(I.impliedInvestmentUsd) + ' implied investment');
+    }
+
+    function frame(now){
+      if (t0 === null) t0 = now;
+      var c = compute(Date.now());
+      var k = RAMP ? ease(Math.min(1, (now - t0) / RAMP)) : 1;
+      var hv = c.hours * k, sv = c.savings * k;
+      setSplit(kpiEls.hours, nf.format(Math.floor(hv)), '.' + pad(Math.floor((hv % 1) * 1000), 3));
+      setSplit(kpiEls.savings, '$' + nf.format(Math.floor(sv)), '.' + pad(Math.floor((sv % 1) * 100), 2));
+      setText(kpiEls.fte, (c.fte * k).toFixed(1));
+      setText(kpiEls.roi, nf.format(Math.round(c.roiPct * k)) + '%');
+      paintRates(c);
+      var gk = GRAMP ? ease(Math.min(1, (now - t0) / GRAMP)) : 1;
+      for (var i = 0; i < gauges.length; i++) paintGauge(gauges[i], c, gk);
+    }
+
+    if (reduce) {
+      frame(performance.now());
+      setInterval(function(){ frame(performance.now()); }, 1000);
+    } else {
+      var loop = function(now){ frame(now); requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+    }
+  } else {
+    /* engine missing: the markup already carries the as-of figures; say so once */
+    var note = document.createElement('p'); note.className = 'noscript-note';
+    note.textContent = 'Figures shown are as of ' + ($('[data-i="lastUpdatedLabel"]') ? $('[data-i="lastUpdatedLabel"]').textContent : 'the last update') + '. The live engine did not load.';
+    if (kpiEls.hours && kpiEls.hours.closest('.wrap')) kpiEls.hours.closest('.wrap').appendChild(note);
+  }
+
+  /* ---------- quote of the month ---------- */
+  (function(){
+    var quotes = [
+      { title: "Adapt to Win", text: "It is not the strongest of the species that survives, nor the most intelligent; it is the one most adaptable to change.", author: "Often attributed to Charles Darwin; phrasing by business professor <strong>Leon C. Megginson</strong> (1963)." },
+      { title: "Relentless Pursuit", text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "<strong>Winston Churchill</strong>" },
+      { title: "Action Over Intention", text: "The way to get started is to quit talking and begin doing.", author: "<strong>Walt Disney</strong>" },
+      { title: "Growth Mindset", text: "The only way to do great work is to love what you do.", author: "<strong>Steve Jobs</strong>" },
+      { title: "Continuous Improvement", text: "It does not matter how slowly you go as long as you do not stop.", author: "<strong>Confucius</strong>" },
+      { title: "Innovation First", text: "Innovation distinguishes between a leader and a follower.", author: "<strong>Steve Jobs</strong>" },
+      { title: "Embrace Challenge", text: "The greater the difficulty, the more glory in surmounting it.", author: "<strong>Epicurus</strong>" },
+      { title: "Build Excellence", text: "Quality is not an act, it is a habit.", author: "<strong>Aristotle</strong>" },
+      { title: "Think Big", text: "The future belongs to those who believe in the beauty of their dreams.", author: "<strong>Eleanor Roosevelt</strong>" },
+      { title: "Stay Hungry", text: "Your time is limited, so don't waste it living someone else's life.", author: "<strong>Steve Jobs</strong>" },
+      { title: "Take Initiative", text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "<strong>Chinese Proverb</strong>" },
+      { title: "Persistence Wins", text: "I have not failed. I've just found 10,000 ways that won't work.", author: "<strong>Thomas Edison</strong>" }
+    ];
+    var now = new Date();
+    var q = quotes[now.getMonth() % quotes.length];
+    var monthStr = String(now.getMonth() + 1).padStart(2, '0') + '/' + now.getFullYear();
+    setText($('#quoteHeader'), 'Quote of the Month, ' + monthStr);
+    setText($('#quoteTitle'), q.title);
+    setText($('#quoteText'), '"' + q.text + '"');
+    $('#quoteMeta').innerHTML = q.author;
+  })();
+
+  /* ---------- charts ---------- */
+  (function(){
+    var months = ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+    var hours = [2679, 2679, 3579, 3579, 3579, 3579, 3579, 3579, 3579, 3651, 3840, 4063];
+    var costK = [67, 67, 89, 89, 89, 89, 89, 89, 89, 91, 96, 102];
+    var mixLabels = ['VoC intake', 'Dec 2025 additions', 'CSI sweep', 'CX Huddle', 'Review processor', 'KIA ledger', 'Ops report', 'Reputation pull'];
+    var mix = [2679, 900, 240, 129, 105, 45, 35, 26];
+    var radarLabels = ['Accuracy', 'Availability', 'Response', 'Adoption', 'Coverage'];
+    var radar = [99, 99.9, 98, 100, 100];
+
+    function fallback(id, html){
+      var cv = document.getElementById(id); if (!cv) return;
+      var wrap = cv.parentNode; var p = document.createElement('p'); p.className = 'chart-fallback'; p.innerHTML = html;
+      wrap.style.height = 'auto'; wrap.replaceChild(p, cv);
+    }
+    if (typeof window.Chart === 'undefined') {
+      fallback('chHours', 'Chart library unavailable. Hours per month, Oct 2025 to Sep 2026: <b>' + hours.join(', ') + '</b>.');
+      fallback('chCost', 'Chart library unavailable. Cost savings per month ($K): <b>' + costK.join(', ') + '</b>.');
+      fallback('chMix', 'Chart library unavailable. Hours per month by system: ' + mixLabels.map(function(l, i){ return l + ' <b>' + mix[i] + '</b>'; }).join(', ') + '.');
+      fallback('chRadar', 'Chart library unavailable. ' + radarLabels.map(function(l, i){ return l + ' <b>' + radar[i] + '</b>'; }).join(', ') + '.');
+      return;
+    }
+    try {
+      var C = window.Chart;
+      C.defaults.font.family = "'Inter', system-ui, sans-serif";
+      C.defaults.font.size = 11;
+      C.defaults.color = '#8f8a82';
+      C.defaults.borderColor = 'rgba(255,255,255,.06)';
+      C.defaults.animation.duration = reduce ? 0 : 900;
+      C.defaults.animation.easing = 'easeOutCubic';
+      var gold = '#d4b483', cream = '#ece9e2';
+      var tip = { backgroundColor: '#131920', borderColor: 'rgba(255,255,255,.12)', borderWidth: 1, titleColor: cream, bodyColor: '#c9c4bb', padding: 10, displayColors: false, titleFont: { family: "'JetBrains Mono', monospace", size: 11 }, bodyFont: { family: "'JetBrains Mono', monospace", size: 11 } };
+      var scalesXY = function(fmt){ return {
+        x: { grid: { display: false }, border: { color: 'rgba(255,255,255,.12)' }, ticks: { font: { family: "'JetBrains Mono', monospace", size: 10 } } },
+        y: { grid: { color: 'rgba(255,255,255,.06)' }, border: { display: false }, ticks: { font: { family: "'JetBrains Mono', monospace", size: 10 }, callback: fmt, maxTicksLimit: 5 } }
+      }; };
+      function lineChart(id, data, color, fmt, tipFmt){
+        var cv = document.getElementById(id); if (!cv) return;
+        new C(cv, { type: 'line', data: { labels: months, datasets: [{ data: data, borderColor: color, borderWidth: 1.5, backgroundColor: function(ctx){
+            var ch = ctx.chart, area = ch.chartArea; if (!area) return 'rgba(0,0,0,0)';
+            var g = ch.ctx.createLinearGradient(0, area.top, 0, area.bottom); g.addColorStop(0, 'rgba(212,180,131,.18)'); g.addColorStop(1, 'rgba(212,180,131,0)'); return g; },
+            fill: true, tension: .32, pointRadius: 0, pointHoverRadius: 4, pointHoverBackgroundColor: color, pointHoverBorderColor: '#07090c', pointHoverBorderWidth: 1 }] },
+          options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+            plugins: { legend: { display: false }, tooltip: Object.assign({ callbacks: { label: tipFmt } }, tip) },
+            scales: scalesXY(fmt) } });
+      }
+      lineChart('chHours', hours, gold, function(v){ return nf.format(v); }, function(c){ return nf.format(c.parsed.y) + ' hours'; });
+      lineChart('chCost', costK, cream, function(v){ return '$' + v + 'K'; }, function(c){ return '$' + c.parsed.y + 'K'; });
+
+      var mixColors = ['#d4b483', '#bfa274', '#a98f66', '#947c58', '#7f6a4b', '#6b593f', '#574834', '#463a2b'];
+      var mixCv = document.getElementById('chMix');
+      if (mixCv) new C(mixCv, { type: 'doughnut', data: { labels: mixLabels, datasets: [{ data: mix, backgroundColor: mixColors, borderColor: '#0f1318', borderWidth: 2, hoverOffset: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, cutout: '68%',
+          plugins: { legend: { position: 'right', labels: { boxWidth: 8, boxHeight: 8, usePointStyle: true, pointStyle: 'circle', padding: 9, color: '#a6a199', font: { size: 11 } } },
+            tooltip: Object.assign({ callbacks: { label: function(c){ return c.label + ': ' + nf.format(c.parsed) + ' hrs'; } } }, tip) } } });
+
+      var radarCv = document.getElementById('chRadar');
+      if (radarCv) new C(radarCv, { type: 'radar', data: { labels: radarLabels, datasets: [{ data: radar, borderColor: gold, borderWidth: 1.5, backgroundColor: 'rgba(212,180,131,.12)', pointRadius: 2.5, pointBackgroundColor: gold, pointBorderColor: gold, pointHoverRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: Object.assign({ callbacks: { label: function(c){ return c.parsed.r + '%'; } } }, tip) },
+          scales: { r: { min: 95, max: 100, angleLines: { color: 'rgba(255,255,255,.08)' }, grid: { color: 'rgba(255,255,255,.08)', circular: true }, pointLabels: { color: '#a6a199', font: { size: 11 } }, ticks: { display: false, stepSize: 1 } } } } });
+    } catch (err) {
+      /* charts are decorative; never let them break the page */
+      if (window.console && console.warn) console.warn('Charts skipped:', err && err.message);
+    }
+  })();
+})();
 </script>
 </body>
 </html>

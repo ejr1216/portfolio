@@ -3,3 +3,9 @@
 "Social Review Sorting",2025-02-01,5,1,22,Eduardo Rodriguez,Active,ML/Python,500
 "Automated Cancellation Input",2025-05-01,2,1,22,Eduardo Rodriguez,Active,Power Automate,200
 "OEM Survey ETL + KPI",2025-08-01,1,1,22,Eduardo Rodriguez,Active,Python/SQL,300
+"Daily CSI Sweep (18 OEM portals)",2026-07-23,56,1,22,Eduardo Rodriguez,Active,Python/Playwright,1500
+"KIA Survey Ledger Importer",2026-08-18,10.5,1,22,Eduardo Rodriguez,Active,Python/Smartsheet API,300
+"Weekly Operations Report",2026-09-09,8,1,22,Eduardo Rodriguez,Active,Python/LibreOffice/pptxgenjs,300
+"Social Review Processor",2026-09-10,24.5,1,22,Eduardo Rodriguez,Active,Python/Chrome/Reputation API,500
+"Daily CX Huddle",2026-09-11,30,1,22,Eduardo Rodriguez,Active,Python/Outlook COM,300
+"Live Reputation Pull",2026-09-14,6,1,22,Eduardo Rodriguez,Active,Python/REST,100

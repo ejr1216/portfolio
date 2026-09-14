@@ -1,70 +1,70 @@
 {
   "kpis": {
-    "totalHours": 31401.2,
-    "totalCost": 690825.52,
-    "fteSaved": 15.1,
-    "avgMonthlyHours": 2616.8
+    "totalHours": 32706.7,
+    "totalCost": 719546.41,
+    "fteSaved": 15.72,
+    "avgMonthlyHours": 2725.6
   },
   "monthly": [
     {
-      "month": "2024-10",
-      "hours": 2598.0,
-      "cost": 57156.0
-    },
-    {
-      "month": "2024-11",
-      "hours": 2598.0,
-      "cost": 57156.0
-    },
-    {
-      "month": "2024-12",
-      "hours": 2598.0,
-      "cost": 57156.0
-    },
-    {
-      "month": "2025-01",
-      "hours": 2598.0,
-      "cost": 57156.0
-    },
-    {
-      "month": "2025-02",
-      "hours": 2619.65,
-      "cost": 57632.3
-    },
-    {
-      "month": "2025-03",
-      "hours": 2619.65,
-      "cost": 57632.3
-    },
-    {
-      "month": "2025-04",
-      "hours": 2619.65,
-      "cost": 57632.3
-    },
-    {
-      "month": "2025-05",
-      "hours": 2628.31,
-      "cost": 57822.82
-    },
-    {
-      "month": "2025-06",
-      "hours": 2628.31,
-      "cost": 57822.82
-    },
-    {
-      "month": "2025-07",
-      "hours": 2628.31,
-      "cost": 57822.82
-    },
-    {
-      "month": "2025-08",
+      "month": "2025-10",
       "hours": 2632.64,
       "cost": 57918.08
     },
     {
-      "month": "2025-09",
+      "month": "2025-11",
       "hours": 2632.64,
       "cost": 57918.08
+    },
+    {
+      "month": "2025-12",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-01",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-02",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-03",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-04",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-05",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-06",
+      "hours": 2632.64,
+      "cost": 57918.08
+    },
+    {
+      "month": "2026-07",
+      "hours": 2875.12,
+      "cost": 63252.64
+    },
+    {
+      "month": "2026-08",
+      "hours": 2920.585,
+      "cost": 64252.87
+    },
+    {
+      "month": "2026-09",
+      "hours": 3217.19,
+      "cost": 70778.18000000001
     }
   ],
   "projects": [
@@ -74,19 +74,49 @@
       "cost": 685872.0
     },
     {
+      "name": "Daily CSI Sweep (18 OEM portals)",
+      "hours": 727.44,
+      "cost": 16003.68
+    },
+    {
       "name": "Social Review Sorting",
-      "hours": 173.2,
-      "cost": 3810.3999999999996
+      "hours": 259.79999999999995,
+      "cost": 5715.599999999999
+    },
+    {
+      "name": "Daily CX Huddle",
+      "hours": 129.9,
+      "cost": 2857.8
+    },
+    {
+      "name": "Social Review Processor",
+      "hours": 106.08500000000001,
+      "cost": 2333.8700000000003
     },
     {
       "name": "Automated Cancellation Input",
-      "hours": 43.3,
-      "cost": 952.6
+      "hours": 103.92,
+      "cost": 2286.2400000000002
+    },
+    {
+      "name": "KIA Survey Ledger Importer",
+      "hours": 90.93,
+      "cost": 2000.46
     },
     {
       "name": "OEM Survey ETL + KPI",
-      "hours": 8.66,
-      "cost": 190.52
+      "hours": 51.96,
+      "cost": 1143.1200000000001
+    },
+    {
+      "name": "Weekly Operations Report",
+      "hours": 34.64,
+      "cost": 762.08
+    },
+    {
+      "name": "Live Reputation Pull",
+      "hours": 25.98,
+      "cost": 571.5600000000001
     }
   ]
 }
