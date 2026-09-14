@@ -125,8 +125,8 @@
   .kpi{padding:30px 28px 30px 0;border-left:1px solid var(--line);padding-left:28px;min-width:0}
   .kpi:first-child{border-left:0;padding-left:0}
   .kpi-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-  .kpi-value{font-family:var(--mono);font-weight:500;font-size:clamp(30px,2.9vw,42px);line-height:1;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
-  .kpi-value .frac{font-size:.52em;color:var(--dim);letter-spacing:0;margin-left:1px}
+  .kpi-value{font-family:var(--mono);font-weight:500;font-size:clamp(26px,2.45vw,36px);line-height:1;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .kpi-value .frac{font-size:.48em;color:var(--dim);letter-spacing:0;margin-left:1px}
   .kpi-value.ph{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:var(--dim);line-height:1.4;white-space:normal}
   .kpi-sub{margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--muted);display:flex;align-items:flex-start;gap:8px;min-height:18px}
   .kpi-sub .pip{width:6px;height:6px;margin-top:7px;border-radius:50%;background:var(--gold);flex:none;opacity:.9}
@@ -148,9 +148,9 @@
   @keyframes ecoDash{to{stroke-dashoffset:-400}}
   .eco-node circle{fill:#0a0d11;stroke-width:1.2}
   .eco-node.core circle{fill:#0d1116;stroke:var(--gold);stroke-width:1.5}
-  .eco-node text{fill:var(--text);font-family:var(--sans);font-size:11.5px;font-weight:500;text-anchor:middle;dominant-baseline:middle}
-  .eco-node.cat text{font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.02em}
-  .eco-node.core text{font-family:var(--serif);font-weight:700;font-size:14px;fill:var(--gold);letter-spacing:.04em}
+  .eco-node text{fill:var(--text);font-family:var(--sans);font-size:12.5px;font-weight:500;text-anchor:middle;dominant-baseline:middle}
+  .eco-node.cat text{font-family:var(--serif);font-weight:700;font-size:14.5px;letter-spacing:.02em}
+  .eco-node.core text{font-family:var(--serif);font-weight:700;font-size:15px;fill:var(--gold);letter-spacing:.04em}
   .eco-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
   .eco-legend li{display:flex;align-items:center;gap:8px}
   .eco-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
@@ -314,6 +314,11 @@
 
   /* ---------- responsive ---------- */
   @media (max-width:1180px){
+    .kpi-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    .kpi{padding:24px 20px 24px 0}
+    .kpi:nth-child(odd){border-left:0;padding-left:0}
+    .kpi:nth-child(even){padding-left:20px}
+    .kpi:nth-child(n+3){border-top:1px solid var(--line)}
     .proj-grid{grid-template-columns:repeat(2,1fr)}
     .proj.wide{grid-column:span 2}
     .badge-grid{grid-template-columns:repeat(3,1fr)}
@@ -474,7 +479,7 @@
       <p class="lede">RPA, AI and machine learning, data, cloud, engineering, and business intelligence, wired together around one operating core.</p>
     </div>
     <div class="eco-stage reveal" id="ecoStage" aria-label="Technology ecosystem map">
-      <svg id="ecoSvg" viewBox="0 0 1320 760" role="img" aria-label="Network map: an Automation Core linked to RPA, AI/ML, Database, Cloud, Dev, and BI hubs, each with its tools"></svg>
+      <svg id="ecoSvg" viewBox="0 0 1320 920" role="img" aria-label="Network map: an Automation Core linked to RPA, AI/ML, Database, Cloud, Dev, and BI hubs, each with its tools"></svg>
     </div>
     <ul class="eco-legend reveal" aria-hidden="true">
       <li><i style="background:#5b8de8"></i>RPA</li><li><i style="background:#34b384"></i>AI/ML</li><li><i style="background:#d19a4a"></i>Database</li><li><i style="background:#9a7de0"></i>Cloud</li><li><i style="background:#e06663"></i>Dev</li><li><i style="background:#3fb1b1"></i>BI</li>
@@ -1176,7 +1181,7 @@
       { name: 'Dev',      color: '#e06663', tools: ['Python', 'JavaScript', 'GitHub', 'Kubernetes', 'Docker', 'CI/CD'] },
       { name: 'BI',       color: '#3fb1b1', tools: ['Power BI', 'Excel', 'Smartsheet', 'Reporting'] }
     ];
-    var W = 1320, H = 760, cx = W / 2, cy = H / 2, R = 252, orbit = 90;
+    var W = 1320, H = 920, cx = W / 2, cy = H / 2, R = 296, orbit = 116;
     function el(tag, attrs){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
     function link(x1, y1, x2, y2, color, curv){
       var mx = (x1 + x2) / 2, my = (y1 + y2) / 2, vx = x2 - x1, vy = y2 - y1, len = Math.hypot(vx, vy) || 1;
@@ -1187,7 +1192,7 @@
     function node(x, y, r, label, cls, color){
       var g = el('g', { 'class': 'eco-node ' + cls, transform: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')' });
       g.appendChild(el('circle', { r: r, stroke: color }));
-      var parts = (label.length > 9 && label.indexOf(' ') > 0) ? label.split(' ') : [label];
+      var parts = (label.length >= 9 && label.indexOf(' ') > 0) ? label.split(' ') : [label];
       var t = el('text', { y: parts.length > 1 ? -6 : 0 });
       parts.forEach(function(p, i){ var ts = el('tspan', { x: 0, dy: i ? 13 : 0 }); ts.textContent = p; t.appendChild(ts); });
       g.appendChild(t);
@@ -1200,7 +1205,7 @@
     // links first so nodes sit on top
     hubs.forEach(function(h, i){
       link(cx, cy, h.x, h.y, h.c.color, .16);
-      var n = h.c.tools.length, orb = n > 4 ? 120 : orbit, spread = Math.PI * (n > 4 ? 1.0 : .75), start = h.a - spread / 2;
+      var n = h.c.tools.length, orb = n > 4 ? 156 : orbit, spread = Math.PI * (n > 4 ? 1.0 : .78), start = h.a - spread / 2;
       h.c.tools.forEach(function(t, j){
         var ang = start + (n === 1 ? spread / 2 : j * (spread / (n - 1)));
         var tx = h.x + orb * Math.cos(ang), ty = h.y + orb * Math.sin(ang);
@@ -1211,10 +1216,10 @@
       link(h.x, h.y, nx.x, nx.y, h.c.color, .1);
     });
     hubs.forEach(function(h){
-      (h.c._pos || []).forEach(function(p){ node(p[0], p[1], 27, p[2], 'tool', h.c.color); });
-      node(h.x, h.y, 38, h.c.name, 'cat', h.c.color);
+      (h.c._pos || []).forEach(function(p){ node(p[0], p[1], 39, p[2], 'tool', h.c.color); });
+      node(h.x, h.y, 46, h.c.name, 'cat', h.c.color);
     });
-    node(cx, cy, 52, 'Automation Core', 'core', '#d4b483');
+    node(cx, cy, 60, 'Automation Core', 'core', '#d4b483');
   })();
 
   /* ---------- quote of the month ---------- */
