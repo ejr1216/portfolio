@@ -16,17 +16,17 @@ window.IMPACT = {
     "_savingsNote": "Cumulative savings the site showed on 2026-01-27 (at the $35/hr rate then in use). Kept as the floor per the owner (2026-09-14); hours accrued after the anchor are valued at hourlyRate."
   },
   "baseDailyRates": {
-    "hours": 119.3,
+    "hours": 40.0,
     "reviews5star": 115,
     "vocCases": 333.3,
-    "_note": "119.3 hrs/day = 89.3/day (VoC intake, since Oct 2023) + 30/day (Dec 2025 additions). Unchanged from the January model."
+    "_note": "40 hrs/day from the 2026-01-27 anchor = 10/day VoC intake and routing (owner-set 2026-09-14, applies to 2026 onward; the anchor already holds the pre-2026 accrual at the older rate) + 30/day for the December 2025 additions."
   },
   "increments": [
     {
       "name": "Daily CSI sweep, 18 OEM portals, 107 store/department lines",
       "start": "2026-07-23",
-      "hoursPerDay": 8.0,
-      "basis": "107 lines x ~4.5 min manual portal work per line, daily"
+      "hoursPerDay": 2.0,
+      "basis": "owner-set 2026-09-14: 2 hours per day"
     },
     {
       "name": "KIA Survey Ledger importer (4 Smartsheets, daily delta)",

@@ -434,22 +434,22 @@
     <div class="kpi-row reveal" role="list" aria-label="Live impact figures">
       <div class="kpi" role="listitem">
         <div class="kpi-label">Hours saved</div>
-        <div class="kpi-value live" data-kpi="hours">105,551</div>
-        <div class="kpi-sub" data-kpi="hoursRate"><span class="pip" aria-hidden="true"></span><span>Live, +138.6 hrs per day</span></div>
+        <div class="kpi-value live" data-kpi="hours">86,994</div>
+        <div class="kpi-sub" data-kpi="hoursRate"><span class="pip" aria-hidden="true"></span><span>Live, +53.3 hrs per day</span></div>
       </div>
       <div class="kpi" role="listitem">
         <div class="kpi-label">Cost savings</div>
-        <div class="kpi-value live" data-kpi="savings">$3,414,925</div>
-        <div class="kpi-sub" data-kpi="savingsRate"><span class="pip" aria-hidden="true"></span><span>Live, +$3,465 per day</span></div>
+        <div class="kpi-value live" data-kpi="savings">$2,951,004</div>
+        <div class="kpi-sub" data-kpi="savingsRate"><span class="pip" aria-hidden="true"></span><span>Live, +$1,332 per day</span></div>
       </div>
       <div class="kpi" role="listitem">
         <div class="kpi-label">FTE equivalent</div>
-        <div class="kpi-value" data-kpi="fte">24.3</div>
-        <div class="kpi-sub static"><span data-kpi="fteSub">138.6 hrs per day, annualized over 2,080</span></div>
+        <div class="kpi-value" data-kpi="fte">9.4</div>
+        <div class="kpi-sub static"><span data-kpi="fteSub">53.3 hrs per day, annualized over 2,080</span></div>
       </div>
       <div class="kpi" role="listitem">
         <div class="kpi-label">Return on investment</div>
-        <div class="kpi-value" data-kpi="roi">1,941%</div>
+        <div class="kpi-value" data-kpi="roi">1,664%</div>
         <div class="kpi-sub static"><span data-kpi="roiSub">On $167,300 implied investment</span></div>
       </div>
     </div>
@@ -548,8 +548,8 @@
       <p class="lede">Four dials move with the engine. Two count the fleet itself.</p>
     </div>
     <div class="gauge-grid reveal" id="gaugeGrid">
-      <div class="gauge live" data-gauge="hours" data-title="Hours saved" data-goal="hours"><div class="gauge-title">Hours saved</div><div class="gauge-sub">70.4% of goal, 105,551 of 150,000, as of September 14, 2026</div></div>
-      <div class="gauge live" data-gauge="savings" data-title="Cost savings" data-goal="savingsUsd"><div class="gauge-title">Cost savings</div><div class="gauge-sub">68.3% of goal, $3.41M of $5M, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="hours" data-title="Hours saved" data-goal="hours"><div class="gauge-title">Hours saved</div><div class="gauge-sub">58.0% of goal, 86,994 of 150,000, as of September 14, 2026</div></div>
+      <div class="gauge live" data-gauge="savings" data-title="Cost savings" data-goal="savingsUsd"><div class="gauge-title">Cost savings</div><div class="gauge-sub">59.0% of goal, $2.95M of $5M, as of September 14, 2026</div></div>
       <div class="gauge live" data-gauge="reviews" data-title="Five-star reviews" data-goal="reviews5star"><div class="gauge-title">Five-star reviews</div><div class="gauge-sub">81.6% of goal, 81,650 of 100,000, as of September 14, 2026</div></div>
       <div class="gauge live" data-gauge="voc" data-title="VoC open cases" data-goal="vocCases"><div class="gauge-title">VoC open cases</div><div class="gauge-sub">70.0% of goal, 350,000 of 500,000, as of September 14, 2026</div></div>
       <div class="gauge" data-gauge="automations" data-title="Production automations" data-goal="productionAutomations"><div class="gauge-title">Production automations</div><div class="gauge-sub">66% of goal, 33 of 50, as of September 14, 2026</div></div>
@@ -647,17 +647,17 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow"><span class="idx">05</span><span class="rule"></span><span>Analytics</span></p>
-      <h2 class="title" id="analyticsTitle">Twelve months, four views.</h2>
-      <p class="lede">October 2025 through September 2026. Modeled from production automation logs.</p>
+      <h2 class="title" id="analyticsTitle">2026 to date, four views.</h2>
+      <p class="lede">January through September 2026. Modeled from production automation logs.</p>
     </div>
     <div class="chart-grid reveal">
       <div class="chart-card">
         <div class="ch-head"><h3>Monthly hours saved</h3><span class="ch-meta">Hours</span></div>
-        <div class="chart-wrap"><canvas id="chHours" aria-label="Line chart of monthly hours saved, October 2025 to September 2026, rising from 2,679 to 4,063" role="img"></canvas></div>
+        <div class="chart-wrap"><canvas id="chHours" aria-label="Line chart of monthly hours saved, January to September 2026, rising from 1,200 to 1,504" role="img"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="ch-head"><h3>Monthly cost savings</h3><span class="ch-meta">USD, thousands</span></div>
-        <div class="chart-wrap"><canvas id="chCost" aria-label="Line chart of monthly cost savings, October 2025 to September 2026, rising from $67K to $102K at $25 per hour" role="img"></canvas></div>
+        <div class="chart-wrap"><canvas id="chCost" aria-label="Line chart of monthly cost savings, January to September 2026, rising from $30K to $38K at $25 per hour" role="img"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="ch-head"><h3>Automation mix</h3><span class="ch-meta">Hours per month</span></div>
@@ -1244,11 +1244,11 @@
 
   /* ---------- charts ---------- */
   (function(){
-    var months = ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-    var hours = [2679, 2679, 3579, 3579, 3579, 3579, 3579, 3579, 3579, 3651, 3840, 4063];
-    var costK = [67, 67, 89, 89, 89, 89, 89, 89, 89, 91, 96, 102];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
+    var hours = [1200, 1200, 1200, 1200, 1200, 1200, 1218, 1281, 1504];
+    var costK = [30, 30, 30, 30, 30, 30, 30, 32, 38];
     var mixLabels = ['VoC intake', 'Dec 2025 additions', 'CSI sweep', 'CX Huddle', 'Review processor', 'KIA ledger', 'Ops report', 'Reputation pull'];
-    var mix = [2679, 900, 240, 129, 105, 45, 35, 26];
+    var mix = [300, 900, 60, 129, 105, 45, 35, 26];
     var radarLabels = ['Accuracy', 'Availability', 'Response', 'Adoption', 'Coverage'];
     var radar = [99, 99.9, 98, 100, 100];
 
@@ -1258,7 +1258,7 @@
       wrap.style.height = 'auto'; wrap.replaceChild(p, cv);
     }
     if (typeof window.Chart === 'undefined') {
-      fallback('chHours', 'Chart library unavailable. Hours per month, Oct 2025 to Sep 2026: <b>' + hours.join(', ') + '</b>.');
+      fallback('chHours', 'Chart library unavailable. Hours per month, Jan to Sep 2026: <b>' + hours.join(', ') + '</b>.');
       fallback('chCost', 'Chart library unavailable. Cost savings per month ($K): <b>' + costK.join(', ') + '</b>.');
       fallback('chMix', 'Chart library unavailable. Hours per month by system: ' + mixLabels.map(function(l, i){ return l + ' <b>' + mix[i] + '</b>'; }).join(', ') + '.');
       fallback('chRadar', 'Chart library unavailable. ' + radarLabels.map(function(l, i){ return l + ' <b>' + radar[i] + '</b>'; }).join(', ') + '.');

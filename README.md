@@ -1,8 +1,8 @@
 # Eduardo J. Rodriguez: Automotive CX, AI and Automation
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-0b2545?style=for-the-badge&logo=github)](https://ejr1216.github.io/portfolio)
-[![Hours Saved](https://img.shields.io/badge/Hours%20Saved-105K%2B-0f4c3a?style=for-the-badge)](https://ejr1216.github.io/portfolio)
-[![Savings](https://img.shields.io/badge/Cost%20Savings-%243.4M-b08d57?style=for-the-badge)](https://ejr1216.github.io/portfolio)
+[![Hours Saved](https://img.shields.io/badge/Hours%20Saved-86K%2B-0f4c3a?style=for-the-badge)](https://ejr1216.github.io/portfolio)
+[![Savings](https://img.shields.io/badge/Cost%20Savings-%242.9M-b08d57?style=for-the-badge)](https://ejr1216.github.io/portfolio)
 [![Updated](https://img.shields.io/badge/Updated-Sep%2014%2C%202026-555?style=for-the-badge)](https://ejr1216.github.io/portfolio)
 
 **Live site:** [ejr1216.github.io/portfolio](https://ejr1216.github.io/portfolio)
@@ -10,9 +10,9 @@
 National CX Director at a 71-location automotive group. I design and run the automation fleet that measures, routes, and improves customer experience: 18 OEM survey portals, every public review, every team, every morning.
 
 ## Impact (modeled from production automation logs, as of September 14, 2026)
-- **105,000+** hours returned to the business (live counter on the site)
-- **$3.4M** in cost savings (January 2026 baseline, hours since then valued at $25/hr)
-- **24.3** FTE equivalent, running unattended
+- **86,000+** hours returned to the business (live counter on the site)
+- **$2.9M** in cost savings (January 2026 baseline, hours since then valued at $25/hr)
+- **9.4** FTE equivalent, running unattended
 - **71** locations, **18** OEM portals, **107** CSI lines captured daily, **12** team huddles every morning
 
 ## Live demos (fictional data, production renderers)
