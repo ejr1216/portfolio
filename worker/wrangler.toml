@@ -1,0 +1,23 @@
+name = "portfolio-demo-request"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Create the namespace once: npx wrangler kv namespace create LEADS
+# then paste the id it prints below.
+kv_namespaces = [
+  { binding = "LEADS", id = "REPLACE_WITH_KV_NAMESPACE_ID" }
+]
+
+[vars]
+FROM_ADDRESS = "er@mavericklabs.dev"
+FROM_NAME = "Eduardo J. Rodriguez"
+BCC_ADDRESS = "er@mavericklabs.dev"
+ALLOWED_ORIGIN = "https://ejr1216.github.io"
+SITE_BASE = "https://ejr1216.github.io/portfolio/"
+SMTP_HOST = "smtp.mail.me.com"
+SMTP_PORT = "587"
+
+# Secrets (never in this file):
+#   npx wrangler secret put SMTP_USER          (your Apple ID email, the iCloud account that owns er@mavericklabs.dev)
+#   npx wrangler secret put SMTP_PASS          (an app-specific password from account.apple.com, not your Apple ID password)
+#   npx wrangler secret put TURNSTILE_SECRET   (from the Turnstile widget in the Cloudflare dashboard)

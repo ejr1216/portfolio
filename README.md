@@ -28,12 +28,16 @@ National CX Director at a 71-location automotive group. I design and run the aut
 - **Dev:** Python, JavaScript, GitHub, Kubernetes, Docker, CI/CD
 - **BI:** Power BI, Excel, Smartsheet, executive reporting
 
+## Email me the demos
+The form under the demos posts to a Cloudflare Worker that sends all three demos from er@mavericklabs.dev with the two report PDFs attached. Setup and operating notes: `worker/README.md`. The form stays hidden until `docs/data/demo-request.js` is configured.
+
 ## How the numbers work
 `docs/data/impact.js` is the single source of truth. The page computes every live figure from an anchor date (January 27, 2026), a base daily rate, and per-automation increments with start dates, so the counters stay honest on any day the page is opened. Savings start from the January cumulative figure and grow at $25 per hour saved. Edit that file, never the HTML.
 
 ## Repository layout
 ```
-docs/            GitHub Pages site (index.html, demos/, assets/, data/impact.js)
+docs/            GitHub Pages site (index.html, demos/ with HTML + PDF, assets/, data/impact.js, data/demo-request.js)
+worker/          Cloudflare Worker behind "Email me the demos" (see worker/README.md)
 data/            automationProjects.csv, the project ledger behind scripts/generateAutomationKpis.py
 scripts/         KPI generator used by CI
 src/analytics/   KPI computation module
