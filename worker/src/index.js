@@ -68,7 +68,8 @@ export default {
       await sendSmtp(env, { from: env.FROM_ADDRESS, to: [email, env.BCC_ADDRESS].filter(Boolean), raw: message });
     } catch (err) {
       console.error('SMTP failed', err && err.message);
-      return json({ error: 'The mailbox did not answer. Please try again in a minute.' }, 502, cors);
+      const msg = /535|AUTH/.test(String(err && err.message)) ? 'The mailbox refused the login. The owner has been notified.' : 'The mailbox did not answer. Please try again in a minute.';
+      return json({ error: msg }, 502, cors);
     }
 
     ctx.waitUntil(Promise.all([
